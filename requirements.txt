@@ -1,0 +1,13 @@
+datasets
+dotenv
+pandas
+seaborn
+pathlib
+transformers
+evaluate
+accelerate
+scikit-learn
+tensorboard
+matplotlib
+sentencepiece
+ollama
