@@ -22,7 +22,7 @@ Swiss German test set is reserved for final evaluation.
 
 ### Approach 1: GBERT on raw Swiss German
 
-`code/train.ipynb` fine-tunes `deepset/gbert-base` on GAHD and evaluates the
+`code/notebooks/train.ipynb` fine-tunes `deepset/gbert-base` on GAHD and evaluates the
 result directly on raw Swiss German. This is the no-dialect-handling condition
 from the proposal.
 
@@ -33,14 +33,14 @@ Set `SEED` to `42`, `43`, and `44` in separate runs. Each run writes to
 - `test_results.json`
 - `gahd_test_predictions.csv`
 
-After all runs, execute `code/analyze_seeds_approach1.ipynb` to report every
+After all runs, execute `code/notebooks/analyze_seeds_approach1.ipynb` to report every
 seed plus the mean and sample standard deviation.
 
 ### Approach 2: GBERT on normalized input
 
 Approach 2 reuses the fine-tuned GBERT model from Approach 1 but evaluates the
 Standard German `translation` instead of the raw Swiss German `text`.
-`code/normalize.ipynb` records the translation comparison experiments.
+`code/notebooks/normalize.ipynb` records the translation comparison experiments.
 
 The proposal named locally run Apertus-70B-Instruct. The final implemented
 test-set pipeline instead uses `claude-haiku-5-5` with effort `medium` and the
@@ -50,7 +50,7 @@ candidate pool.
 
 ### Approach 3: SwissBERT on raw Swiss German
 
-`code/train_approach3.ipynb` fine-tunes SwissBERT on GAHD. It activates `de_CH`
+`code/notebooks/train_approach3.ipynb` fine-tunes SwissBERT on GAHD. It activates `de_CH`
 for German training and validation, then `gsw` for final raw Swiss German
 evaluation. The final configuration uses five epochs, learning rate `2e-5`, and
 seeds `42`, `43`, and `44`; outputs are stored in
@@ -58,7 +58,7 @@ seeds `42`, `43`, and `44`; outputs are stored in
 
 ### Baseline
 
-`code/baseline.ipynb` provides a TF-IDF logistic-regression reference model. It
+`code/notebooks/baseline.ipynb` provides a TF-IDF logistic-regression reference model. It
 is useful as a sanity check but is not one of the proposal's three main
 approaches.
 
@@ -70,11 +70,11 @@ candidate pool with the pinned `jagoldz/gahd` classifier, creates the fixed
 the Approach 1 training notebook. Run it with:
 
 ```bash
-python code/build_swisscrawl_testset.py score --resume
-python code/build_swisscrawl_testset.py sample --resume
-python code/build_swisscrawl_testset.py translate --resume
-python code/build_swisscrawl_testset.py annotations --resume
-python code/build_swisscrawl_testset.py verify --resume
+python code/scripts/build_swisscrawl_testset.py score --resume
+python code/scripts/build_swisscrawl_testset.py sample --resume
+python code/scripts/build_swisscrawl_testset.py translate --resume
+python code/scripts/build_swisscrawl_testset.py annotations --resume
+python code/scripts/build_swisscrawl_testset.py verify --resume
 ```
 
 The project uses the AustroTox score intervals with a documented,
@@ -102,6 +102,14 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Start Jupyter from `code/` so notebook imports and relative output paths resolve
+consistently:
+
+```bash
+cd code
+jupyter lab notebooks
+```
+
 Reproducibility controls include:
 
 - fixed experiment seeds `42`, `43`, and `44`
@@ -125,7 +133,7 @@ every run. Report mean and sample standard deviation across the three seeds.
 ## Verification
 
 ```bash
-python -m pyflakes code/*.py
-black --check code/*.py
-python code/build_swisscrawl_testset.py verify --resume
+python -m pyflakes code/scripts/*.py
+black --check code/scripts/*.py
+python code/scripts/build_swisscrawl_testset.py verify --resume
 ```
