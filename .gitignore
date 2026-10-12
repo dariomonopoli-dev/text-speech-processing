@@ -3,4 +3,8 @@ __pycache__/
 .env
 runs/
 data/*.csv
+!data/master_sample_stratified.csv
+data/checkpoints/*.sqlite3*
+data/translation_prompt_*.txt
 .ipynb_checkpoints/
+tmp/
