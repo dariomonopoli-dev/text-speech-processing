@@ -11,7 +11,6 @@ from typing import Any
 
 import pandas as pd
 
-from checkpoint_store import CheckpointStore
 from austrotox_sampling import (
     FIXED_STRATUM_TARGETS,
     GAHD_MODEL,
@@ -105,11 +104,10 @@ def build_gahd_classifier(device: str | None = None) -> Any:
 
 def score_candidate_pool(
     frame: pd.DataFrame,
-    store: CheckpointStore,
     classifier: Any,
     batch_size: int,
 ) -> pd.DataFrame:
-    """Score missing candidates in bounded, transactionally saved batches."""
+    """Score every candidate in bounded inference batches."""
     required = {"sentence_id", "text"}
     missing_columns = sorted(required.difference(frame.columns))
     if missing_columns:
@@ -131,31 +129,18 @@ def score_candidate_pool(
     ):
         raise ValueError("Every text must be a non-empty string.")
 
-    completed = store.completed_score_ids()
-    pending = frame.loc[~frame["sentence_id"].isin(completed), ["sentence_id", "text"]]
-    for start in range(0, len(pending), batch_size):
-        batch = pending.iloc[start : start + batch_size]
-        scores = score_with_gahd(
+    scores: list[float] = []
+    for start in range(0, len(frame), batch_size):
+        batch = frame.iloc[start : start + batch_size]
+        batch_scores = score_with_gahd(
             batch["text"].tolist(),
             classifier=classifier,
             batch_size=batch_size,
         )
-        store.save_scores(
-            {
-                "sentence_id": sentence_id,
-                "hate_score": score,
-            }
-            for sentence_id, score in zip(batch["sentence_id"], scores)
-        )
+        scores.extend(batch_scores.tolist())
 
-    score_by_id = store.load_scores()
     result = frame.copy()
-    result["hate_score"] = result["sentence_id"].map(score_by_id)
-    if result["hate_score"].isna().any():
-        missing_ids = result.loc[result["hate_score"].isna(), "sentence_id"].tolist()
-        raise RuntimeError(
-            "Checkpoint is missing scores after scoring: " + ", ".join(missing_ids[:10])
-        )
+    result["hate_score"] = scores
     return result
 
 

@@ -64,13 +64,10 @@ approaches.
 
 ## SwissCrawl evaluation set
 
-`code/score_swisscrawl_gahd_colab.ipynb` is a Google Colab data-construction
-notebook. It is not the Approach 1 multi-seed training script. It scores the
-complete filtered SwissCrawl candidate pool with the pinned `jagoldz/gahd`
-classifier, creates the fixed 700-row stratified sample, and exports the master
-sample and sampling report. Haiku is not called by this notebook.
-
-The equivalent local pipeline is:
+The local data-construction pipeline scores the complete filtered SwissCrawl
+candidate pool with the pinned `jagoldz/gahd` classifier, creates the fixed
+700-row stratified sample, and exports the master sample. It is separate from
+the Approach 1 training notebook. Run it with:
 
 ```bash
 python code/build_swisscrawl_testset.py score --resume
@@ -90,13 +87,10 @@ Each annotator receives 300 rows:
 - 100 shared rows labeled independently by all three annotators
 - 200 private rows
 
-Use the committed XLSX files for manual annotation. Fill `label` with `1` or
-`0`, and use `comment` for uncertainty. The CSV files are canonical
-machine-readable copies. Translations, GAHD scores, and strata are excluded from
+Generate the local XLSX files with the `annotations` stage, then fill `label`
+with `1` or `0` and use `comment` for uncertainty. Annotation CSV and XLSX files
+are excluded from Git. Translations, GAHD scores, and strata are excluded from
 annotator files to avoid bias.
-
-The detailed sampling and validation rules are in the
-[test-set design](docs/superpowers/specs/2026-10-08-swisscrawl-stratified-testset-design.md).
 
 ## Reproducibility
 
@@ -105,12 +99,8 @@ Create the environment from the repository root:
 ```bash
 python3.10 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements-lock.txt
+pip install -r requirements.txt
 ```
-
-`requirements-lock.txt` captures the complete Python 3.10 environment used for
-the experiments. `requirements.txt` lists only direct dependencies and is
-intended for development when exact environment reproduction is unnecessary.
 
 Reproducibility controls include:
 
@@ -119,15 +109,14 @@ Reproducibility controls include:
 - pinned GAHD model revision
   `90c6e4f50d109c42bebdeb0f43fb5c3e619612fc`
 - versioned Haiku model name and prompt
-- corpus fingerprints bound to scoring and translation checkpoints
-- resumable SQLite scoring checkpoints and atomic artifact writes
-- committed sampling and verification reports
+- corpus fingerprints bound to translation checkpoints
+- atomic translation checkpoint writes
 - per-seed model metrics and predictions rather than only aggregate scores
 
 Set `ANTHROPIC_API_KEY` in `.env` only for a new Haiku request. The successful
-batch checkpoint is retained as an audit artifact, so the translated master can
-be reconstructed without repeating the paid request. API keys, raw corpora,
-model checkpoints, and local SQLite files are ignored by Git.
+batch checkpoint is retained locally, so the translated master can be
+reconstructed without repeating the paid request. API keys, raw corpora, model
+checkpoints and translation checkpoints are ignored by Git.
 
 Before reporting results, record the Python version, package versions, hardware,
 device, model revisions, seed, training duration, and selected checkpoint for
@@ -136,8 +125,7 @@ every run. Report mean and sample standard deviation across the three seeds.
 ## Verification
 
 ```bash
-python -m pytest -q
-python -m pyflakes code/*.py tests/*.py
-black --check code/*.py tests/*.py
+python -m pyflakes code/*.py
+black --check code/*.py
 python code/build_swisscrawl_testset.py verify --resume
 ```

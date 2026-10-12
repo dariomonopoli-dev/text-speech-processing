@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import sys
+import tempfile
 from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
@@ -13,18 +14,10 @@ from typing import Any
 import pandas as pd
 from dotenv import load_dotenv
 
-from artifact_io import (
-    atomic_write_csv,
-    atomic_write_json,
-    atomic_write_xlsx,
-    verify_annotation_workbooks,
-)
-from austrotox_sampling import FIXED_STRATUM_TARGETS, GAHD_MODEL, GAHD_REVISION
-from checkpoint_store import SQLiteCheckpointStore
+from austrotox_sampling import FIXED_STRATUM_TARGETS
 from swisscrawl_pipeline import (
     build_annotation_frames,
     build_gahd_classifier,
-    corpus_fingerprint,
     score_candidate_pool,
     select_master_sample,
     restore_batch_translation,
@@ -40,7 +33,6 @@ DEFAULT_SCORED = Path("data/swisscrawl_scored_gahd.csv")
 DEFAULT_MASTER = Path("data/master_sample_stratified.csv")
 DEFAULT_SAMPLING_REPORT = Path("data/stratified_sampling_report.json")
 DEFAULT_VERIFICATION_REPORT = Path("data/stratified_verification_report.json")
-DEFAULT_CHECKPOINT = Path("data/checkpoints/swisscrawl_testset_gahd.sqlite3")
 DEFAULT_TRANSLATION_CHECKPOINT = Path("data/checkpoints/haiku_batch_translation.json")
 ANNOTATORS = ("dario", "marjorie", "yannis")
 
@@ -72,7 +64,6 @@ def _add_common_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--verification-report", type=Path, default=DEFAULT_VERIFICATION_REPORT
     )
-    parser.add_argument("--checkpoint", type=Path, default=DEFAULT_CHECKPOINT)
     parser.add_argument(
         "--translation-checkpoint",
         type=Path,
@@ -149,7 +140,7 @@ def _preflight(args: argparse.Namespace, environ: Mapping[str, str]) -> None:
         )
 
     if command == "score":
-        _protect_outputs([args.scored, args.checkpoint], args.resume)
+        _protect_outputs([args.scored], args.resume)
     elif command == "sample":
         _protect_outputs([args.master, args.sampling_report], args.resume)
     elif command == "translate" and not args.resume:
@@ -176,7 +167,6 @@ def _preflight(args: argparse.Namespace, environ: Mapping[str, str]) -> None:
                 args.master,
                 args.sampling_report,
                 args.verification_report,
-                args.checkpoint,
                 args.translation_checkpoint,
                 *_annotation_paths(args).values(),
                 *_annotation_workbook_paths(args).values(),
@@ -193,45 +183,77 @@ def _read_csv(path: Path) -> pd.DataFrame:
     return pd.read_csv(path, dtype={"sentence_id": "string"})
 
 
-def _score_checkpoint_configuration() -> dict[str, str]:
-    return {
-        "score_model": GAHD_MODEL,
-        "score_revision": GAHD_REVISION,
-    }
+def _write_csv(frame: pd.DataFrame, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    frame.to_csv(path, index=False, encoding="utf-8-sig")
 
 
-def _open_store(
-    args: argparse.Namespace, candidate: pd.DataFrame
-) -> SQLiteCheckpointStore:
-    return SQLiteCheckpointStore(
-        args.checkpoint,
-        corpus_hash=corpus_fingerprint(candidate),
-        configuration=_score_checkpoint_configuration(),
-    )
+def _write_json(payload: Mapping[str, Any], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    content = json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    with tempfile.NamedTemporaryFile(
+        mode="w", encoding="utf-8", dir=path.parent, delete=False
+    ) as handle:
+        handle.write(content)
+        handle.flush()
+        os.fsync(handle.fileno())
+        temporary = Path(handle.name)
+    temporary.replace(path)
+
+
+def _validated_scored_output(candidate: pd.DataFrame, path: Path) -> pd.DataFrame:
+    scored = _read_csv(path)
+    required = {"sentence_id", "text", "hate_score"}
+    if not required.issubset(scored.columns) or not scored[
+        ["sentence_id", "text"]
+    ].equals(candidate[["sentence_id", "text"]]):
+        raise PipelineCliError(
+            "Existing scored output does not match the candidate corpus."
+        )
+    scores = pd.to_numeric(scored["hate_score"], errors="coerce")
+    if scores.isna().any() or not scores.between(0.0, 1.0).all():
+        raise PipelineCliError("Existing scored output contains invalid scores.")
+    return scored
+
+
+def _write_xlsx(frame: pd.DataFrame, path: Path) -> None:
+    from openpyxl import Workbook
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "annotations"
+    sheet.append(frame.columns.tolist())
+    for values in frame.itertuples(index=False, name=None):
+        sheet.append([None if pd.isna(value) else value for value in values])
+    for row in sheet.iter_rows():
+        for cell in row:
+            if isinstance(cell.value, str):
+                cell.data_type = "s"
+    workbook.save(path)
 
 
 def _run_score(args: argparse.Namespace) -> None:
     candidate = _read_csv(args.candidate)
-    with _open_store(args, candidate) as store:
-        classifier = build_gahd_classifier(args.device)
-        scored = score_candidate_pool(
-            candidate,
-            store,
-            classifier,
-            batch_size=args.batch_size,
-        )
-        atomic_write_csv(scored, args.scored)
-        completed = len(store.completed_score_ids())
-    print(
-        f"score: wrote {len(scored)} rows to {args.scored} ({completed} checkpointed)"
+    if args.resume and args.scored.is_file():
+        scored = _validated_scored_output(candidate, args.scored)
+        print(f"score: reused {len(scored)} rows from {args.scored}")
+        return
+    classifier = build_gahd_classifier(args.device)
+    scored = score_candidate_pool(
+        candidate,
+        classifier,
+        batch_size=args.batch_size,
     )
+    _write_csv(scored, args.scored)
+    print(f"score: wrote {len(scored)} rows to {args.scored}")
 
 
 def _run_sample(args: argparse.Namespace) -> None:
     scored = _read_csv(args.scored)
     master, report = select_master_sample(scored, random_state=42)
-    atomic_write_csv(master, args.master)
-    atomic_write_json(report, args.sampling_report)
+    _write_csv(master, args.master)
+    _write_json(report, args.sampling_report)
     print(f"sample: wrote {len(master)} rows to {args.master}")
 
 
@@ -251,7 +273,7 @@ def _run_translate(args: argparse.Namespace, api_key: str) -> None:
             ) from error
         if prior_report.get("status") == "success":
             translated = restore_batch_translation(master, prior_report)
-            atomic_write_csv(translated, args.master)
+            _write_csv(translated, args.master)
             print(
                 f"translate: wrote {len(translated)} rows to {args.master} "
                 "(reused batch checkpoint)"
@@ -266,13 +288,13 @@ def _run_translate(args: argparse.Namespace, api_key: str) -> None:
         client,
         max_api_attempts=args.max_api_attempts,
         prior_report=prior_report,
-        checkpoint_callback=lambda checkpoint: atomic_write_json(
+        checkpoint_callback=lambda checkpoint: _write_json(
             checkpoint, args.translation_checkpoint
         ),
     )
-    atomic_write_json(report, args.translation_checkpoint)
+    _write_json(report, args.translation_checkpoint)
     source = "one Haiku batch request"
-    atomic_write_csv(translated, args.master)
+    _write_csv(translated, args.master)
     print(f"translate: wrote {len(translated)} rows to {args.master} " f"({source})")
 
 
@@ -318,13 +340,13 @@ def _run_annotations(args: argparse.Namespace) -> None:
         if path.exists():
             print(f"annotations: preserved existing {path}")
         else:
-            atomic_write_csv(frame, path)
+            _write_csv(frame, path)
             print(f"annotations: wrote {len(frame)} rows to {path}")
         workbook_path = _annotation_workbook_paths(args)[annotator]
         if workbook_path.exists():
             print(f"annotations: preserved existing {workbook_path}")
         else:
-            atomic_write_xlsx(frame, workbook_path)
+            _write_xlsx(frame, workbook_path)
             print(f"annotations: wrote {len(frame)} rows to {workbook_path}")
 
 
@@ -335,8 +357,7 @@ def _run_verify(args: argparse.Namespace) -> None:
         for annotator, path in _annotation_paths(args).items()
     }
     report = verify_artifacts(master, annotations)
-    verify_annotation_workbooks(annotations, _annotation_workbook_paths(args))
-    atomic_write_json(report, args.verification_report)
+    _write_json(report, args.verification_report)
     print(f"verify: passed and wrote {args.verification_report}")
 
 
