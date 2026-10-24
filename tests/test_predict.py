@@ -39,6 +39,15 @@ def test_predictions_file_is_named_after_the_input_column():
     )
 
 
+def test_explicit_checkpoint_overrides_the_run_checkpoint(tmp_path):
+    assert predict.get_model_path(str(tmp_path), "runs/none") == str(tmp_path)
+
+
+def test_missing_explicit_checkpoint_is_refused(tmp_path):
+    with pytest.raises(FileNotFoundError, match="nope"):
+        predict.get_model_path(str(tmp_path / "nope"), "runs/none")
+
+
 def test_eval_set_keeps_id_and_input_column(tmp_path):
     path_eval_set = tmp_path / "master.csv"
     pd.DataFrame(

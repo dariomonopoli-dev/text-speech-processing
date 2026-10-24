@@ -8,7 +8,7 @@
         "learning_rate": 2e-05,
         "weight_decay": 0.01,
         "patience": 3,
-        "no_fp16": false,
+        "no_fp16": true,
         "log_interval": 50,
         "path_runs_dir": "runs",
         "seed": 42
@@ -20,9 +20,10 @@
         "path_eval_set": "data/master_sample_stratified.csv",
         "input_column": "text",
         "batch_size": 32,
-        "no_fp16": false,
+        "no_fp16": true,
         "path_runs_dir": "runs",
-        "seed": 42
+        "seed": 42,
+        "path_checkpoint": "models/gbert_seed42/best"
     },
     "predict_translation": {
         "experiment_name": "gahd_gbert_raw",
@@ -31,8 +32,9 @@
         "path_eval_set": "data/master_sample_stratified.csv",
         "input_column": "translation",
         "batch_size": 32,
-        "no_fp16": false,
+        "no_fp16": true,
         "path_runs_dir": "runs",
-        "seed": 42
+        "seed": 42,
+        "path_checkpoint": "models/gbert_seed42/best"
     }
 }

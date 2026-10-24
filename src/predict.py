@@ -39,6 +39,15 @@ def load_eval_set(path_eval_set: str, input_column: str) -> pd.DataFrame:
     return eval_set[["sentence_id", input_column]]
 
 
+def get_model_path(path_checkpoint: str | None, run_path: str) -> str:
+    """Return the explicit checkpoint if given, else the best checkpoint of the run."""
+    if path_checkpoint is None:
+        return get_checkpoint_path(run_path)
+    if not os.path.isdir(path_checkpoint):
+        raise FileNotFoundError(f"Checkpoint '{path_checkpoint}' does not exist.")
+    return path_checkpoint
+
+
 def main(args: argparse.Namespace) -> None:
     pred_logger.info(f"CMD args: {json.dumps(args.__dict__, indent=4)}")
     if args.batch_size <= 0:
@@ -47,7 +56,8 @@ def main(args: argparse.Namespace) -> None:
     path_predictions = get_predictions_path(run_path, args.input_column)
     if os.path.exists(path_predictions):
         raise FileExistsError(f"Output file '{path_predictions}' exists already.")
-    path_checkpoint = get_checkpoint_path(run_path)
+    path_checkpoint = get_model_path(args.path_checkpoint, run_path)
+    os.makedirs(run_path, exist_ok=True)
     eval_set = load_eval_set(args.path_eval_set, args.input_column)
     pred_logger.info(f"Loaded {len(eval_set)} examples from {args.path_eval_set}.")
 
@@ -101,6 +111,11 @@ def get_argparser() -> argparse.ArgumentParser:
         type=int,
         default=None,
         help="Truncation length in tokens. Default: the tokenizer's model_max_length.",
+    )
+    parser.add_argument(
+        "--path_checkpoint",
+        default=None,
+        help="Directory with a saved model. Default: the best checkpoint in the run.",
     )
     # data
     parser.add_argument(

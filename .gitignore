@@ -11,3 +11,4 @@ data/translation_prompt_*.txt
 tmp/
 logs/
 paths.json
+models/
