@@ -1,0 +1,38 @@
+{
+    "train": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "deepset/gbert-base",
+        "max_length": null,
+        "epochs": 3.0,
+        "batch_size": 32,
+        "learning_rate": 2e-05,
+        "weight_decay": 0.01,
+        "patience": 3,
+        "no_fp16": false,
+        "log_interval": 50,
+        "path_runs_dir": "runs",
+        "seed": 43
+    },
+    "predict": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "deepset/gbert-base",
+        "max_length": null,
+        "path_eval_set": "data/master_sample_stratified.csv",
+        "input_column": "text",
+        "batch_size": 32,
+        "no_fp16": false,
+        "path_runs_dir": "runs",
+        "seed": 43
+    },
+    "predict_translation": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "deepset/gbert-base",
+        "max_length": null,
+        "path_eval_set": "data/master_sample_stratified.csv",
+        "input_column": "translation",
+        "batch_size": 32,
+        "no_fp16": false,
+        "path_runs_dir": "runs",
+        "seed": 43
+    }
+}
