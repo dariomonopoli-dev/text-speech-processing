@@ -1,7 +1,11 @@
+"""Plotly style and plotting helpers shared by the notebooks."""
+
 import re
 from collections import Counter
+from collections.abc import Iterable, Sequence
 
 import numpy as np
+from numpy.typing import ArrayLike
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -38,7 +42,8 @@ MIN_WORD_COUNT = 5
 MIN_WORD_LENGTH = 3
 
 
-def apply_style():
+def apply_style() -> None:
+    """Register the gahd plotly template and make it the default."""
     axis = dict(
         gridcolor=GRID_COLOR,
         linecolor=AXIS_COLOR,
@@ -75,7 +80,8 @@ def apply_style():
     pio.renderers.default = "plotly_mimetype+notebook_connected"
 
 
-def with_predictions(examples, hate_log_odds):
+def with_predictions(examples: pd.DataFrame, hate_log_odds: ArrayLike) -> pd.DataFrame:
+    """Add predicted label, hate probability and correctness from hate log-odds."""
     pred = (np.asarray(hate_log_odds) > 0).astype(int)
     return examples.assign(
         pred=pred,
@@ -84,7 +90,14 @@ def with_predictions(examples, hate_log_odds):
     )
 
 
-def add_reference_line(fig, value, label, axis="y", position="top right"):
+def add_reference_line(
+    fig: go.Figure,
+    value: float,
+    label: str,
+    axis: str = "y",
+    position: str = "top right",
+) -> None:
+    """Draw a labelled dashed reference line on either axis."""
     add_line = fig.add_hline if axis == "y" else fig.add_vline
     add_line(
         value,
@@ -97,7 +110,8 @@ def add_reference_line(fig, value, label, axis="y", position="top right"):
     )
 
 
-def plot_confusion_matrix(results):
+def plot_confusion_matrix(results: pd.DataFrame) -> None:
+    """Show the row-normalised confusion matrix with raw counts."""
     counts = confusion_matrix(results["label"], results["pred"])
     rates = counts / counts.sum(axis=1, keepdims=True)
 
@@ -127,7 +141,10 @@ def plot_confusion_matrix(results):
     fig.show()
 
 
-def macro_f1_interval(truth, predicted, seed=0):
+def compute_macro_f1_interval(
+    truth: ArrayLike, predicted: ArrayLike, seed: int = 0
+) -> np.ndarray:
+    """Percentile 95 percent bootstrap interval of macro F1."""
     truth, predicted = np.asarray(truth), np.asarray(predicted)
     resamples = np.random.default_rng(seed).integers(
         0, len(truth), size=(N_RESAMPLES, len(truth))
@@ -141,8 +158,9 @@ def macro_f1_interval(truth, predicted, seed=0):
     return np.percentile(scores, [2.5, 97.5])
 
 
-def round_summary(results):
-    low, high = macro_f1_interval(results["label"], results["pred"])
+def compute_round_summary(results: pd.DataFrame) -> pd.Series:
+    """Macro F1 with interval and per-class recall for one set of results."""
+    low, high = compute_macro_f1_interval(results["label"], results["pred"])
     return pd.Series(
         {
             "examples": len(results),
@@ -160,13 +178,14 @@ def round_summary(results):
     )
 
 
-def plot_rounds(results):
+def plot_rounds(results: pd.DataFrame) -> None:
+    """Show macro F1 and per-class recall per GAHD collection round."""
     by_round = pd.concat(
         [
             results.groupby("round")
-            .apply(round_summary, include_groups=False)
+            .apply(compute_round_summary, include_groups=False)
             .loc[ROUNDS],
-            round_summary(results).to_frame("all").T,
+            compute_round_summary(results).to_frame("all").T,
         ]
     )
     by_round["round"] = [
@@ -222,7 +241,8 @@ def plot_rounds(results):
     fig.show()
 
 
-def contrastive_examples(results, gahd):
+def get_contrastive_examples(results: pd.DataFrame, gahd: pd.DataFrame) -> pd.DataFrame:
+    """Return label-flipping contrastive pairs with their character similarity."""
     by_id = gahd.set_index("gahd_id")
     contrastive = results.assign(
         original_text=results["contrastive_gahd_id"].map(by_id["text"]),
@@ -242,8 +262,9 @@ def contrastive_examples(results, gahd):
     return contrastive.assign(similarity=similarity)
 
 
-def plot_contrastive(results, gahd):
-    contrastive = contrastive_examples(results, gahd)
+def plot_contrastive(results: pd.DataFrame, gahd: pd.DataFrame) -> None:
+    """Show accuracy on contrastive examples by similarity quartile."""
+    contrastive = get_contrastive_examples(results, gahd)
     contrastive["similarity_bin"] = pd.qcut(
         contrastive["similarity"], N_SIMILARITY_BINS
     )
@@ -282,7 +303,8 @@ def plot_contrastive(results, gahd):
     fig.show()
 
 
-def plot_precision_recall(results, model_name):
+def plot_precision_recall(results: pd.DataFrame, model_name: str) -> None:
+    """Show the precision-recall curve with the default threshold marked."""
     precision, recall, thresholds = precision_recall_curve(
         results["label"], results["prob_hate"]
     )
@@ -324,7 +346,8 @@ def plot_precision_recall(results, model_name):
     fig.show()
 
 
-def frequent_words(texts):
+def frequent_words(texts: Iterable[str]) -> list[str]:
+    """Return words that occur often enough and are long enough to score."""
     counts = Counter(re.findall(r"\w+", " ".join(texts).lower()))
     return [
         word
@@ -333,7 +356,10 @@ def frequent_words(texts):
     ]
 
 
-def word_training_stats(words, training_examples):
+def compute_word_training_stats(
+    words: Sequence[str], training_examples: pd.DataFrame
+) -> pd.DataFrame:
+    """Count training sentences per word and their hate share."""
     texts = training_examples["text"].str.lower()
     contains = [texts.str.contains(rf"\b{re.escape(word)}\b") for word in words]
     return pd.DataFrame(
@@ -347,13 +373,14 @@ def word_training_stats(words, training_examples):
     )
 
 
-def plot_word_scores(word_scores, training_examples):
+def plot_word_scores(word_scores: pd.Series, training_examples: pd.DataFrame) -> None:
+    """Show the words with the most extreme log-odds of hate."""
     ranked = word_scores.sort_values()
     extremes = pd.concat(
         [ranked.head(N_WORDS_PER_CLASS), ranked.tail(N_WORDS_PER_CLASS)]
     )
     words = (
-        word_training_stats(extremes.index, training_examples)
+        compute_word_training_stats(extremes.index, training_examples)
         .assign(
             log_odds=extremes,
             prob_hate=1 / (1 + np.exp(-extremes)),
