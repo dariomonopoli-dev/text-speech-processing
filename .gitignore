@@ -9,3 +9,5 @@ data/stratified_*_report.json
 data/translation_prompt_*.txt
 .ipynb_checkpoints/
 tmp/
+logs/
+paths.json
