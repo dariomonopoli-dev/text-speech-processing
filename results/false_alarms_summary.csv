@@ -1,0 +1,7 @@
+﻿category,n,mean_raw,above_threshold_raw,mean_ap,above_threshold_ap,mean_hk,above_threshold_hk
+"group mention, no hate",15,0.77,14,0.75,14,0.54,9
+no clear trigger,13,0.74,11,0.76,11,0.46,7
+reported / counter-speech,3,0.74,3,0.55,2,0.67,2
+statement not clear,5,0.71,3,0.81,5,0.57,3
+"swearing / insult, no group",8,0.82,8,0.8,8,0.75,8
+All,44,0.76,39,0.75,40,0.57,29

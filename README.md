@@ -102,6 +102,22 @@ python src/compare_variants.py --path_output results/paired_differences.json
 
 `evaluate_unflagged_subset.py` scores only the sentences that neither normaliser left unchanged. `compare_variants.py` bootstraps the metric differences between variants (Haiku and Apertus-8B against the raw text, and against each other) on shared resamples of the test sentences.
 
+### Error analysis
+
+```bash
+python src/export_hate_sentences.py --subset all --path_output results/test_set_scores.csv
+python src/export_hate_sentences.py
+python src/analyse_false_alarms.py --step select
+python src/analyse_false_alarms.py --step summarise
+python src/analyse_hate.py
+```
+
+`export_hate_sentences.py` writes the test sentences with the gold label, both translations and the hate score of every variant averaged over the seeds. The first call exports all 700 sentences, the second only the 26 gold-hate sentences into `results/gold_hate_sentences.csv`.
+
+`analyse_false_alarms.py --step select` writes the highest-scoring non-hate sentences of each variant to `results/false_alarms_to_tag.csv`. Fill in `category` and `label_noise` by hand, then run `--step summarise` for `results/false_alarms_summary.csv`. The select step refuses to overwrite tags that already exist.
+
+`analyse_hate.py` counts, per target and mechanism, how many gold-hate sentences each variant detects at threshold 0.5. It reads the hand-assigned `Target` and `Mechanism` columns of `results/gold_hate_sentences.csv`, writes `results/hate_analysis_table.csv` and logs every cell that differs from the hand counts stored in the script.
+
 ### Figures
 
 ```bash
@@ -117,7 +133,7 @@ scripts/    bash launchers for the experiment families
 notebooks/  exploration, baseline and Yannis's Approach 3 training
 tests/      pytest suite for the pipeline, evaluation and training helpers
 data/       inputs, annotations, translations and prediction inputs
-results/    annotation agreement, subset metrics and paired differences
+results/    annotation agreement, subset metrics, paired differences and error analysis
 runs/       training output (gitignored)
 ```
 
