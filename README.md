@@ -78,6 +78,18 @@ done
 
 `notebooks/train_approach3.ipynb` fine-tunes SwissBERT on GAHD (`de_CH` adapter for training, `gsw` for the dialect, five epochs, learning rate `2e-5`, seeds 42, 43, 44). Its Swiss German predictions have to be exported as a CSV with the columns `sentence_id` and `prob_hate` to be scored with the commands below.
 
+### Baseline: TF-IDF logistic regression
+
+Character 2- to 5-gram TF-IDF features within word boundaries and a logistic regression, trained on GAHD and applied to the raw text and both translations. The model is deterministic, so all seeds give the same predictions.
+
+```bash
+for seed in 42 43 44; do
+  python src/train_baseline.py --seed $seed
+done
+```
+
+Each run writes `runs/gahd_tfidf_logreg/run<seed>/` with the GAHD test metrics and `predictions_swiss_german_{text,translation_haiku,translation_apertus8b}.csv`.
+
 ### Evaluate
 
 ```bash
