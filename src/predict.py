@@ -125,10 +125,12 @@ def get_argparser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--input_column",
-        choices=["text", "translation"],
+        choices=["text", "translation", "translation_haiku", "translation_apertus8b"],
         default="text",
         help="text: raw Swiss German (approach 1); "
-        "translation: Standard German normalisation (approach 2).",
+        "translation: Standard German normalisation (approach 2); "
+        "translation_haiku, translation_apertus8b: the same, one column per "
+        "normaliser so that their prediction files do not collide.",
     )
     # hyperparams
     parser.add_argument(

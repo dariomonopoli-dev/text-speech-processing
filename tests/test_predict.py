@@ -23,7 +23,8 @@ def test_predict_config_keys_equal_predict_flags(config_name):
 
     assert [section["input_column"] for section in predict_sections] == [
         "text",
-        "translation",
+        "translation_haiku",
+        "translation_apertus8b",
     ]
     for section in predict_sections:
         assert section.keys() == exec_scripts.get_step_dests(predict)

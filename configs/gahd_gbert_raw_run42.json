@@ -17,24 +17,36 @@
         "experiment_name": "gahd_gbert_raw",
         "model_name": "deepset/gbert-base",
         "max_length": null,
-        "path_eval_set": "data/master_sample_stratified.csv",
+        "path_eval_set": "data/eval_sentences.csv",
         "input_column": "text",
         "batch_size": 32,
         "no_fp16": true,
         "path_runs_dir": "runs",
         "seed": 42,
-        "path_checkpoint": "models/gbert_seed42/best"
+        "path_checkpoint": null
     },
-    "predict_translation": {
+    "predict_translation_haiku": {
         "experiment_name": "gahd_gbert_raw",
         "model_name": "deepset/gbert-base",
         "max_length": null,
-        "path_eval_set": "data/master_sample_stratified.csv",
-        "input_column": "translation",
+        "path_eval_set": "data/pred_input_haiku.csv",
+        "input_column": "translation_haiku",
         "batch_size": 32,
         "no_fp16": true,
         "path_runs_dir": "runs",
         "seed": 42,
-        "path_checkpoint": "models/gbert_seed42/best"
+        "path_checkpoint": null
+    },
+    "predict_translation_apertus8b": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "deepset/gbert-base",
+        "max_length": null,
+        "path_eval_set": "data/pred_input_apertus8b.csv",
+        "input_column": "translation_apertus8b",
+        "batch_size": 32,
+        "no_fp16": true,
+        "path_runs_dir": "runs",
+        "seed": 42,
+        "path_checkpoint": null
     }
 }

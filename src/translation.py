@@ -44,6 +44,12 @@ TRANSLATION_COLUMNS = {
     "translation_error",
     *(f"translation_{column}" for column in AUDIT_COLUMNS),
 }
+API_USAGE_COLUMNS = (
+    "translation_input_tokens",
+    "translation_output_tokens",
+    "translation_estimated_cost_usd",
+    "translation_error",
+)
 META_COMMENTARY_PATTERN = re.compile(
     r"(?:^\s*(?:hinweis(?:\s+zur\s+übersetzung)?|übersetzung|translation|note)\s*:|"
     r"\b(?:let me correct|bitte prüfen|ich habe .* übersetzt)\b)",
@@ -144,6 +150,24 @@ def compute_translation_audit(source: str, translation: str | None) -> dict[str,
         key: bool(value) if key != "length_ratio" else value
         for key, value in audit.items()
     }
+
+
+def compute_unchanged(translated: pd.DataFrame) -> pd.Series:
+    """Flag rows where the translation equals the source, ignoring case and spaces."""
+    source = translated["text"].str.strip().str.casefold()
+    output = translated["translation"].str.strip().str.casefold()
+    return (source == output).fillna(False).astype(bool)
+
+
+def flag_unchanged(translated: pd.DataFrame) -> pd.DataFrame:
+    """Add translation_unchanged and mark those rows as anomalies for manual review."""
+    flagged = translated.copy()
+    flagged["translation_unchanged"] = compute_unchanged(flagged)
+    flagged["translation_has_anomaly"] |= flagged["translation_unchanged"]
+    flagged.loc[flagged["translation_has_anomaly"], "translation_status"] = (
+        "manual_review"
+    )
+    return flagged
 
 
 def to_translation_prompt(texts: Sequence[str]) -> str:

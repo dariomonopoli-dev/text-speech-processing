@@ -27,5 +27,6 @@ evaluate_approach() {
 
 python3 src/compute_annotation_agreement.py
 evaluate_approach gahd_gbert_raw text
-evaluate_approach gahd_gbert_raw translation
+evaluate_approach gahd_gbert_raw translation_haiku
+evaluate_approach gahd_gbert_raw translation_apertus8b
 evaluate_approach gahd_swissbert_raw text

@@ -4,6 +4,8 @@ black==23.3.0
 datasets==5.0.1
 kaleido==1.5.0
 matplotlib==3.10.9
+mlx==0.32.4; sys_platform == "darwin" and platform_machine == "arm64"
+mlx-lm==0.32.2; sys_platform == "darwin" and platform_machine == "arm64"
 ollama==0.6.3
 openpyxl==3.1.5
 pandas==2.3.3
