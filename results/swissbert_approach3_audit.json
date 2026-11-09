@@ -1,0 +1,474 @@
+{
+    "gold": {
+        "sentences": 700,
+        "hate": 26,
+        "shared": 100,
+        "manual_csv_vote_reconstruction_matches": true
+    },
+    "cached_base_revision": "c1294db2e2eb48bfed66ee0b536861601164b92c",
+    "token_lengths": {
+        "max": 136,
+        "median": 30.0,
+        "over_128": 1,
+        "hate_over_128": 0,
+        "unknown_tokens": 37
+    },
+    "gahd_label_counts": {
+        "0": {
+            "dev": 939,
+            "test": 954,
+            "train": 4436
+        },
+        "1": {
+            "dev": 709,
+            "test": 692,
+            "train": 3265
+        }
+    },
+    "runs": {
+        "42": {
+            "checkpoint_sha256": "63549f709724f853a40591872d6a6b3f00aaba82a174f28aee296e0697cdbc91",
+            "selected_checkpoint": "checkpoint-1205",
+            "best_dev_macro_f1": 0.7956728130985036,
+            "checkpoint_matches_selection": true,
+            "loading": {
+                "missing_keys": [],
+                "unexpected_keys": [],
+                "mismatched_keys": []
+            },
+            "frozen_tensors_unchanged": 245,
+            "shared_tensors_changed": 192,
+            "tokenizer_matches_cached_base": true,
+            "gahd_dev": {
+                "metrics": {
+                    "f1-macro": 0.7956728130985036,
+                    "f1-pos": 0.7690160502442428,
+                    "precision": 0.761049723756906,
+                    "recall": 0.7771509167842031,
+                    "acc": 0.7991504854368932,
+                    "roc-auc": 0.8810628898792491,
+                    "pr-auc": 0.8257387179195702,
+                    "confusion_matrix": [
+                        [
+                            766,
+                            173
+                        ],
+                        [
+                            158,
+                            551
+                        ]
+                    ]
+                },
+                "max_probability_difference": 1.458335876503014e-07,
+                "prediction_disagreements": 0
+            },
+            "gahd_test": {
+                "metrics": {
+                    "f1-macro": 0.8040594298113435,
+                    "f1-pos": 0.7762039660056658,
+                    "precision": 0.7611111111111111,
+                    "recall": 0.791907514450867,
+                    "acc": 0.8080194410692588,
+                    "roc-auc": 0.8929726978587269,
+                    "pr-auc": 0.8386778769089055,
+                    "confusion_matrix": [
+                        [
+                            782,
+                            172
+                        ],
+                        [
+                            144,
+                            548
+                        ]
+                    ]
+                },
+                "max_probability_difference": 1.2309646602037816e-07,
+                "prediction_disagreements": 0
+            },
+            "swiss_gsw": {
+                "metrics": {
+                    "f1-macro": 0.5120960920318051,
+                    "f1-pos": 0.10434782608695652,
+                    "precision": 0.06741573033707865,
+                    "recall": 0.23076923076923078,
+                    "acc": 0.8528571428571429,
+                    "roc-auc": 0.6986418625884502,
+                    "pr-auc": 0.07684549645693137,
+                    "confusion_matrix": [
+                        [
+                            591,
+                            83
+                        ],
+                        [
+                            20,
+                            6
+                        ]
+                    ]
+                },
+                "max_probability_difference": 2.9489135688898216e-08
+            },
+            "swiss_de_CH_diagnostic": {
+                "metrics": {
+                    "f1-macro": 0.4169588550983899,
+                    "f1-pos": 0.10461538461538461,
+                    "precision": 0.056856187290969896,
+                    "recall": 0.6538461538461539,
+                    "acc": 0.5842857142857143,
+                    "roc-auc": 0.622004108650993,
+                    "pr-auc": 0.0501264398384227,
+                    "confusion_matrix": [
+                        [
+                            392,
+                            282
+                        ],
+                        [
+                            9,
+                            17
+                        ]
+                    ]
+                },
+                "prediction_changes_vs_gsw": 232
+            },
+            "routing": {
+                "nonempty_adapter_samples_across_layers": {
+                    "de_CH": 0,
+                    "fr_CH": 0,
+                    "it_CH": 0,
+                    "rm_CH": 0,
+                    "gsw": 96
+                },
+                "explicit_implicit_max_difference": 0.0
+            },
+            "swiss_512_diagnostic": {
+                "metrics": {
+                    "f1-macro": 0.5120960920318051,
+                    "f1-pos": 0.10434782608695652,
+                    "precision": 0.06741573033707865,
+                    "recall": 0.23076923076923078,
+                    "acc": 0.8528571428571429,
+                    "roc-auc": 0.698698927185574,
+                    "pr-auc": 0.0768644315474411,
+                    "confusion_matrix": [
+                        [
+                            591,
+                            83
+                        ],
+                        [
+                            20,
+                            6
+                        ]
+                    ]
+                },
+                "prediction_changes_vs_128": 0
+            }
+        },
+        "43": {
+            "checkpoint_sha256": "c16e1e6097594330a4f3cda668198ae01aee50b4265f92393811226b06b33e69",
+            "selected_checkpoint": "checkpoint-1205",
+            "best_dev_macro_f1": 0.7995046011747473,
+            "checkpoint_matches_selection": true,
+            "loading": {
+                "missing_keys": [],
+                "unexpected_keys": [],
+                "mismatched_keys": []
+            },
+            "frozen_tensors_unchanged": 245,
+            "shared_tensors_changed": 192,
+            "tokenizer_matches_cached_base": true,
+            "gahd_dev": {
+                "metrics": {
+                    "f1-macro": 0.7995046011747473,
+                    "f1-pos": 0.7738343771746694,
+                    "precision": 0.7637362637362637,
+                    "recall": 0.7842031029619182,
+                    "acc": 0.8027912621359223,
+                    "roc-auc": 0.8804282682264088,
+                    "pr-auc": 0.833539460307441,
+                    "confusion_matrix": [
+                        [
+                            767,
+                            172
+                        ],
+                        [
+                            153,
+                            556
+                        ]
+                    ]
+                },
+                "max_probability_difference": 1.381484985296666e-07,
+                "prediction_disagreements": 0
+            },
+            "gahd_test": {
+                "metrics": {
+                    "f1-macro": 0.8030249889739032,
+                    "f1-pos": 0.7757404795486601,
+                    "precision": 0.7575757575757576,
+                    "recall": 0.7947976878612717,
+                    "acc": 0.8068043742405833,
+                    "roc-auc": 0.8940406078452756,
+                    "pr-auc": 0.8450405971764161,
+                    "confusion_matrix": [
+                        [
+                            778,
+                            176
+                        ],
+                        [
+                            142,
+                            550
+                        ]
+                    ]
+                },
+                "max_probability_difference": 1.4224166866583232e-07,
+                "prediction_disagreements": 0
+            },
+            "swiss_gsw": {
+                "metrics": {
+                    "f1-macro": 0.5228679746956664,
+                    "f1-pos": 0.14184397163120568,
+                    "precision": 0.08695652173913043,
+                    "recall": 0.38461538461538464,
+                    "acc": 0.8271428571428572,
+                    "roc-auc": 0.7170166628623602,
+                    "pr-auc": 0.13890845703928287,
+                    "confusion_matrix": [
+                        [
+                            569,
+                            105
+                        ],
+                        [
+                            16,
+                            10
+                        ]
+                    ]
+                },
+                "max_probability_difference": 2.9071044904682708e-08
+            },
+            "swiss_de_CH_diagnostic": {
+                "metrics": {
+                    "f1-macro": 0.49038585071303153,
+                    "f1-pos": 0.10526315789473684,
+                    "precision": 0.06206896551724138,
+                    "recall": 0.34615384615384615,
+                    "acc": 0.7814285714285715,
+                    "roc-auc": 0.6493951152704862,
+                    "pr-auc": 0.06031585799159935,
+                    "confusion_matrix": [
+                        [
+                            538,
+                            136
+                        ],
+                        [
+                            17,
+                            9
+                        ]
+                    ]
+                },
+                "prediction_changes_vs_gsw": 122
+            },
+            "routing": {
+                "nonempty_adapter_samples_across_layers": {
+                    "de_CH": 0,
+                    "fr_CH": 0,
+                    "it_CH": 0,
+                    "rm_CH": 0,
+                    "gsw": 96
+                },
+                "explicit_implicit_max_difference": 0.0
+            },
+            "swiss_512_diagnostic": {
+                "metrics": {
+                    "f1-macro": 0.5238095238095238,
+                    "f1-pos": 0.14285714285714285,
+                    "precision": 0.08771929824561403,
+                    "recall": 0.38461538461538464,
+                    "acc": 0.8285714285714286,
+                    "roc-auc": 0.7171307920566081,
+                    "pr-auc": 0.13898904371625506,
+                    "confusion_matrix": [
+                        [
+                            570,
+                            104
+                        ],
+                        [
+                            16,
+                            10
+                        ]
+                    ]
+                },
+                "prediction_changes_vs_128": 1
+            }
+        },
+        "44": {
+            "checkpoint_sha256": "a575bf873e3c2bf6a898e96a48ab11da86b607d76eadd009138f686b24963720",
+            "selected_checkpoint": "checkpoint-964",
+            "best_dev_macro_f1": 0.7936527930229909,
+            "checkpoint_matches_selection": true,
+            "loading": {
+                "missing_keys": [],
+                "unexpected_keys": [],
+                "mismatched_keys": []
+            },
+            "frozen_tensors_unchanged": 245,
+            "shared_tensors_changed": 192,
+            "tokenizer_matches_cached_base": true,
+            "gahd_dev": {
+                "metrics": {
+                    "f1-macro": 0.7936527930229909,
+                    "f1-pos": 0.7661064425770309,
+                    "precision": 0.760778859527121,
+                    "recall": 0.771509167842031,
+                    "acc": 0.7973300970873787,
+                    "roc-auc": 0.8747129181931383,
+                    "pr-auc": 0.8173618445777966,
+                    "confusion_matrix": [
+                        [
+                            767,
+                            172
+                        ],
+                        [
+                            162,
+                            547
+                        ]
+                    ]
+                },
+                "max_probability_difference": 1.4215011601148575e-07,
+                "prediction_disagreements": 0
+            },
+            "gahd_test": {
+                "metrics": {
+                    "f1-macro": 0.792459186073865,
+                    "f1-pos": 0.7635850388143967,
+                    "precision": 0.7462068965517241,
+                    "recall": 0.7817919075144508,
+                    "acc": 0.7964763061968408,
+                    "roc-auc": 0.8842052326074574,
+                    "pr-auc": 0.8294413713799007,
+                    "confusion_matrix": [
+                        [
+                            770,
+                            184
+                        ],
+                        [
+                            151,
+                            541
+                        ]
+                    ]
+                },
+                "max_probability_difference": 1.4853744512155487e-07,
+                "prediction_disagreements": 0
+            },
+            "swiss_gsw": {
+                "metrics": {
+                    "f1-macro": 0.5202850877192983,
+                    "f1-pos": 0.14473684210526316,
+                    "precision": 0.0873015873015873,
+                    "recall": 0.4230769230769231,
+                    "acc": 0.8142857142857143,
+                    "roc-auc": 0.7207258616754165,
+                    "pr-auc": 0.09500085094364297,
+                    "confusion_matrix": [
+                        [
+                            559,
+                            115
+                        ],
+                        [
+                            15,
+                            11
+                        ]
+                    ]
+                },
+                "max_probability_difference": 2.946319577201706e-08
+            },
+            "swiss_de_CH_diagnostic": {
+                "metrics": {
+                    "f1-macro": 0.46548528486707774,
+                    "f1-pos": 0.13026819923371646,
+                    "precision": 0.07234042553191489,
+                    "recall": 0.6538461538461539,
+                    "acc": 0.6757142857142857,
+                    "roc-auc": 0.706916229171422,
+                    "pr-auc": 0.0671963878785649,
+                    "confusion_matrix": [
+                        [
+                            456,
+                            218
+                        ],
+                        [
+                            9,
+                            17
+                        ]
+                    ]
+                },
+                "prediction_changes_vs_gsw": 143
+            },
+            "routing": {
+                "nonempty_adapter_samples_across_layers": {
+                    "de_CH": 0,
+                    "fr_CH": 0,
+                    "it_CH": 0,
+                    "rm_CH": 0,
+                    "gsw": 96
+                },
+                "explicit_implicit_max_difference": 0.0
+            },
+            "swiss_512_diagnostic": {
+                "metrics": {
+                    "f1-macro": 0.5202850877192983,
+                    "f1-pos": 0.14473684210526316,
+                    "precision": 0.0873015873015873,
+                    "recall": 0.4230769230769231,
+                    "acc": 0.8142857142857143,
+                    "roc-auc": 0.7209541200639124,
+                    "pr-auc": 0.0950676193061141,
+                    "confusion_matrix": [
+                        [
+                            559,
+                            115
+                        ],
+                        [
+                            15,
+                            11
+                        ]
+                    ]
+                },
+                "prediction_changes_vs_128": 0
+            }
+        }
+    },
+    "audit_date": "2026-11-09",
+    "conclusion": "No correctness error found in the checked training configuration, saved checkpoints, adapter routing, tokenization, gold-label merge or evaluation. All saved German and Swiss German classifications reproduced.",
+    "checks": {
+        "gahd_train_dev_text_overlap": 0,
+        "gahd_train_test_text_overlap": 0,
+        "gahd_dev_test_text_overlap": 0,
+        "swiss_gahd_text_overlap": 0,
+        "unicode_replacement_character_rows": 0,
+        "adapter_regression_test_strengthened": true
+    },
+    "sources": [
+        "https://huggingface.co/docs/transformers/model_doc/xmod#fine-tuning",
+        "https://huggingface.co/docs/transformers/model_doc/xmod#cross-lingual-transfer",
+        "https://huggingface.co/ZurichNLP/swissbert#training-details"
+    ],
+    "reproducibility_limitations": {
+        "training_revision_recorded": false,
+        "compatible_cached_revision": "c1294db2e2eb48bfed66ee0b536861601164b92c",
+        "runtime_torch": "2.11.0+cu128",
+        "requirements_torch": "2.14.1",
+        "runtime_transformers": "5.19.0",
+        "requirements_transformers": "5.18.0",
+        "interpretation": "The frozen tensors and tokenization match the cached base revision. Original experiment manifests contain null revision, so this match is evidence for compatibility, not a recovered historical download log."
+    },
+    "audit_source_sha256": {
+        "notebooks\\train_approach3.ipynb": "1e8ee99635ea5a735e45fb8c057a682f62407cd1bf28ce65e7ac7426aa7cfe12",
+        "src\\predict_swissbert.py": "94629423de838863b0edf87c2f25d45ee8f4b16ae393313a71730030ebfb991a",
+        "src\\gold_labels.py": "3a6ab1a02bc003a8d5e34f56deeaa9d43fbc056acb7d678e39a2d2693b6ded8b",
+        "src\\evaluate_predictions.py": "a1c413b501c34242b5d38277c63b02d1dab6a346da4a13386a272baaba170381",
+        "tmp\\audit_approach3.py": "d91deed04ff46611a8f048bf06f04049fb3cc90ccad0e38ebd7af0703f1c949f"
+    },
+    "diagnostic_variants_only": true,
+    "validation": {
+        "swissbert_prediction_tests_passed": 6,
+        "git_diff_whitespace_check_passed": true
+    }
+}

@@ -1,0 +1,701 @@
+sentence_id,text,gold_label,is_shared,prediction_seed42,prob_hate_seed42,prediction_seed43,prob_hate_seed43,prediction_seed44,prob_hate_seed44,mean_prob_hate
+111131,"Anyway das ding het sone verbruchsanzeig (aktuell/durchschnittlich), da isch am afang vo so 10l/100km langsam abe richtig 7. eigentlich sött si mit dem auto aber einiges weniger anebringe xD.",0,False,0,0.049012657,0,0.02113174,0,0.05779608,0.042646825666666666
+119107,zum glück sus wäred die no flach usä cho.,0,False,0,0.040091887,0,0.013129795,0,0.015967622,0.023063101333333336
+63257,"das sin nid richtige männer, sondern entweder sozial inkompetänti oder dümmling, bi nur uff das...",0,False,0,0.15772542,0,0.14467685,0,0.30367416,0.20202547666666668
+32724,woner kha hett wär wieder öbbis für e rotoloso gsi,0,True,1,0.6475309,1,0.8969186,1,0.79416925,0.7795395833333334
+88535,"Am Rad bim 2 erschte Kontakt, 3te liechts brämse bis scho fascht blockiere.",0,False,0,0.0407649,0,0.0155424895,0,0.016221818,0.0241764025
+199252,bin die einzig wo tracks fr gaht go lose wen sie öpert id story posted?,0,False,0,0.081705965,0,0.032452844,0,0.09230643,0.06882174633333334
+124996,Aber es Fähnli im Wind isch eifach brutal überflüssig.,0,False,0,0.05079616,0,0.011103636,0,0.0147834765,0.02556109083333333
+96661,aber das chasch ja bim zeichne oder läse oder was au immer.,0,False,0,0.012741253,0,0.010228771,0,0.014770869,0.012580297666666665
+67166,denn lueg ich lieber TSR2 welsche könne wenigstens moderiere und schreie wenns goals git,0,True,0,0.2239132,0,0.3823283,0,0.34953234,0.31859128
+58177,"(aber wenn zwei rezessivi allele ""blaui auge"" uffenander träffe, denn wärde si blau.) (oder so.)",0,False,0,0.09075701,0,0.38611886,0,0.38833392,0.2884032633333333
+202055,abär iisi i gloub jedä faht mau soo a u fingts kuhl müglächscht dumm dsuä a serignä aaläss.,0,False,0,0.23632538,0,0.061413348,0,0.11112244,0.136287056
+52322,Die ältescht Mensche uf der Weld rauche und suffe wie es Loch und dene geiz super.,0,True,0,0.16427845,0,0.054445416,0,0.19522488,0.13798291533333332
+153223,"he ihr garderobe mensche, und wievil jackene händr verschwinde loh ;-) So 7.1.07, 21:",0,False,1,0.75602263,0,0.19621728,1,0.53361404,0.49528465000000005
+120746,"Ha mal es Jahr lang welle ine Guggemusig go Pauke spiele (obwohl ich nuet so fescht verabscheue wie betrunkni Menschemasse uf engem Ruum) nur will mir gseid worde isch, dass das Fraue nid choennd, will Pauke zschwer siged.",0,True,0,0.3485195,0,0.2894062,1,0.5925072,0.4101443
+35527,"Und d'Unterhaltig vo de Diefflieger isch sowiso Hammer, usser Konkurränz!",0,False,0,0.08938625,0,0.025193112,0,0.015343462,0.043307608
+100771,Itz hani schwein gha und hamer sogar e ts chönne leischte,0,False,0,0.04576511,0,0.032938477,0,0.12534913,0.06801757233333333
+57748,do sind die welsche mol besser im moderiere und sie brülle ins microfon wenns e goal git,0,False,0,0.3308577,0,0.2997321,1,0.50002825,0.3768726833333333
+41347,Hhahahah schwanzduell hahahahahahaha hey russanisch der nüt bessers i kfalle??,0,False,0,0.45581296,1,0.8801349,1,0.8470188,0.7276555533333333
+96529,"also bi mir isches ja chle extremer wen me ihr celi hockt und das vo dört alueget isches ""s vordere rächte liecht, die vorderi linki näbellampe, und die hinderi linki rücklüchte het wasser/kondenzwasser drine..",0,False,0,0.054113477,0,0.053468715,0,0.09084131,0.06614116733333332
+179463,"Isch mer scho es paar mal ufgfalle, dini spielgruppe-revoluzzerische Biträg sind fasch immer under jedere Sau!",0,False,0,0.027491871,0,0.018399267,0,0.03551465,0.02713526266666667
+156184,Obwohl ich fascht zu nüt cho bin will ich als Polnischs-5Rp-Arbetschind han müesses/dörfe Löte.,0,True,0,0.30354255,0,0.083723255,1,0.70862097,0.3652955916666667
+69136,"Hauptsach e Grund ha zum, verschteggt hinter irgendwelche pseudopolitische Vorwänd, go d Sau uuseloo (in Levis Jeans, nachdäm me mitem Mercedes vom Babbe an G8-Gipfel gfaare-n-isch mitem Gäld wo me sich ufem Schparkonto vo der dütsche Bangg zämmegschpaart het zum dört Bier vo Global Players wie Amstel etc. z dringge).",0,False,0,0.08076842,0,0.072777644,0,0.079477936,0.07767466666666666
+73843,D.h. falls öpper mit Chind wett go luege:,0,False,0,0.08588079,0,0.019563626,0,0.07822655,0.06122365533333333
+57894,Will Du -anschyynend- halb Engländer bisch muesch so luschtig halb englisch/dütsch rede..ah so.,0,False,1,0.8621789,0,0.31703532,1,0.5497177,0.57631064
+138857,"Bi süscht zwar nid so fründ drvo, aber do ghörä definitiv anderi Rücklüchtä anä!",0,False,0,0.07938425,0,0.016756602,0,0.092087224,0.062742692
+81493,"wär glaub s'1. Spiel, woni bi de Entscheidig nöd live debie wär, wänn mir's am Sa.",0,True,0,0.052389685,0,0.02556734,0,0.06418732,0.04738144833333333
+163438,dr verstärker chan au ohni masse grün lüchte ha nämli mal genau sgliche gha,0,False,0,0.07733757,0,0.15652503,0,0.15500608,0.12962289333333332
+78305,ich finde die nemets alli no voll easy... :,0,False,0,0.06314962,0,0.2239287,0,0.0881388,0.12507237333333335
+100717,"Es hät ebe am Samstig niemert eusi Turte wölle transportiere, drum hämer das sälber id Hand müese neh.",0,False,0,0.06450801,0,0.012553429,0,0.08016197,0.052407803
+6374,"aber schiss-serie gits jeni, ebe, wie scho erwähnt die ganze telenovelas vo julia über bianca über weiss doch au nid, wie die tussis alli heisse!",0,False,0,0.14446771,0,0.26108038,0,0.18273646,0.19609485000000001
+8862,"nur die ""dumme franzose"" (aber würgliiiii) nähme de trezegol nie mit und setzte de weltklass stürmer nie ihhh...",0,True,0,0.13984802,0,0.099499606,0,0.4031753,0.21417430866666667
+50072,das heisst Läusezüchter du cheib du!!!,0,False,0,0.06830389,0,0.06920432,0,0.06509285,0.06753368666666666
+134437,Mittlerweile passe d ROAR und weme nüt muesch Erhitze isch ou ds Material guet.,0,True,0,0.0148006845,0,0.007714802,0,0.01128104,0.011265508833333333
+9265,Het irgendöper de Schnuuf sich ehm Trunyx und ehm Buuch tz stelle??,0,True,0,0.111153506,0,0.03245863,0,0.061413594,0.06834191
+194996,"aber äbe rubi, gib mou dr link düre wome so kaländer bstöue cha!!",0,False,1,0.6657247,1,0.9000129,1,0.76641285,0.7773834833333333
+204777,"agree, aber s ding isch, eusi schönheitsideal sind halt eifach eusi schönheitsideal, solang dudes buurekaldender mit (teilwiis sogar gfährlich) skinny chicks chaufed werded neui buurekalender mit skinny chicks gmacht, kapitalismus gang",0,False,1,0.53823453,0,0.4950158,1,0.7808907,0.6047136766666666
+119994,Und du hesch kei Problem das die Schiiwerfer rissig sind oder sprööd werded so we auscho diskutiert?,0,True,0,0.045084897,0,0.05081692,0,0.042478137,0.04612665133333333
+153375,dänn schlather iih und gaht nach 1 monet wieder?,0,True,0,0.077853605,0,0.017186467,0,0.023968428,0.0396695
+57983,"so, aber das isch erscht näggschts Wucheänd, hüt zoobe Hopp Svizzera !!",0,True,0,0.03697083,0,0.017992474,0,0.03922925,0.031397518000000006
+13397,Hey i ha mol Christopher Street Day und Italien in dr Google Bildsuech igäh.,0,True,0,0.07826734,0,0.02030929,0,0.027940877,0.042172502333333334
+191806,hahahahaha und wänns no 20 'sons meh verplichtet....die chömed nöd über dä strich,0,True,0,0.1945907,1,0.59969836,1,0.7546061,0.5162983866666666
+161799,"Hoffentlich passt der Unterrock vo mire Schwöschter unter mis Chleid, de hätti wider 100 Franke gspart ;-)",0,True,0,0.0758969,0,0.04422083,0,0.22130895,0.11380889333333333
+154035,Min GG und ich hend morn zeme en Termin bim Dokter zum luege wasmer alles für Impfige bruchet für d Flittis.,0,False,0,0.16922152,0,0.023588974,0,0.20723864,0.13334971133333332
+42918,Nura macht Passbild imene Fotofixautomat für 6 Franke und tuet uf mugshot bide polizei für lebenslänglichi Haftstraf pic.twitter.com/R8xtQ3lF9C,0,True,0,0.1507485,0,0.17643791,0,0.23083931,0.18600857333333334
+13935,Die Umfroog soll aber kaineswägs e vergliich mit em Schnaabelbryys syy!,0,True,0,0.1795953,0,0.012928649,0,0.03349865,0.07534086633333334
+133757,"Dezent aber hammer :-) Ebe Hecklüchte wer schono was womer wür gfalle, abr ebe git nix Gschiids wo legal isch, und Schiinwerfer wie du seisch, alles Müll sozsege..",0,True,0,0.056243867,0,0.07442668,0,0.102029055,0.077566534
+76867,Das isch de so mit dr Zyt und au chli mit dr Partnerschaft gwachse.,0,False,0,0.007067211,0,0.0074947025,0,0.01073968,0.0084338645
+75646,kaufed de schiri gäg susch öper aber nöd gäg de fcz,0,False,0,0.058090884,0,0.07443877,0,0.1311658,0.08789848466666667
+42728,"Dä isch jo nit nur dumm und wiescht, dä isch jo au no schlächt... :",0,False,0,0.035589214,0,0.031383656,0,0.045050494,0.03734112133333334
+13926,Gegränne vo de Grännis uf de social medias,0,False,0,0.043993115,0,0.13806759,0,0.16420303,0.11542124499999999
+108447,"Und ii hoff, dass ii eu morn paar kuuli Fotis vo miim Klaiid gha schicke.",0,False,0,0.11574176,0,0.0108268205,0,0.027397892,0.0513221575
+41737,tanner los emol Du weisch jo au das halt vo dehne junge sehr viel Bier konsumiert wird im Zug denn bisch au hemmigsloser und machsch uf Deutsch gseid seich. ;),0,False,0,0.320316,1,0.65244824,1,0.6935895,0.5554512466666667
+27959,"Aber wenn d Stricher eifach ungscholte ihres ""Sch...",0,False,0,0.070288844,0,0.05775853,0,0.20262577,0.11022438133333334
+57306,ich glaub ned nur mir Sädelgeischter send sprochlos gsii..,0,True,0,0.2611764,0,0.085270084,0,0.1851262,0.17719089466666668
+119643,"de Vorteil bi dere on Sutter (also ade Sutter street) isch, GRATIS WLAN!!!",0,False,0,0.06796485,0,0.071681894,0,0.04898114,0.06287596133333333
+5864,Wieso pfifft das a**** direkt ufd Sekunde ab und loht dr Freistoss nümme spiele?,0,False,0,0.042141438,0,0.023937613,0,0.03060245,0.032227167
+205239,"du nimsch ihne ihre bode weg, sie chönd nûmme luuter werde wenn du ned luuter wirsch",0,True,1,0.5845038,1,0.77798414,1,0.63007057,0.66418617
+68937,"Dert, wo me süsch scho gnue Problem het?",0,True,0,0.05285425,0,0.0106584765,0,0.017092388,0.026868371500000002
+134580,"Zersch isch de mini Besti mit mim Brüetsch ine gange, mi Papi und ig hei no chli gwartet und när si mir ou ine gloffe.",0,False,0,0.009141562,0,0.008189564,0,0.014440244,0.010590456666666666
+100234,"D'Truurminute isch ä tolli Geste gsi vo eusem Club und wie scho so oft gseit, fahrts no meh ih, wänn ä ganzi Halle müüslistill isch.",0,True,0,0.046554383,0,0.010869669,0,0.011415169,0.022946407
+140821,süsch muessi halt de es anders mal dert ga schlafe,0,False,0,0.09291121,0,0.09630205,0,0.23173821,0.14031715666666666
+58462,so öbbis isch doch einfach definitiv zum khoze i wür glaub amock laufe wenn unsre verein e andere name becho wür.,0,True,1,0.62244374,0,0.03072048,1,0.8034867,0.48555030666666665
+115500,"De Steinmann hät sicher Angscht, dass sin evz im Final gäg de ZSC wieder unter d Räder chunt.",0,True,0,0.02364717,0,0.008289364,0,0.0120367,0.014657744666666667
+75271,und was passiert denn mit dene guetschine?,0,False,0,0.05738548,0,0.017797394,0,0.01755812,0.03091366466666667
+110685,Herrjeh das junge ZSc Fanpack isch ächt nüüt meh wärt.,0,False,0,0.14133665,0,0.0326327,0,0.06213902,0.07870279000000001
+41761,"D Lüt sige dört wohl z dumm zum dr Himmel z finde, sodass Gott Aesch in sini Nöchi gholt hett, damit sie sich nid verlaufe dien",0,True,0,0.4297402,0,0.40993348,0,0.48692125,0.44219831
+104153,das bin ich wenn ich id türkei gah und mini mom mir seit ich söll yufka mitbringe damit sie börek chan mache,0,True,1,0.50687444,1,0.7765048,1,0.8719189,0.7184327133333334
+69022,"Auso die, wo myner Grosseutere hei gha.",0,False,0,0.18695796,0,0.019275708,0,0.042044304,0.08275932400000001
+50044,Am Hanfueli siin Cousin wo so viel Alk gsoffe hät das er chiise muess :-),0,True,0,0.3250507,0,0.27022377,0,0.1589723,0.25141558999999997
+84070,Aber de Pfiiferaucher und sini paffend Alt händ's ja au nöd nötig.,0,False,0,0.039582662,0,0.012936976,0,0.020938985,0.024486207666666666
+95603,de schlösech die hingr nid ab jedere bodewäue dr kopf ah..,0,False,0,0.06027341,0,0.03441236,0,0.09890242,0.06452939666666667
+50603,"genau;-) zum glück bini am MI im Knie, wemer uselaufet hend d schwizer au gege d türke uf de sack becho und de ganz scheiss event isch endgültig fertig, und s wetter stellt au wieder um",0,False,0,0.09599773,0,0.37807462,1,0.5348145,0.33629561666666663
+145294,"de kanton spart ah de beldig well er kei gäld hed, ih de schwiz döfed homosexuelli päärli emmer noni hürote, es gehd vell z'wenig lüt, wo bluet ond organ spändet ond üse planet werd ih wenige johr abbrönne zum glöck sorgt sech d'beatrice om d'farb vo de vbl büs pic.twitter.com/C3HThbpUI2",0,False,0,0.23243065,0,0.26198792,1,0.6480157,0.3808114233333333
+13692,Ich zahl doch nöd no Schtüre für di Fuule,0,False,0,0.15920988,0,0.33069333,0,0.15071046,0.21353789
+197054,"Seeehr seeeeeehr guet, den freu ich mich scho mal uf gwüssi frauleins :-))))",0,False,1,0.52891123,0,0.22760166,1,0.6753172,0.47727669666666667
+57710,die lüt sind voll scheisse und ghöred nöd id mk!,0,False,0,0.039154347,0,0.037676696,0,0.1254516,0.06742754766666666
+195002,"due de uf weddix scho es schiferehärz bseue woni cha ad oder id chischte due mit ""karten"" oder üser näme oder so i gloube, bis am schluss chunnts no guet",0,True,0,0.22109988,0,0.20864716,0,0.26294428,0.23089710666666666
+47545,"aber die ober coole gangster bandene an unserne schuele wo sich drnäbe benähme, oder anderi usländer wo alles kurz und klai schlage die wärde no munter witerzahlt vom soz.",1,True,0,0.05788786,0,0.06302105,0,0.33101597,0.15064162666666667
+122763,"d hecklüchte si gschmacksach d dotz si easy, schad gits die nid i 18"" gäu..",0,True,0,0.073219776,0,0.3268419,0,0.2125791,0.204213592
+165838,"Irgendwenn chunnt villicht no de Ledri dezue, aber Tingulli 3 und 2Po2 hesch vergesse..",0,False,0,0.18425527,0,0.055162497,0,0.14632167,0.12857981233333335
+45223,"D Kasch en au mit dr Muus in dr Luft ummewirble, dä Penner!!",0,False,0,0.47790274,1,0.6302424,0,0.35067186,0.48627233333333336
+17559,sorry aber du hesch gar kei ahnig also halt d fräss!,0,False,0,0.14258474,0,0.022723354,0,0.30573505,0.15701438133333334
+122811,Und wenn ich uf unlock click den lüchtets liechtli unds entrigelt mers auto!,0,True,0,0.060979906,0,0.08840177,0,0.10004908,0.08314358533333334
+56631,Är isch au 1x im Knascht gse wäge unterstützig vo illegali iiwanderig.,0,False,0,0.040165637,0,0.03916404,0,0.08447716,0.054602279
+147405,"Mir beidi liebe Kind ou, fiire aber ohni.",0,True,0,0.07098513,0,0.011318081,0,0.026688682,0.036330630999999995
+19897,"mit homosexuelle hani überhaupt kei problem, aber so umwandlige, wenn s denn so halb maa halb frau isch, do kani dnen scho mit mim vrschtand ilängge, dass ihm das zueschtoht und jede s rächt het si richtigi identität z ha, aber es fahrt halt scho schief i.",1,False,1,0.8866288,1,0.91494524,1,0.807509,0.8696943466666666
+198826,"na ja, ha grundsätzlich e aversion gege ehemalige insekte.",0,False,0,0.06466309,0,0.018177254,0,0.13523409,0.072691478
+179377,Hammergeil I de Inzuchtstadt das ufzhänke!,0,True,0,0.15787876,0,0.029901192,0,0.022450743,0.07007689833333333
+146458,"Ha unbedingt nu e Täsche wellä chaufe, da mier gar nid soviel Geld bruucht hend ide Flittis!",0,True,0,0.13652061,0,0.023097074,0,0.08352147,0.08104638466666665
+118133,GC sind eifach idiote sind hend ja scho vor 2 Jahr de Cup dur en Handspenalty us de händ ge,0,True,0,0.03763127,0,0.056914262,0,0.07914681,0.05789744733333333
+50177,Haha do inne cha me sich sehr guet amüsiere....zerscht freue sich alli das de Huggel wieder do isch und jetzt isch er e Vollidiot und er söll verschwinde!,0,False,0,0.06397853,0,0.06258345,0,0.058804512,0.061788830666666676
+10772,die mit ihrne hässliche text und halb nackt nutte sind doch würkli eifach nu lächerlich!!!!,1,False,0,0.10504035,0,0.16461918,0,0.095200464,0.12161999799999999
+175109,"Trauig isch schön gsi, aber extrem churz.",0,True,0,0.0134655,0,0.0089401,0,0.012518816,0.011641472
+24515,userdäm sind sie dank em kaka-tranfer fascht schuldelos!!,0,False,0,0.053085536,0,0.0411865,0,0.08603996,0.060103998666666665
+154200,wenn hemmer sletscht mal so hoech verlore?!,0,True,0,0.063248,0,0.0155658005,0,0.08177855,0.053530783500000005
+123548,I de südkurve stah primitiv schnure und säge YEEEEAH ICH BIS ISCH SCHO MIS 4 BIER USEME BILLIGE PAPPBECHER ?!,0,True,1,0.6384764,1,0.78685325,1,0.8437831,0.7563709166666667
+13759,Aber isch halt mega cool User dumm azfigge;),0,False,0,0.04986789,0,0.04038439,0,0.06676751,0.05233993
+133674,"Vor allem die dütsche Privatsänder, was da über de Sänder gaht isch Volksverblödig (Frauentausch, Schwiegertochter gesucht, Bauer sucht Frau, die Auswanderer, etc. pp)!",0,False,0,0.2548265,0,0.27707395,0,0.23042186,0.25410743666666663
+113565,Die vom neue Team würdet villicht scho motze.,0,False,0,0.023042258,0,0.009290677,0,0.013639567,0.015324167333333333
+148054,Original von asylumtraxx das sind canards.....wennd die dinger meinsch wo so usestönd,0,True,0,0.074823864,0,0.38959283,0,0.18472578,0.21638082466666667
+96829,Aber lieber dumm is Forum ine schriebe und i dä kurve dänn döt hocke und glich über dSpieler fluechä.,0,False,0,0.04613428,0,0.0260208,0,0.031048175,0.034401085
+13230,Also Chinesisch isch es ziemlich sicher so zeigts au mis Skype a. Ha aber no nie so öbis gha vielicht bruche dich d Chinese für d Olympia.,0,True,0,0.33960572,0,0.14480443,0,0.39542246,0.29327753666666667
+57506,"Denn lauft wieder jede mit ere kleine kamera ume, und es seht no beschissener us als die idiotische Handies.",0,True,0,0.033126656,0,0.038253866,0,0.018767457,0.030049326333333334
+123103,"Die Scheiss Berner hetteds hüt so öppis vo verdient, wänns use gheit wäred.",0,False,1,0.62423295,0,0.3224306,0,0.4903224,0.47899531666666667
+47808,"und bbb komische siech bisch, läbsch do und findsch schwizerfraue dumm, gäll gott sei dangg wohnsch in basel, do hetsch jo fascht me usländerinne als schwizerinne...:",0,False,1,0.5210702,1,0.7589971,1,0.79641914,0.6921621466666666
+93600,er hätt am Samstig gspielt gha im 1. Meisterschaftspiel für 15 mi.,0,False,0,0.0063535296,0,0.0076346993,0,0.011248028,0.008412085633333333
+75294,D'Millione vom Gaydoul werdet's richte.,0,False,0,0.011575109,0,0.03601468,0,0.030598333,0.026062707333333334
+129557,"Aber die Mätchbsüech werde sech hüffe, wie au d'Sieg vom FCZ sech weder werdid hüffe!!!",0,True,0,0.37856123,1,0.57617736,0,0.31484792,0.4231955033333334
+146710,Sini Berater & au sini Interview in Polen (sofern die so gsi sind) sind underschti!,0,False,0,0.051878855,0,0.011196699,0,0.015044891,0.026040148333333336
+87917,abdi und hassli sind nicht die ganze mannschaft.,0,True,0,0.03318384,0,0.021586692,0,0.032665916,0.029145482666666667
+127010,"Wenn du Angst um din (********) hesch, denn lueg doch eifach dihei.",0,False,0,0.051542986,0,0.044652656,0,0.036475174,0.04422360533333333
+38214,"lieber 45 stuzz zahle und e guete coiffeur, als 10 stuzz und wie e kakadu umelaufe",0,False,0,0.093188085,0,0.4328491,0,0.14306037,0.22303251833333335
+75235,Verstah das dass du gern DIN Name wetsch bhalte und de vo dim Maa wetsch däzue tue.,0,True,0,0.25418335,0,0.010814847,0,0.060249966,0.10841605433333333
+29255,"""stimmt nid, wer vöglet cha au nid Fliege"":",0,False,0,0.09149399,0,0.047253884,0,0.03883543,0.059194434666666663
+90300,Sind dSchiibe dänn au gwächslet worde oder nur dKlötz?,0,False,0,0.035833847,0,0.009801835,0,0.011943625,0.019193102333333333
+53127,Diä bösä Zürcher mit ihrere Ostschwiizer-Hänslete...,0,False,0,0.116839014,0,0.24477832,0,0.3954041,0.252340478
+207804,lüt wo im volle zug ned chönd as fenster rütsche chömed direkt us de höll,0,False,0,0.11394239,0,0.204984,0,0.24295698,0.18729445666666666
+32371,"hoi zäme i lose brandhörd ond sektion kuchichäschtli, ehner sälte die ärzte, wer lost alöles ärzte???",0,False,0,0.19781741,0,0.11841964,0,0.15817899,0.15813868
+108348,"mer liest immer nume ICH i dem tegscht, passt guet zum flüügefänger zubi.",0,False,0,0.22514306,0,0.29121348,0,0.2742834,0.2635466466666667
+44138,"dürfti au nid so ä coole Götti gsi sy, wie mehs vom Autistöppler dänggt wenn meh en kennt",0,False,0,0.32776132,1,0.8550932,1,0.8339205,0.67225834
+82733,wennd als frau spielsch muesch dir kei müeh geh!,1,True,0,0.4643819,1,0.8329095,1,0.6831791,0.6601568333333333
+201347,"also mängisch chan die dümmscht sändig, so dumm sie, dass sie scho wieder luschtig isch...",0,False,0,0.045974433,0,0.02492582,0,0.041089453,0.037329902
+21985,Liechte und schwere gits nümm in der Armee 21...,0,False,0,0.077323966,0,0.02478358,0,0.05181416,0.05130723533333333
+92077,Ärdbeeriwy mit Ärdbeeri vor umgäbig Macht freud bi däm Wätter im Garte,0,False,0,0.10657762,0,0.3372932,0,0.26035765,0.23474282333333332
+44838,"Wär nämlig nume e frog vo de Zyt, bis sich Wiiblichi-Fans den würde Gruppieren und Radikalisieren ;) )",0,False,0,0.059012145,0,0.047851093,0,0.11121043,0.07269122266666667
+157612,"schön wärs^^ bi mir isches eigentlich sits chaut isch worde, soviu mr isch, wasmi schissig het gmacht isch dases bir hindere linke hecklüchte iz o isch...",0,False,0,0.37120137,1,0.77820903,0,0.24268462,0.4640316733333332
+190480,Das isch halt wenn mä d Fraue zwit vom Chochherd wegloht.,1,True,0,0.18689957,0,0.07860432,1,0.5964302,0.28731136333333335
+69849,"Dr Helge mit dr Larve isch ys fründligerwiis vom Horror Wäber zer Verfiegig gstellt worde, beschde Dangg!",0,False,0,0.063894644,0,0.028150132,0,0.07473766,0.055594145333333324
+89132,"ah nei, ihr gönd ja mit fäldstächer & gsend de seich glich nur gaaaanz chli :-)",0,False,0,0.091245286,0,0.24961725,0,0.35744604,0.23276952533333337
+23059,Mr isch so blöd und loht e Spieler nur us Plausch us Pole kho...,0,False,0,0.23238648,0,0.22974785,0,0.06158157,0.17457196666666666
+133082,"alli iversüchtig, milan häts verdient, sie hät die saison dominiert und fertig",0,False,0,0.07947624,0,0.0766813,0,0.1929214,0.11635964666666665
+5241,17 biträg zume thema wo uffere mäldig vo däne 442 halunke basiert?,0,False,0,0.4280582,0,0.03857908,0,0.130719,0.19911875999999998
+180357,"Da söu no eine säge, Bärnerinne sige langsam!",0,False,0,0.1011552,0,0.027748397,0,0.054009974,0.060971190333333335
+59946,"das cha doch nit si, GayC Maischter, dass muss BASEL gsi si!!",1,False,0,0.20411158,1,0.8846054,1,0.7956046,0.6281071933333333
+4417,"abr am beschte gfallt mr jo dr Dani (dr Kampfsportler mit asiatischer Abstammig), dä disst dr Osman und är tscheggts eifach nit^^",0,False,1,0.73503846,1,0.8461516,1,0.7202004,0.7671301533333333
+5863,"Ah scheiss Zytverschiebig, ha nur dr Franzake-Grottekick chönne luege.",0,False,1,0.7004935,0,0.42581815,1,0.7645646,0.6302920833333333
+195368,"de schiri isch allei, zwar ebe besser als früener mit de assi verbunde, aber pfieffe oder nöd muen glich er allei und das ohni jeglichi tv kameras oder sogar zietlupe.",0,False,0,0.40320405,0,0.24751848,0,0.35861856,0.33644703
+65120,trotzdem blibt no gnuag Zit für klini -lichkeita...,0,False,0,0.049790975,0,0.01337795,0,0.018074958,0.027081294333333335
+29370,"Guet, für Ishockey müess me sech nid interessiere, är interessier sech ja süsch scho für aus, sogar für dä dütsch Profässer, wo vor em Computer warni u üs aune e digitali Demänz vorussäg, we mer witerhin scho üser Ching schtungelang vor em Computer löinge la hocke.",0,False,0,0.38444892,0,0.03700733,0,0.21784176,0.2130993366666667
+187745,nei man...de blerim söll nachli bliiibe!,0,True,1,0.6574457,0,0.23484313,0,0.21060356,0.3676307966666667
+75874,am beschte isch du suechsch selber au echli...,0,False,0,0.08287211,0,0.050787427,0,0.09701271,0.076890749
+103177,Obwohl ech glaub scho eher dass d'Fraue smeischte mached.,0,False,0,0.41752622,0,0.04231761,0,0.45355383,0.3044658866666667
+142246,"switzige isch genau die lüt werfe einem immer vor me wär sexistisch, rassistisch etc debi zeigts, dass genau sie diejenige mit dene gedankezüge sind.",0,False,0,0.031391855,0,0.08480803,0,0.05364236,0.05661408166666667
+45997,Aber Religione sind allgemein für de Müll.,0,False,0,0.07302558,0,0.14960346,0,0.0721596,0.09826288
+53575,"alli gmeinsam für unseri farbe, unseri liebi und unseri stadt!",0,False,0,0.016054451,0,0.012303579,0,0.03508063,0.021146220000000004
+170799,gosch zum biespiel uf www.********3 suesch de adobe phooshop und ladiesch ihn abe mit em emule...,0,False,0,0.19020417,1,0.7075188,1,0.606796,0.5015063233333333
+8220,Ame guet frequentierte Ort (Bahnhof z.b) findsch sicher vili so Album umeligge vo Blödmänner wos Alpapier (aka. Blück) wän läse aber keini Bildli wän sammle.,0,False,0,0.06740949,0,0.080927104,0,0.14872248,0.09901969133333333
+114363,Wiiä hend das dii bereits zivil-verhürotete Brüüt.,0,True,0,0.14624755,0,0.014622752,0,0.024007121,0.061625807666666664
+167090,ansuschte ischs mir glich weli sprach.,0,True,0,0.089576386,0,0.014683634,0,0.012756329,0.039005449666666664
+102033,I weiss isch bitz blöd formuliert gsi.,0,True,0,0.04170135,0,0.013284103,0,0.018825825,0.024603759333333333
+85169,i hetti intresse i ha mini ebbe au sho welle inne lackiere aber die sind voll zuekittet worde und die bringsch nid uf kei chance...,0,False,0,0.11263636,0,0.1337994,0,0.2665487,0.17099482
+38247,3. Hesch keini andere Problem du vrdammti dummi Drecksau!!,0,False,0,0.03172144,0,0.015217278,0,0.041532867,0.02949052833333333
+58102,"aber jo wohl nid däm blinde kinderschänder wo sich schiri schimpft, oder?!",0,False,0,0.46902016,0,0.16216598,1,0.6373882,0.42285811333333334
+31536,I bi jo au scho gspannt uf Euches Album.,0,False,0,0.005821066,0,0.008283498,0,0.011808657,0.008637740333333333
+41394,"Sprich Lüt, wo nid luege was ihne gfallt, sondern wo luege, was ""trendy"" isch (Hass-Wort).",0,False,0,0.10667351,0,0.08146524,0,0.060866445,0.08300173166666666
+168497,"Genau, darum sind das ja alles Chind wo bim Strasseverchersamt tüüfi nummere für tuusigi vo Franke e...",0,False,0,0.07823073,0,0.0722022,0,0.1800408,0.11015791000000001
+111225,egal ob en bisler en heugümper oder wer au immer....,0,False,0,0.04719907,0,0.031354565,0,0.06459146,0.047715031666666664
+54762,jo klar wege de $$$ aber denn muesch di ebe au nid wundere wenn de nochher gsperrt wirsch ;),0,True,0,0.07580988,0,0.06112054,0,0.20628062,0.11440368000000001
+207745,So t Instrument sind iglade Morn gahts los!,0,False,0,0.027358416,0,0.010754721,0,0.01376549,0.017292875666666666
+99001,"Bim Fanartikel-Verchaufsstand hets sicher Pistole, Messer und anderi luschtigi Sache geh :-)",0,True,0,0.04601492,0,0.012311464,0,0.045589667,0.03463868366666667
+28531,hallo das sind össis die sitzet nur brav ume wenn mr ihne seit:,0,False,0,0.30998647,1,0.6212718,1,0.7358287,0.5556956566666668
+208578,"tja, säubschtgspräch füere isch o lustig, gäu schizophrens royli *kopftätschel* er isch o gmäudet worde bi sunrise, wägem rassistische u sexistische inhaut vo sire site...",0,False,0,0.060149565,0,0.20379306,0,0.08090387,0.11494883166666665
+73240,"wellkommen e usre schöne wäud :-) wönsch der velli schöne stonde, ond gueti fahrt.",0,True,0,0.09144297,0,0.016477074,0,0.12951402,0.079144688
+106639,"WIR SINGEN HEIMSPIEL IM HARDTURM, HEIMSPIEL IM HARDTURM *sing* aber d insekte hän jo im cup au 4-0 gwunne...",0,True,0,0.07733686,0,0.11681335,0,0.21730547,0.13715189333333333
+38838,will drusse händ ihn lieber drine wie dusse;-) spass bi site..denke russland wird stercher ufträte mit weniger hemmige wie d tscheche und das wird ne früeh 0:,0,True,0,0.39282385,0,0.3445072,1,0.6206003,0.45264378333333327
+72229,"& jenschtes touristinnä, wo lieber mit ihrem partner chli quatscht händ, statt de match luege",0,False,0,0.103308104,1,0.74502546,0,0.26599872,0.37144409466666667
+60938,"Ungerhose, flüge mir a Gring - tärätä tää tä tää, tärätä tää tä tää Ungerhose, si das gsi denn - tärätä tää tä tää, tärätä tää tä tää Ungerhose, müesse das gsi sie, wo näbe üs im Höi, gläge si",0,False,1,0.743855,0,0.09876987,1,0.7034235,0.5153494566666666
+208509,"d bonze nützed eu us und verdiened auno geld debi, d bravo leser liebed eu und ihr liebet ihres geld....",0,False,0,0.08841715,0,0.05088373,0,0.24184217,0.12704768333333336
+197553,i finde das macht bi lüt wo eh scho breit si obe no breiter.,0,False,0,0.08261364,0,0.01956336,0,0.15498862,0.08572187333333332
+92166,dass all die fraue wo ufgstande sind absätz agha händ wo höcher als 10 cm gsi sind:,0,True,0,0.13343596,0,0.10074627,0,0.41087836,0.21502019666666664
+64938,"ah nei shit sorry rechts"" Biifahrer sii chan eifach würkli ned jede #schwiizchiste Mehr anzeigen",0,True,0,0.07748584,0,0.39394066,0,0.26675388,0.24606012666666666
+51549,"eifach keini asiatinne (obwohl die vom namenlos im schwarze bikini gseht geil uss, muessi zuegäh.",0,False,1,0.8050037,1,0.66063267,1,0.77666175,0.7474327066666667
+142245,Macht eim viel meh freud wänn mer nahdisna alles macht,0,False,0,0.26890135,0,0.08013535,0,0.30101576,0.21668415333333332
+128000,Luzärner mien eifach immer chli stresse...,0,True,0,0.06613315,0,0.023515917,0,0.024833368,0.03816081166666666
+24142,"Stroofe 2 Mittel Linie und wyter goots Jede rieft, aber kain verstoots Änglisch, Brasiliaanisch Franzeesisch und Japaanisch Und unsre Rakitic schuttet uff Schwyzer Dytsch:",0,True,0,0.11174244,0,0.013563835,0,0.075253315,0.06685319666666667
+174407,jo noch adam wöri au mol mit cho überigens.,0,False,0,0.08764781,0,0.023044132,0,0.05974807,0.05681333733333333
+18759,"dasch jo e zuemuetig für d zueschauer (wens überhaupt öpper luegt, heheh..).",0,False,0,0.07877907,0,0.03437919,0,0.14424966,0.08580264
+180079,wärend em Fahre isch eifach sonen Goof hinder mene Fuessbalböle vor em Auto grannt..,0,True,0,0.05504255,0,0.028375655,0,0.035066623,0.039494942666666664
+5582,"Was sind denn das für lüt, wo sich bi dr polizei melde, wyl e vogel sie agriffe het?",0,False,0,0.034899283,0,0.027690966,0,0.034128282,0.03223951033333333
+143092,typisch mi vater :-) aber si hei mega fröid gha und hei när sogar 3 stück für üs gspiut.,0,False,0,0.037821136,0,0.009268382,0,0.048658196,0.03191590466666667
+279,"Abr es isch mega schad, dass d Bereitschaft vo de Lüt zum Mitsinge in ABC fascht am Nullpunkt ako isch.",0,False,0,0.026596887,0,0.00852473,0,0.013668954,0.01626352366666667
+98723,alli nume Zug nöd...ich ha mit em Kläy na e Rächnig off mit dem Riesearschloch..,0,True,0,0.09663047,0,0.068644725,0,0.14907113,0.10478210833333333
+134595,do drüber wotti nit rede :) Alkohol und Fraue das passt nit zämme...,0,False,0,0.19213632,0,0.28519744,0,0.3375761,0.27163662
+17053,"Ich kenn's als Pippo Azurro - Amico è, aber isch nid die genau glichi Version.",0,False,0,0.064609386,0,0.0190944,0,0.033777554,0.03916044666666667
+171339,"(isch aber nid aifach z realisiere, das ali zfride sind...)",0,False,0,0.32582217,0,0.102023564,0,0.12656982,0.18480518466666665
+193881,Ziit vode Gschänkli as flügende Pack isch verbii!,0,False,0,0.060368333,0,0.017848462,0,0.0191864,0.032467731666666666
+111922,1 für dschwiiz goal Yakin (eine vo dene hald :-) und de Frei Cabanas chunt die rot charte über wegem schleggle :-),0,False,0,0.1619786,0,0.44150907,0,0.3078507,0.30377945666666667
+8777,"- z'viel zürcher in de züg wo immerno stundelang übere 13.mai rede, schibe mit FCZ vollschribe (kopenhage allez) und sowieso e voll widerligge dialäggt hän - wahnsinns masse an schwizer, aber halt au sehr viel wo meh sich nid drmit kah identifiziere.",0,False,0,0.04727314,0,0.08972201,0,0.070557356,0.06918416866666667
+37622,"ronny het talent für l'oréal wärbig, oder sunnst e schwuchtle event....",1,True,0,0.0959947,0,0.017942956,0,0.065389246,0.059775634
+144637,"wieso, schimmlisch öbe wirklich vor di ane?!",0,True,0,0.06093364,0,0.029596835,0,0.12192851,0.07081966166666666
+167461,Vorallem wenn mr mit 50-100 Celis alles durchsuächä würdä!!!,0,True,0,0.042951673,0,0.008853972,0,0.012439574,0.021415073000000003
+194488,Naja Männer (sicher ned all :-) werdet glaub nie schnalle das Fraue au chönd Fuessball spiele und das öppis vo Fuessball verstönd...egal mir wüssets ja besser gell Célina :-))),0,False,1,0.589011,1,0.6051736,1,0.521632,0.5719388666666666
+200835,ghöri hie scho zum alte Ise oder no zude jüngere?!,0,False,0,0.17356877,0,0.01774381,0,0.15666078,0.11599112
+25713,Naja gsend de Serbe sooooo viel besser us?,0,False,0,0.47986192,0,0.072076194,0,0.2448702,0.2656027713333334
+206620,sogar wemer gfesslet wird fumänä fetischist oder wie das heisst:,0,False,0,0.028543297,0,0.02837146,0,0.033940993,0.03028525
+112349,"fehlt nur no eine, dän chönt sich de rochat, hassli und nkufo zum jasse träffe....",0,True,0,0.0646833,0,0.20147067,0,0.11241872,0.12619089666666664
+9548,"Shit, 11'000 heidnischi Jungfraue-Girls in Basel.",0,False,1,0.9311548,1,0.84281045,1,0.9010812,0.89168215
+48714,find au das mir das positiver müend gse.,0,False,0,0.039396048,0,0.009175398,0,0.012882818,0.02048475466666667
+38046,Vo mir us chönt me s buy-in au mit gras zahle:,0,True,0,0.051467214,0,0.05045522,0,0.13308388,0.078335438
+105305,De wo mal gege Basel am Yakin id Füess kickt häd ???,0,False,0,0.039341703,0,0.02463855,0,0.029395686,0.031125313
+184348,Wieso si lüt wo uf facebook vor und nachname vertuscht hei immer die grösste bure,0,True,0,0.046041396,0,0.087218724,0,0.10204951,0.07843654333333333
+159436,"es brucht schwizwit, nöd nur für de fuessball, meh polizischte.",0,False,0,0.063473165,0,0.019635938,0,0.09227454,0.058461214333333324
+121531,hey ihr verschissene gcz und fcb fans verpissed eu und gönd uf eurä eigänä forum wenn ihr iiversüchtig sind aber lönd eus da in ruhä.,0,True,0,0.05887993,0,0.045631025,0,0.08077075,0.06176056833333333
+101184,"bevor ihr nid gege schaffhuse günned, haltet eifach de latz!!!",0,False,0,0.05798896,0,0.023204133,0,0.10480694,0.062000011
+86348,Wo isch am Klay sind Loosertruppe i mag das dem Riesearsch soooo goenne,0,False,0,0.45580122,1,0.8189156,1,0.5815481,0.6187549733333334
+75911,Dä chunt CHarte über und bringt überhaupt nüt.,0,False,0,0.044097412,0,0.013950175,0,0.021055592,0.026367726333333338
+134939,si chöi drin nid laufe ohni dssi usgse wie wensi körperlech behindert wäre,1,False,0,0.40053424,1,0.5166623,1,0.56781405,0.49500352999999997
+127911,"Schiri mit Schiri, Schiri mit Ambri Trainer, Schiri mit Ambri Captain, Schiri mit Bern Captain, dann noch alle zusammen haha voll lustig gsie..",0,False,0,0.04458366,0,0.018513663,0,0.041255254,0.03478419233333333
+197613,chasch aber sicher mit glaschugle oder tröchnete affeschwänz zahle!,0,True,0,0.10232085,0,0.048451312,0,0.094263345,0.08167850233333333
+79692,"D Fasnacht ruckt in grosse Schritt nöher, drum schmück doch au di mit ere Schwellemer Fasnachts Blagette!",0,False,0,0.049406033,0,0.010660288,0,0.012116586,0.024060969
+185184,"ich han jetzt grad 6 tickets C5 bstellt, mir wänd diä dämliche fratzene vo dä muttenzer fuzies gseh wämer MEISTER wärdet.",0,False,0,0.13916355,0,0.046548273,0,0.38332343,0.18967841766666668
+22302,Mir isch sit e wuche de schleimpfropf ab.,0,False,0,0.010386447,0,0.00831143,0,0.013084399,0.010594092
+142158,Original von Der Marokkaner chond druf a wie tüf dine chare esch aber eigentlech söt das go,0,True,1,0.5874759,1,0.70447105,1,0.71220666,0.6680512033333333
+61939,dört hets jo tshirts über jedi gaggi sportart...,0,True,0,0.035051294,0,0.012699047,0,0.061156064,0.036302135
+118842,Lüt wo sich i Stossziite vor de Zug rüered sind eifach die grösste huere ARSCHLÖCHER!!,0,False,0,0.025529804,0,0.020044046,0,0.042985577,0.029519808999999998
+101990,sorry de liechtsteiner isch eis vo de grösste Idiote im Schweizer Fuessball!!,0,True,0,0.034646086,0,0.028829506,0,0.078381635,0.04728574233333333
+51375,sobald e neus modäll oder scho nume e neui farb...,0,True,0,0.061330076,0,0.010316628,0,0.02637631,0.032674338
+47561,Hau ab und mach ändlich im Quennoz Platz!!!!,0,False,0,0.064291194,0,0.028040785,0,0.07059699,0.054309656333333324
+75786,"Als 8 jährige 1 Stund im Oechslin ghocket, well ich mich bim liibli chauf nöd han chöne zwüsched lebeau und micheli entscheide",0,False,0,0.18499725,0,0.29240415,0,0.33692816,0.27144318666666667
+196054,"nei starki fraue, wo sich dr chälti gstellt händ und nid viel trunke händ, will sie wüsse wo ihri gränzene sind händ chöne dusse umestoh bzw. laufe:",0,True,0,0.45842028,0,0.4254187,1,0.52060497,0.4681479833333333
+31333,bi dr tramhaltstell kirche z allschwil teschte sii dr blitz... :,0,False,0,0.052660495,0,0.060064517,0,0.109564036,0.07409634933333333
+171336,schüsch chöndme ja ar rasdschdet grauholz abmache??,0,False,0,0.20472187,0,0.12952669,0,0.23241195,0.1888868366666667
+75217,da mier jetzt ali 280 zeiche hend möcht ich de platz nutze zum eu druf ufmerksam mache das ier ali öbbis biträge chönd zum lüt mit depressione und anxiety helfe.,0,False,0,0.1901451,0,0.03284971,0,0.22115532,0.14805004333333335
+32035,"Knuddelmüüsli, du weisch, es isch e Tatsach, dass es in Asie en Siech voll Velos git.",0,False,0,0.32265693,0,0.38398936,0,0.47011915,0.39225514666666667
+27711,"Alles was dä alängt (man erinnere, black&blond, Lied ""meh Dräck"")....isch einfach nur PEINLICH!",0,True,0,0.076176085,0,0.17734666,0,0.10212728,0.11855000833333333
+44812,"Was y ganz gruusig find, sin jeglichi Hosene wo über de Kneu uffhöre (bi Männer)!",0,False,1,0.5036427,0,0.1298917,1,0.50142723,0.37832054333333337
+208680,"Isch sicher en neue Ma (oder Frau, grad am hütige Tag sött mer das säge) wo en Voodoo-Zauber i d'Kabine und ufs Eis ufbeschwört hät.....!!",0,False,0,0.10114626,0,0.010395528,0,0.040001463,0.050514417
+193527,Mir sueche no Hälfer für am Mittwuch am morge fürs Zelt abbaue.,0,True,0,0.02508626,0,0.010022806,0,0.013456548,0.016188538
+24649,"Im dütschsprachige südtirol ufm land (es t-shirt wird det 'leibele' gnennt) seged doch die uf d'frag woher ich denn chömi (woruf ich gseit han züri) ah so gut, hascht sicher viele kühe dort aufm ländle..",0,False,1,0.89286196,1,0.9136727,1,0.92704153,0.9111920633333334
+52398,"die einte kommen ou ja, die andern sind doch alles hööligääns!",0,False,1,0.6179074,1,0.8843383,1,0.7679045,0.7567167333333332
+120199,"bi schönem wätter gönni de mim liebe celi baby ab und zue e erholiogspause und gang chli dr heckatriebler go umewüete (siehe drittes foto, felge hinte links) scheiss bordstei immer überall",0,True,0,0.047458436,0,0.056675084,0,0.09856171,0.06756507666666667
+29506,"E ""Reto Zanni Fuessballgott"" Ruef, wo s'blödschte und lächerlichschte isch wo im Joggeli je gschraue worde isch, sogar dümmer als die futzdumme ""UH UH UH"" rüef bi de Schwarze spieler, wird natürlich eifach emol mitgschraue...",0,False,1,0.7979033,0,0.15199648,1,0.53257364,0.4941578066666666
+183791,Ich hoffe sooo fescht dass Aarau wie GCN bald mal i dä ewig versänkig verschwindet...,0,False,0,0.036485754,0,0.014419309,0,0.08256782,0.044490960999999996
+206691,"bin dafür, dass alli svpler a johr oder zwei ufd baustell oder als putzhilf go schaffa sötten und denn söttens nomol säga obd schwiz usländer brucht oder nit.",0,False,0,0.22495198,0,0.17627688,0,0.46201834,0.28774906666666666
+200292,Bi FarCry chani mi kei bizeli beklage;,0,False,0,0.06772936,0,0.03237966,0,0.017188368,0.03909912933333333
+191528,Die hend kei ahnig vo Verchaufspolitik!,0,True,0,0.036416233,0,0.020464607,0,0.054782983,0.03722127433333333
+68041,Ohni Strossburji wäre mer scho lang dusse.,0,True,0,0.12405959,0,0.04383711,0,0.0276484,0.0651817
+139145,und Churz danach en schwarze t23 tuned malet eu,0,True,0,0.4149272,1,0.90782624,1,0.8621248,0.7282927466666668
+64936,"scheisse, pro asyl für ballz.de in ch (oder süscht neume), wärde eidütig politsch verfolgt im reich",0,False,0,0.17015447,1,0.5478137,1,0.7068844,0.4749508566666667
+196434,"Das wür bestimmt au no hälfe bi de ""nöd-Sportfans"", vor allem dörft mer mal ufzeige, wie ruhig die letschte PO abgange sind, mit usnahm uf de einzelnä Pyro-Aktione (wo dänn au entspr.",0,False,0,0.040952798,0,0.023016047,0,0.042375028,0.03544795766666667
+84805,"uiui das wird im janosch nit eso gfalle ;) Mi 26.4.06, 12:",0,False,0,0.25298604,1,0.6523574,1,0.8188961,0.5747465133333334
+168008,"Binärä Truppä voller Raucher, Alkoholiker und Drögeler chunt das nöd guät:-)",0,False,0,0.027621383,0,0.046987463,0,0.059867892,0.04482557933333334
+185276,"für d Chinder wo au am Fest sind tüemer anderi Füllige id Säckli, ha jetzt grad übere Mittag no chöne e Teil devo fang poste.",0,False,0,0.029244822,0,0.011422699,0,0.01533433,0.018667283666666666
+161907,eingelti müsti scho für dütschland si aber da ich d'em än scheiss finde bin ich für griecheland!!!!,0,True,0,0.30797595,1,0.7461432,1,0.55232984,0.5354829966666667
+192046,"Ich finds ou sehr guet das mir so vil usgäbet für üses militär, schliesslich wot üs Italie scho lang mal erobere ;-)",0,False,0,0.09319645,0,0.03048122,0,0.15626052,0.09331273000000001
+14644,"Mit ere guete Mischig us Russkis, InglischMeeen und Toitschen kanni läbe, aber allzu viil vo ainere Sorte uff aim Huffe isch miehsam",0,False,1,0.6513001,1,0.76281875,0,0.4025902,0.6055696833333334
+204006,"Chöbd doch au verbi go luegä, ad Güli Party",0,False,0,0.06865369,0,0.030650629,0,0.08526453,0.06152294966666667
+42512,mini traumfraue sin eigentlich alli ost-europäerinne!,0,False,0,0.10193181,1,0.6411439,0,0.34526205,0.36277925333333333
+151008,"wenns passt de passt's, u süsch haut nid!",0,False,0,0.03285892,0,0.011924256,0,0.019397326,0.021393500666666666
+133177,Alles andere ich es gebaschtel was früehner oder spöter schlächt ändet!,0,True,0,0.028173046,0,0.016471421,0,0.018758439,0.021134301999999997
+8933,den sini bestialisch gueti analyse mit dene viele...,0,False,0,0.058348544,0,0.017198272,0,0.06223821,0.045928342000000004
+127984,Am Abig dän Jetzt münder nonig nahlah mit schriebe.,0,True,0,0.039107773,0,0.010651666,0,0.014831335,0.021530258
+20169,für mi sin die lüt schuld wo sich müen go schlo...,0,False,0,0.049120788,0,0.07801164,0,0.13587303,0.08766848599999999
+44474,"20'500 sin bote, ich glaub mr bliibe dütlich drunter",0,True,0,0.3564733,0,0.17722376,1,0.53179616,0.35516440666666665
+37307,"Ich bi so socially retarded dasi nachem Poschte mit 10 Kilo belade extra en Umweg laufe, dasi nöd bide Chind uf de Strass verbiilaufe mues wo grad ihre Mini-Flohmi uufbaut hend und de Lüt wänd ihre alt Scheiss aadrehe.",0,False,0,0.21957806,0,0.056093026,0,0.12719136,0.13428748199999999
+205689,so kuul gsi das ehr mol of chriens cho send...!,0,False,0,0.21463706,1,0.81831145,1,0.7353614,0.5894366366666667
+57087,hip hop isch dr islam vo de musikrichtige:,0,True,0,0.041070096,0,0.06879632,0,0.03044228,0.046769565333333325
+16383,"Dr Cup isch immer ä Möglichkeit Stadie z gseh vomer sunscht nit immer seht, drum ganz klar Bellinzona usswärts!!",0,True,0,0.06669643,0,0.017832495,0,0.052982394,0.04583710633333334
+21642,He hallo das isch Fuessball machet Tubberware Parties:,0,False,0,0.043440375,0,0.039708365,0,0.067504294,0.05021767800000001
+61888,Jede Savannehuscher het scho e neys Gebiss bevor är Dytsch ka...,1,True,1,0.5329455,0,0.10756001,0,0.23483157,0.29177902666666666
+7317,"Ey du Vollweiche, muesch definitiv nit in dem thread poste, bisches genau so e riiiiieeeeese Mongi, wo genau die do inne ufgführte Sprüch vrwendet...",1,True,1,0.71383065,1,0.69112784,0,0.48202735,0.62899528
+208922,aber min körper will lieber eso liede anstatt mal flach deheime liege,0,True,0,0.06477302,0,0.09764727,0,0.14719607,0.10320545333333335
+122168,"kei Ahnig wos diä usgrabe händ Das sind eifach die unterste Reihe, wo Sehbehinderige muesch in Chauf näh...",0,False,1,0.67164904,1,0.7757799,1,0.80809164,0.7518401933333333
+173786,"Jo do hesch scho rächt, vor allem in derä ziit wo sie müsse so ""tanzmusig"" spiele und nid Party isch nid so guet gsi.",0,True,0,0.049463615,0,0.01564619,0,0.041861117,0.035656974
+147867,"Schittli - uf Facebook z.B hets e Gruppe ""Nadelspiel""...",0,True,0,0.02699511,0,0.010062348,0,0.01313326,0.016730239333333334
+153627,die frau isch jo schrecklich die cha jo nödmol laufe mit dene schueh.,0,False,0,0.14410007,0,0.09838516,0,0.32014358,0.18754293666666666
+56249,tüppisch blondi Oberdoofschwoobetussi *würg* - gang emol uff Andalusie go dr s'Gäägedail yynezieh ;),1,False,0,0.1448855,0,0.37823313,0,0.3317615,0.2849600433333333
+17623,"so öpis wär super, aber im Union isches vorletschtjohr gsi..",0,False,0,0.10971714,0,0.036527164,0,0.02198579,0.056076698
+163354,"da bini mitem jan einer meinung, einersits was klassischi musik agaht und andersits was das blöde kroki agaht ;)",0,False,0,0.06476,0,0.05737825,0,0.06970421,0.06394748666666666
+178240,;-) also ich muess mi nöd am dunschtig mit irgendwelchnä inzuchthoppers umäschlah :),0,False,0,0.12064824,0,0.49126258,0,0.41130707,0.34107263
+203561,"omg mini kollegin und ich hend uf mini schwöster gwartet, denn gsehmer so ehn fette benz und mini kollegin so ""HAMBUUURG"" am schreie, denn luegt de usem auto zu eus und ich luegt ihn so ah und es isch eif de AZET!!!",0,True,0,0.08173858,0,0.15710506,0,0.13276911,0.12387091666666666
+105963,"Flittis, mer werde ja im Mai hürote und de churz is wellnes gah und den im September/Oktober für 6-8 Wuche um Amerika go chli Reise, das nur am Strand lige isch nüt für eus :)",0,True,0,0.41691133,0,0.03881702,0,0.17848258,0.21140364333333336
+179738,Si di tüürärä vill heller vom uslüchtä här?,0,False,0,0.41323474,0,0.1701255,0,0.079740085,0.22103344166666664
+32679,"Aber ich fig ihn wege dem nit eifach dumm a, sondern frog noche.",0,False,0,0.04174566,0,0.016681332,0,0.01977462,0.026067204
+160468,i ha jetzt ut 2004 mit vollä details uf 32bi gspielt mitärä uflösig fu 1280*1024.,0,False,0,0.012677591,0,0.0076511865,0,0.01327385,0.011200875833333332
+209052,"und das isch s Cafe Burger in Laufe gsi (jetzt Niederberger), schiins...",0,False,0,0.03395475,0,0.019320775,0,0.02662811,0.026634545
+121011,langwiligi scheissgruppe ohni bzw. mit wenig uswärtsfans und ohni möglichkeite für zuesätzlichi tv gelder.,0,False,0,0.04651768,0,0.02135023,0,0.1444707,0.07077953666666667
+4070,"Sinn glaub Schwoobe gege Türke gsi, wenn ich mi nid tüsch.",0,True,1,0.56001884,1,0.5696967,1,0.8058653,0.6451936133333332
+98006,"cool wege de flittis..mir gönd au nid allei, nehmed d chind mit.",0,True,0,0.06996706,0,0.01440541,0,0.15978794,0.08138680333333333
+49168,"die ganze urwald-brasilianer/argentinier, bis die sich aklimatisiert hän isch d meisterschaft gloffe!",1,False,0,0.16520607,0,0.2548095,0,0.33959186,0.2532024766666667
+7457,die 2 glatze wo gmeint händ si miesse sieg heil schreiend an uns verbi fahre....ja mann!!,0,False,0,0.13100043,0,0.30625397,0,0.24758343,0.22827927666666667
+143503,und wäge dem verdammte saupack us niederhasli müemer uswärts spille...,0,True,0,0.052786708,0,0.02798926,0,0.0659061,0.04889402266666667
+153063,Was chönd mir zürcher für e paar so Halbschlaui bulle wo ihre job mached und kei ahnig händ wieso???,0,False,1,0.69723684,0,0.15987752,0,0.45893502,0.43868312666666665
+10360,könnt jo aber au an unsere defensive spielusrichtig vor eigenem publikum liige:,0,False,0,0.03592872,0,0.010642951,0,0.012278249,0.019616639999999998
+128482,Ah eusi Frauequote stigt doch no chli *g Herzlich wilkomme bi eusem luschtige Huufe da!,0,False,1,0.65651864,0,0.47634232,1,0.72141236,0.6180911066666667
+181592,Trotz schlechtem Wetter het sis gschafft dass wunderschöni Erinneriga enstande sind...,0,False,0,0.026234455,0,0.007865781,0,0.011287244,0.015129160000000001
+168414,"die nuttesöhn händ eus dä uefa platz klaut, weg mit dene",0,False,1,0.87991434,1,0.9531241,1,0.918638,0.91722548
+7892,Eifach das dreckspack vernichte und jeglichi hoffnung uf dr cupfinal raube !!,0,False,0,0.039720476,0,0.02374628,0,0.074580915,0.04601589033333333
+38337,"wird luschtig, de bedrunggene holländr zueluege wiesie mit de bulle diskutiere..wie letzt mol..muahaha",0,False,1,0.79313016,1,0.91263354,1,0.9176618,0.8744751666666666
+71206,"aber nur um jetzt n punk zu sein müsst ihrs natürklich au nicht hören, sonst verblödet die s szene noch ganz.",0,True,0,0.051502883,0,0.03950175,0,0.07026981,0.053758147666666665
+169938,"Flying-Eye sofern di normale Schwarze oder Chrom häsch muesch fürd MFK nüüt wächsle, sötted ja es DOT/SAE Zeiche druffha",0,True,1,0.9500938,1,0.9498332,1,0.9509261,0.9502843666666667
+118474,En wahre kroat würd aber welle dass no en zeche meh mittrennt wird damits es grosskroatie mit bosnie git,0,False,0,0.36434093,1,0.548564,1,0.718823,0.54390931
+130205,wönsche der und din chend vell gsondheit!,0,False,0,0.035355143,0,0.010250053,0,0.017899498,0.021168231333333332
+164583,"was mich wundered, dass niemert eis Wort über d'Leischtig vo de Berner Verteidigung ab de 53. Minute schriebt.",0,False,0,0.042914443,0,0.009398906,0,0.013590681,0.02196801
+205063,masturbieret taubi fraue mit einere hand das sie mid de andere stöhne chönd?,1,True,0,0.14453325,0,0.24515057,0,0.28598294,0.22522225333333334
+49852,Ja okay isch das ned aber d Fraue send so..,0,False,1,0.8996349,1,0.8926625,1,0.9183531,0.9035501666666667
+45544,willsch mr nit im ärnscht sage dass de dr untrschiid zwüschemne böngli und ere shishs nit kenn sch odr?!,0,True,0,0.36280072,0,0.20058434,1,0.61814797,0.39384434333333335
+65003,"Egal ob Zürcher, Luzerner oder Basler, so Lüt sind unterstes Niveau.",0,False,0,0.058198202,0,0.0092130825,0,0.021466676,0.029625986833333336
+119981,"sowit ig mi ma bsinnä sis würklech nur je 2 kabu gsi, aber i bimr äbä nümme sichr...",0,False,0,0.19783802,0,0.117291234,0,0.2654531,0.19352745133333335
+38771,"französin isch bliebe (will si meint krankheit chönnt scho wieder umegriffe ha, was aber nümm genau wieso), de iraki het müesse gege d'französin wehre, damit er het wieder chönne go.",0,False,0,0.28679135,0,0.37610847,1,0.65755635,0.4401520566666666
+129916,dänk um de komische optiker us chloote!,0,False,0,0.057863172,0,0.0610377,0,0.0833893,0.06743005733333333
+13326,Das Lied hät me scho länger wieder sötte abschaffe.,0,False,0,0.008792622,0,0.011396953,0,0.011030138,0.010406571000000002
+63964,nach paar mönet im usland wiedr mol i de region und jetz spür is au no.,0,False,0,0.05101616,0,0.010552625,0,0.13684236,0.06613704833333334
+76407,"wennd als white guy mittleren alters inere hochschuel-bib sones naziblatt lesisch, de esch jedem klar, dass du keine vode studis besch.",0,False,0,0.1354251,0,0.2325477,0,0.3492176,0.23906346666666667
+208623,boomers so verdammt zrugbliebe ha min zug verpasst wil es müetti mit 4 kind het müese ticket löse bruch doch d app du urgestein,0,False,1,0.6173793,0,0.36850485,1,0.5386125,0.5081655500000001
+104518,Bitte entlönd eifach de Thurneer han fascht krise becho ab dem sine behinderte sprüch !,0,False,1,0.73995155,1,0.59462076,1,0.7708745,0.7018156033333334
+169296,Un schon wieder ein kubaner im Forum...nur het ich das nöd gad vo eusem ober Kapitalist erwartet!,0,False,1,0.6342099,1,0.81675804,1,0.87153584,0.7741679266666667
+42207,"Ich glaub so dumm sin nid emol d Wähler vo sälere Partei, dass sie versueche das Vieh z mälke:",0,False,0,0.077516325,0,0.03298953,0,0.07079713,0.060434328333333336
+134128,Und ich freu mich scho dass ihr sie a de Hochziit hend und mir wieder Fotis chönd aluege will mir ja au die glich hend...,0,False,0,0.048539467,0,0.011074746,0,0.07404309,0.044552434333333335
+46166,"""Lueg das hani letschti ide Apotheke-Rundschau (oder Zeitung XY) geseh!""",0,False,0,0.04453975,0,0.021773746,0,0.015241706,0.02718506733333333
+15848,"Stell dir vor, jezt würde mir no dope legalisiere..ganz europa hasst uns will sie zu uns wän und nit dörfe",0,False,0,0.109659106,1,0.5241068,0,0.25102428,0.294930062
+6124,Drum fraisch di wie e glaine Gnopf Syt Wuche scho uff das Speggdaakel Hesch nyt me anders sunscht im Kopf (Au trotz em null-fimf-Haimdebaakel),0,False,0,0.11513079,0,0.028431633,0,0.08802863,0.07719701766666666
+186568,u äs witers kunstwerk het si platz gfungä.....,0,False,0,0.029491376,0,0.0082129715,0,0.013128312,0.016944219833333333
+164994,"Isreal macht a jedere Euro usscheidig mit, Telaviv isch ja au scho im Uefa Cup vertrette gsi,",0,False,0,0.059003476,0,0.027242294,0,0.026929954,0.03772524133333333
+71144,"Mit dr Abschaffig vo dere Schuel wurdi sich BL nur Sozialfäll schaffe, und die koschte denn e bitz mehr als 0, 6 Millione...",0,False,0,0.07376281,0,0.050868616,0,0.15719348,0.09394163533333333
+209287,Hüt simmer a oisere Heimfasnacht in Hinwil am Umzug gsi.,0,False,0,0.00619417,0,0.008082614,0,0.011027779,0.008434854333333333
+57179,so vrsnobbti studänteärsch go usneh...,0,False,0,0.09681394,0,0.05769083,0,0.14511845,0.09987440666666668
+63722,Es git halt in dr kurve scho lüt däre ihre IQ isch gleiner wie em vaclik si ruggenummere!!!!,0,False,0,0.19514209,1,0.66173136,0,0.24398553,0.3669529933333333
+160632,"Hend au Forene, Install Kits (Schiiwärfer) und und und.",0,False,0,0.026041387,0,0.008811868,0,0.013038335,0.01596386333333333
+124417,"I hätti gseit, es segi eifach alles bis 20'000.- versicheret.",0,False,0,0.03237646,0,0.009433869,0,0.014783069,0.018864466
+189768,"bi eher so richtig oste ungerwägs vo mir us, nid gäge weste(bärn) kenne ou nume z'mad kriens...",0,False,0,0.2629191,0,0.19031075,1,0.6222295,0.35848645
+115227,nit das am schluss 13 oder 14 jährige lüt sind !!!!!,0,False,0,0.10006548,0,0.024253901,0,0.2648741,0.12973116033333335
+190343,du hettsch mal geschter müese isles vs. leafs gseh...nhl schiris sind teilwiis kein dreck besser als oisi.,0,False,0,0.16115898,1,0.74622864,1,0.6387654,0.51538434
+102942,2 obwohl ali sehr schön sind eifach damit ich au min sänf dezue geh han.,0,False,0,0.069994316,0,0.019094521,0,0.08221474,0.05710119233333333
+109384,"Aber do dure bin ich typisch Frau, Täsche und Schueh am liebse ha ich die tüürste....",0,False,1,0.505517,0,0.0430639,0,0.24565184,0.2647442466666667
+126803,", lueget mal i länder wie serbie oder isreal, oder au türkei, wenn de nachber chrank isch sind all da um en z pfläge!!!",0,False,0,0.32371137,1,0.54636973,0,0.40906203,0.4263810433333333
+16781,"Primititv und unterschti Schublade die Hetze, pienlich, dass es so dummi Schwiezer giht...:",0,False,0,0.12807098,1,0.5189809,1,0.64931124,0.43212104
+117500,"aber es isch es liibli vo brasilie, nöd vo chloote oder (schauder) em fcz.",0,False,0,0.064719036,0,0.021829726,0,0.16963899,0.08539591733333333
+38850,o Euch Möchtegärns muess meh definitiv ignoriere!!!,0,False,1,0.7456891,0,0.051997807,0,0.48921478,0.428967229
+89006,Mir werded ide Ferie weg de Ring go luege.,0,False,0,0.029891837,0,0.00944611,0,0.014643674,0.017993873666666667
+31332,dg und all diese scheisse ist für abschaum gemacht...,0,False,0,0.03370282,0,0.039411984,0,0.058801252,0.04397201866666667
+122518,Im Alm Style Siebnen giits richtig viel Uswahl a wunderschönä Dirndli und tollä Herrämode!,0,False,0,0.049642075,0,0.010873247,0,0.014784346,0.025099889333333333
+193683,1. Was für Dütschi Fans sölled a de Front gsi si???,0,False,0,0.03584103,0,0.014330145,0,0.014124173,0.021431782666666666
+8796,ich mein was wotti ufem balkon bi dene langwiiler?!,0,False,1,0.6155638,1,0.6546607,1,0.6641902,0.6448048999999999
+75150,"verstah immer no nid, wie das grücht, dass gflüchteti es IPHONE GSCHÄNKT berchöme wenn sie hie achömme, erstens immer no im umlouf isch und zwöitens DS LÜT WÜRKLECH GLOUBE?!",0,False,1,0.821679,1,0.87163943,1,0.71865386,0.8039907633333333
+136461,"veganer dä viecher s frässe wägässed, so dass sie en trurige hungertod erliided und mirs dänn ässe müend??!",0,False,0,0.11560146,0,0.11213225,0,0.13812704,0.12195358333333334
+190301,Det sind dlüt nämmli übelscht scheisse.,0,False,0,0.05007083,0,0.059076253,0,0.07909196,0.06274634766666666
+53356,"isch irgendwie chli undankbar, die ganzi jugendusbildig in dr schwiz z mache (und z profitiere), und denn für d a-nati vo kroatie go spille.",0,False,0,0.10852549,0,0.07922363,0,0.15646487,0.11473799666666666
+194947,"ja das scho, hehe muss der d spieler ufzelle, aber ebe als serb stahni me hinder serbie montenegro, schwärm, stankovic, kovacevic, kezman, efach göttlich, aber ebe, da kein satelite tv mussi fasch ch mätch luege ;) aber stahni immer hinder de schwizer, obwohl i amel mi fröge wie mer soo schlecht chan spiele (israel, zypere) hesch nid gwüsst wer s schlechter team isch!",0,False,0,0.33592314,1,0.63421524,0,0.42741132,0.4658499
+14473,"jede söt loose was ihn gfallt und söt ihn asporne guetes z mache und nid ghirn abschalte und zuelose, d.h. die wo do schwiizr rap kritisiere und fascht kai english verstöhn und nume ami hip hop lose wills geil tönt könnt ich do arsch versohle!!",0,False,0,0.069484904,0,0.10740355,0,0.10506922,0.09398589133333334
+85564,o) immer gäge mänschlichi Gägner gschpillt.,0,False,0,0.023484662,0,0.009112819,0,0.021694114,0.01809719833333333
+52224,Scheiss Zivi pack vo Verona (sind nit eso licht zerkenne wie (D'spengler) Zivis vo Zi!,0,False,0,0.23953272,0,0.19086534,0,0.35194498,0.2607810133333333
+44733,Liids drah das sie eifach nomal wett gestillt werde?,0,False,0,0.18370831,0,0.029751243,0,0.05319253,0.08888402766666668
+21207,Hoffentlich wird gfilmt und hoffentlich verliert sone Krüppel sini Sturmmaske und wird denn gstellt!,1,False,0,0.041124985,0,0.023423215,0,0.020506583,0.02835159433333333
+111032,"Okay, aber Frankrich - Ungarn würdsch ehner luege als Slowakei - Ungarn, oder?",0,False,0,0.22076665,0,0.116390884,0,0.099838555,0.14566536300000002
+2376,"Töggelisch dyner Bräschte ine, de nüschelets chly im Inneläbe, de räblets - u unge chunnt es Pack Medikamänt use oder e Tegschtnachricht:",0,False,0,0.22970746,0,0.020366805,0,0.052576087,0.10088345066666667
+155822,eine vo gck hät sich doch mal a dä schiibe (aber die wo dänn um d'verteidigungszone ume gaht) verheitzt?,0,False,0,0.07401789,0,0.09512767,0,0.089496635,0.086214065
+14055,"ihr toys meinet ihr siged die beschte rapper, doch euri teggscht verdiene nid mehr als füscht und kläpper.",0,False,0,0.07727306,0,0.103355296,0,0.10970375,0.09677736866666665
+60664,ha kei luscht uf so superhelde wo s'gfühl hänn sie mien schneebäll umeschmeisse - so öbbis machtme nur uswärts:,0,False,0,0.04409055,0,0.03775944,0,0.056256216,0.046035402
+173321,"d föteli vor de chile, oder erscht nacher?",0,False,0,0.052224386,0,0.03281521,0,0.23860444,0.10788134533333334
+152877,"scheiss gc basel, ich gönns jedem verdammte gc fan dass ine vo somene hinterwäldlerclub in arsch gingget worde isch, und sogar verdient.",0,False,0,0.051182386,0,0.041033152,0,0.14113395,0.07778316266666667
+46818,"de Gross isch doch sicher schwul, het dä scho irgendöpper mol mit ere frau gseh (abgseh vo de oeri)?????",0,False,0,0.3564777,1,0.53352654,1,0.8161942,0.5687328133333334
+155485,2 gäg griächä d portugisä sind obär schwach wobi mär au muäs sägä das d griächä stark sind voralläm sehr diszipliniär1,0,False,0,0.32535803,0,0.3035861,0,0.41658318,0.34850910333333335
+157143,Es isch s einzig richtige de arno sekte as bei z pisse,0,False,0,0.09270184,0,0.33999732,0,0.20399475,0.21223130333333332
+86112,"Häsch echli en Shitstorm usglöst, aber als Produzänt vom ""Meister im Schluefweg"" Liibli häsch Narrefreiheit!",0,False,0,0.07262137,0,0.015210591,0,0.053814102,0.04721535433333333
+60864,ka mr nid vorstelle das es tussy vo sich us ufd idee kunnt ane match z'goh.,0,False,0,0.060601503,0,0.020234132,0,0.059496786,0.04677747366666667
+208379,ANIkat Videos Dr chli Fabrice darf sech ab ere Schildchrot- Musigdose fröie...,0,False,0,0.14552195,0,0.013425905,0,0.017539326,0.05882906033333333
+45978,"isch au normal die meischte gönge konkurs mit ihri mannschafte well si die priise und wert vo de spieler nid kenne, biete unnötig uf irgendwelchi spieler wos gar nid wert sin!",0,False,0,0.03961043,0,0.02331343,0,0.055407465,0.039443775
+76583,"Hopp Züriii, aber ohne Pöbelscheisse!!!",0,False,0,0.03615696,0,0.037686136,0,0.062113833,0.04531897633333334
+18953,"Wo würde denn all die Lüt ane, wo ständig dört hogge?",0,False,0,0.04462916,0,0.017828127,0,0.04836519,0.03694082566666667
+197749,Wär ja geil wenn mir die tuble schlönd.,0,False,0,0.04370373,0,0.01886463,0,0.04712614,0.03656483333333333
+23152,Fremdsproche sind öbbis für Lütt vo dumm sind und das versuche mit streberischem Wörtlipaucke weg z...,0,False,0,0.07291694,0,0.21257648,0,0.05622295,0.11390545666666667
+200957,"Züri hät FCZ ZSC Scheiss Kloten und drecks Insekte, und überall immer min. 6000 - 12000 dän mal wän mer nur dä FCZ hettet wie dä F...",0,False,0,0.04072446,0,0.039167598,0,0.054838173,0.04491007699999999
+15907,1. Mir Basler dörfe uff dütschem Bode d Zollalag Weil-Autobahn baue (scho längscht gmacht) 2. die Dütsche dörfe d Zollfreistroos baue,0,False,0,0.27026492,1,0.6842714,1,0.6461645,0.53356694
+167404,nei mer muess ja au mal de chline länder äh chance geh griecheland und türkey die chönted no vor eus sie aber ich lass mich überasche und hoffe doch das mir günäd,0,False,0,0.43606934,1,0.8635367,1,0.69554394,0.6650499933333333
+176209,ufnes erfolgriichs und unfallfreis neus läbesjahr!,0,False,0,0.0072664632,0,0.008161566,0,0.013729763,0.009719264066666667
+147743,isch mega nöch vom bahnhof und s hed gnueg parkplätz.,0,False,0,0.031274192,0,0.016362716,0,0.02793585,0.025190919333333336
+65274,Jaaaa Kaffirahmdecheli sind chli altmodisch..,0,False,0,0.1428389,0,0.3726347,0,0.30785537,0.27444299
+168760,"Afrikaner bruchid Zuneigig, öppis vo de Ponte hervorragend hed könnä (wenigstens das hed er könnä)!",0,False,1,0.83658695,1,0.5901684,1,0.56544185,0.6640657333333334
+74472,"in Aesch düst immer en Ältere Herr inre rote Celica ume, immer weni Griesse due luegtr ganz verwirrt",0,False,0,0.116452724,1,0.6145063,1,0.6370377,0.455998908
+207584,"lol typisch skaterin, meh chani nid zu dir sege",0,False,0,0.23538356,1,0.68449545,1,0.53328294,0.48438731666666673
+13165,"I'm Jew, i'm jewish isch an dr tagesornig und es regt sich niemer uf drwäge.",0,False,0,0.44672117,0,0.32747832,1,0.76421547,0.5128049866666666
+140183,"aber d autoprüefig sälber isch ned schwirig, nur die kürs sind müehsam",0,False,0,0.04744325,0,0.03650819,0,0.10155928,0.06183690666666667
+47751,Ich bi e Frau und bi scho länger mit mine Kollege ir MK.,0,False,0,0.024607342,0,0.009453036,0,0.015382427,0.016480935000000002
+715,"Und plz frag mal e paar vernünftigi Serbe (nit so welchi we dü), was diä so fo Schwizer HipHop haltet (plz keine Einwanderer fragen, also deine,, Homies "", ty) Ja ich hoffe au das der MICHMAA hiä mal verbi lüegt, er wirds sicher, wiä ich, sehr witzig find.",0,False,1,0.77378356,1,0.6978098,1,0.6677668,0.7131200533333333
+87809,Sehr guet gsi geschter und es hät - ussert es paar Durchhänger - endlich Stimmig gha!,0,False,0,0.013843349,0,0.007718694,0,0.011206644,0.010922895666666666
+46011,"hui, und ich vrreis ändi joor für 4 wuche, muess glaub öper engagiere, wo mr das alles uffnimmt, oder meinsch, es...",0,False,0,0.098795034,0,0.031118698,0,0.13503861,0.08831744733333334
+4996,"Vielliecht het sich aber Adili scho druff iigstellt, dass er in dr CL gege Chelsea in dr startelf nebe Drogba...",0,False,0,0.034731295,0,0.009236289,0,0.013272509,0.019080031
+140867,"super palmares vom forte, ääähh nati b oder was",0,False,0,0.1247275,0,0.3420291,1,0.7817126,0.4161564
+78514,"gschmackssach, aber für mi wär jetz das nix",0,False,0,0.047216088,0,0.06382699,0,0.12497702,0.07867336600000001
+142495,sogar d basler händ es besser rating als mir... :-),0,False,0,0.05613629,0,0.058290616,0,0.23387906,0.11610198866666666
+135972,wenn niemert mitmacht nimi hald nächschtesmal digitalkamera mit id dsüdkurve den fotografieremer al männer und den tümer uswerte !,0,False,0,0.11710763,0,0.08538676,0,0.43104312,0.21117917
+145014,"ich säg ja, dass für jede ma irgendwo dört usse DIE frau isch!",0,False,1,0.6013802,0,0.057210844,0,0.4493513,0.3693141146666667
+77152,Aber i ha dänk aspraye gäng no fasch gäbiger als male?,0,False,0,0.047803763,0,0.19282177,0,0.15559956,0.13207503099999998
+73458,Hät nach jedem Schirientscheid diä arm Sülä (oder besser gseit Fuess) kicked.,0,False,0,0.04077594,0,0.012425951,0,0.018228922,0.023810270999999997
+61660,uff fcb.ch stoht aber dä match vom mäntig gäge/in zirü sigi au am 2:,0,False,0,0.027074872,0,0.010223116,0,0.051620387,0.02963945833333333
+63952,"stanislaw, mach e militärputsch, denn herrscht ändlig wieder mol zucht und ornig:",0,False,0,0.11530433,0,0.19414799,0,0.25881898,0.18942376666666663
+15919,"Hauptsach meh seht, dass mä sich liebt, es bringt nüt, wenn dä das nur am Johrestag chasch zeige.",0,False,0,0.17130113,0,0.020328403,0,0.054908723,0.08217941866666666
+141816,"Vom einte Vollpfoschte zum andere Vollpfoschte, und Din Arbeitgeber druckt Din Müll no ab.",0,False,1,0.82537216,0,0.051274158,0,0.2344917,0.3703793393333334
+57427,D findsch die beschti tips vo alternativi ernährig über ufologie zu wältverschwörige:,0,False,0,0.09034293,0,0.06087492,0,0.2044365,0.11855145
+22278,Schwiizer lueget zerscht für euch selber und erscht denn für di Andere (!!!),0,False,0,0.32814622,0,0.28306627,1,0.55785567,0.3896893866666667
+22660,"Nur diejenige wo NID mien uff's Geld luege, ruefe am lüüdischte uss, vo wäge ""Einkaufterrorist"", wo unseri schöni Schwiiz hintergoht !",0,False,0,0.15531063,0,0.07554975,0,0.100023195,0.11029452499999999
+156636,"han vorher bim durezape so än schwizer remix vo wenus vo bümpliz gseh, da isch doch wahrhaftig die schwuchtle vo eme cabans umeghüpft.",1,False,0,0.38613364,1,0.6325062,1,0.7896611,0.6027669800000001
+202763,"We Skaladdin nid zu mir chunnt, chume i haut zu skaladdin!",0,False,1,0.7903205,0,0.39993355,1,0.60455775,0.5982706000000001
+99273,z.B e T23 mid hekspöiler spordfarwärch dönde schibe unere remus uspufalag ?!?!,0,False,1,0.6415119,0,0.29612178,1,0.7026391,0.5467575933333334
+36871,die kriegsch glaub in jedere migros.,0,False,1,0.92222345,1,0.62399906,1,0.86391664,0.8033797166666666
+197060,"wenn mer die gastgschänli nid fertig möged, de gits halt keini pompons schiebi immer use, aber anonsten...",0,False,0,0.42730922,1,0.79369074,0,0.36416662,0.52838886
+35478,zeig dene Italiäner das si e scheiss Fuessball spiele..,0,False,0,0.24480136,0,0.28945658,0,0.13518673,0.22314822333333337
+68638,Das und Spil in Pole sin im Momänt wirklich fascht s einzige woni im Kopf ha,0,False,0,0.39278385,1,0.5817321,0,0.1728957,0.38247055
+38359,"mann, bezieh di doch mol uf richtigi quelle, so isches eifach nur bullshit was de schriebsch:",0,False,0,0.041448247,0,0.053074155,0,0.09195904,0.06216048066666666
+40845,"Mannschaft hets voll verdiennt usgpifft zwärde, sone schissdreck wo sie zämespielt händ gege e CHL Verein.",0,False,0,0.061571743,0,0.01850207,0,0.06466343,0.048245747666666665
+44229,"also dr fandel hed Recht, es hed lebensgfoor bestande, do muss er knallhart reagierte such hed er kai chance gegä di Horde vo Huuligans!!!",0,False,1,0.93679744,1,0.9188503,1,0.7787869,0.8781448799999999
+70395,si isch nid nur der mount everest sondern alli achtduusiger vo der dummheit !,0,False,0,0.07484566,0,0.39021948,0,0.36939022,0.2781517866666667
+142583,"Ich weiss scho dass es z'gross isch, aber ich wott dass es baut wird, und zwar nur wäg denen Bernulli-Terrorischte!",0,False,0,0.3722432,1,0.7902229,0,0.26281896,0.47509502
+40150,"läcket eier loosers, numme will ich e grössere ha als ihr Mi 21.1.09, 18:",0,False,1,0.6012256,1,0.50954795,1,0.56694853,0.5592406933333334
+144223,"Ich möcht do nid Chef si vo sooo viele ""Bräute und Ehefrauen"" uf eim Huffe, das geschnadder!!",0,False,0,0.14838931,0,0.027280685,0,0.3101193,0.161929765
+190827,Mädels ha eu au no es foti :))) isch ned super quali welis med em Handy abgföttelet ha hihi,0,False,0,0.13925102,0,0.417974,1,0.5301106,0.36244520666666663
+19198,"""Bisch e Plaagarschti"" chüscheletsi Schwoscht ""wie wosch de das agattige?",0,False,0,0.04395198,0,0.07320768,0,0.04488537,0.05401501
+6012,kunnt grad e huere geili hand hansen gege negreanu und denn nachem river rugglets uff eimol und was kunnt???,0,False,0,0.2175261,0,0.42675412,0,0.35506034,0.33311352
+101297,"Ahhjaaa de Fritsche und de Keller sind für d Füchs, kein Check kein Move und ständig immer im Seich, haha",0,False,0,0.03923716,0,0.052913688,0,0.067603506,0.05325145133333333
+58635,"Aber jenu mir eigentlich glich, Konsumiere eh zumene grosse Teil dusse und mir gönd spöter ine sits dinne nur no Bleifrei Gülle git.",0,False,0,0.10988223,0,0.033297148,0,0.20167047,0.11494994933333331
+56965,"Bi die migros, im schützemattquartier!",0,False,1,0.5702642,1,0.8711057,1,0.65620106,0.69919032
+86754,30 vod dr stream ah ^^ Zerst wird Anno1800 zockt und denn gods wider ab ins MORDHAU:,0,False,0,0.046557914,0,0.014310782,0,0.032479923,0.03111620633333333
+164625,Übrigens mis Service heft hät vo eui kein TOYOTA stämpfel über cho...,0,False,1,0.56113106,1,0.70942885,0,0.28284115,0.5178003533333334
+41916,"Warum gänd eigentli San galler überall ihre Senf dezue, usser uf de Bratwurscht?",0,False,0,0.2623646,0,0.10559461,0,0.08506485,0.15100802
+66956,die feigi sau hät mol ä penalti verdient,0,False,0,0.055101953,0,0.022906922,0,0.15151422,0.07650769833333333
+19055,Söttsch viellicht dr Assistänt wächsle - dr Herr P. Etrus wär wohl besser bezüglich Wätterfroge...,0,False,0,0.07135209,0,0.015546129,0,0.090755835,0.059218018000000004
+199326,wenn is internet gasch go luege denn isch es ca. 15000 s'zuebehör interessiert niemert....,0,False,0,0.06232394,0,0.04475428,0,0.08337289,0.06348370333333334
+1157,wennd bi Hotlines jeglicher Art aruefsh chash der Spotify spare und gratis musik losse,0,False,0,0.07388216,0,0.08709667,0,0.20579913,0.12225932
+84116,"Gringo, gang lieber uf Neuchatel, was wetsch etz ame Samschtig z Biel!?",0,False,0,0.18646127,0,0.02019904,0,0.072010495,0.09289026833333335
+17601,"Ich ka mir scho vorstelle, dass me für beidi yakins e plätzli gfunde hät in dr türkische nati.",0,False,0,0.3506688,1,0.64761275,1,0.8041795,0.60082035
+45028,Dr Fandel isch scho immer e schwuchtel gsi!!!,1,False,0,0.19295198,0,0.028154425,0,0.040525347,0.087210584
+101917,isles fans erträäged das alles nurno mit galgehumor.,0,False,0,0.1643001,0,0.33549502,0,0.22527058,0.2416885666666667
+205912,"patschifig, pachifik patchific, pachific I bring dr de Pazifik patschifig, patschifig patgific, patschific alles isch easy z'Fest isch vrbii, d'Party passé.",0,False,0,0.19136612,0,0.100192636,0,0.22131848,0.17095907866666668
+162722,Wäm ghört de di Schwarzi Celi ufem Foti?,0,False,0,0.040874474,0,0.015599529,0,0.019062832,0.025178944999999998
+40519,dr Ludo die Kampfsau und denn nämme mir aber au no dr Frederik Ch.,0,False,0,0.036017817,0,0.008945697,0,0.012803856,0.019255790000000002
+199732,"ja, ich weiss mushu, sehr gföhrlich, alles kriminelli...aber wie hät de gygax bim brack emal gseit?",0,False,0,0.07805956,0,0.052203044,0,0.15907083,0.096444478
+23212,"solang ihr ******* (dörf durs wort der Wahl ersetzt wärde) uf ehm bahndamm, gellert und im A euri stimme nit erhebed (wie das au nit alli machi in dr mk) wird dr fcb nit 100% möglich untersützt.",0,False,0,0.042691536,0,0.024867825,0,0.04771681,0.03842539033333333
+5506,"denn isch widr sone reform koh, umteilig, no simmr no 6 bitz älteri gse, underer e schaar unkritische manipulierbare hamburger, sisch zuegange wie in dr RS, niemer het rebeliert, für e dummi schnure het niemer dr muet gha vo dene.",0,False,0,0.25017396,0,0.2675447,0,0.47183278,0.32985048
+21895,Ihr hän doch eh die grossi Meerhait in däm Land...:,0,False,0,0.24236548,0,0.025534773,0,0.057206135,0.10836879599999999
+134000,i wird mit angels umefahre und gseh nid i wieso es DOT nid söti lange,0,False,0,0.32641107,1,0.9254537,1,0.88865215,0.71350564
+84088,"de besti söll gwünne, eifach nöd italie und dütschland *ggg* die chönd nie die beste sii!",0,False,0,0.09415263,0,0.30002704,0,0.36584923,0.25334296666666667
+60037,S Hotel Merkur (hüt irgend esone $aizzendrek-Gangsta-Lade in dr Stänzlergass) und die Alti Bayirischi Bierhalle (hüt Mr. Wong).,0,False,0,0.067552574,0,0.08732733,0,0.053424645,0.06943484966666667
+61317,Super Sach gsi...es danke a di giele u modis wo da so viu krampfet hei derfür.,0,False,0,0.01974344,0,0.009591647,0,0.01577469,0.015036592333333335
+64025,Wrum händ mir deppe überhaupt e neus baut?,0,False,0,0.047234625,0,0.008771536,0,0.013673018,0.023226392999999998
+33286,"- Schwoobeköpf selle doch in ihrer aigene Uni Gras frässe, vrdammi nomol",0,False,1,0.58716846,1,0.79612094,1,0.9278351,0.7703748333333333
+153348,Sogar bi de Stadtpolizei isch jetzt e Alaufstell für schwuli Polizischte igrichted worde.,0,False,0,0.010537933,0,0.035084646,0,0.029808432,0.02514367033333333
+115698,"Jä nu, die Schurnalischte us de ganze Schwiiz sind trotzdäm cho, GC hät sogar müesse in es grössers Zimmer zügle.",0,False,1,0.52585185,1,0.5800598,0,0.3638001,0.4899039166666666
+116426,tweety - üse camper (ford transit mit camperufbou) usem johr 1978 oder irgend so öppis!,0,False,0,0.10164192,0,0.03604184,0,0.09492915,0.07753763666666667
+78470,"ooo man voralem d dudaa mafi mach klar ich bring nja 200 albaner mit hahah xD Di 20.9.11, 22:",0,False,1,0.7158821,1,0.89261174,1,0.9433251,0.8506063133333334
+114869,"e-""sport"", so sinnvoll wie muul und chlaue süchi!",0,False,0,0.37087157,1,0.86662245,0,0.4647952,0.56742974
+62093,"Me muess nit über d uefa flueche, sondern über dä hirnamputierti trottel wo das ding gschosse het.",0,False,0,0.06742135,0,0.039419148,0,0.11382928,0.07355659266666667
+201913,Mir händ au im Summer für eu offe am Samstig.,0,False,0,0.006288597,0,0.0076982398,0,0.011909388,0.008632074933333332
+143390,de fcz hät alli täter innerhalb vo 3 täg gha dank dene internet phötelis!,0,False,0,0.044960238,0,0.016704898,0,0.1157789,0.059148012
+138115,"die dütsch nati zum chotze und fürchterlich arrogant, aber die englisch voll geil und kultig.",0,False,0,0.07142767,0,0.11876192,0,0.2085894,0.13292633
+116551,Mal luege was ich dänn mit däne mache,0,False,0,0.049897768,0,0.013239638,0,0.12068613,0.061274512
+52413,"Das wirdi nie vrgässe, sälte soviel schwarze gseh und das imene Clspil :)",0,False,1,0.9365501,1,0.96049434,1,0.9413144,0.9461196133333334
+1829,"Gseht us, als miesste mir uns in Zuekunft vor all däne ""glaine"" Toni Montanas, Nino Browns und em fuffzig Rappe-Pöbel in acht näh....Wette die 2 sind zwüsche 13 und 15 und könne drum nid wirklich bestroft wärde, empfindes wohrschinlich eher no als Bestätigung im Sinn vo ""keep it gangsta!""",0,False,0,0.04799456,0,0.056243967,0,0.049841445,0.05135999066666667
+50330,"geschdr widr mol dr reinschti chindergeburtsdaag gsi in däre mk, bsoffeni bekiffti kiddies...",0,False,1,0.8840047,1,0.6866066,1,0.5930304,0.7212139
+137488,"jo händ enand gwunke ja es gaht, dSchiebe sind tönt, frontlippe hani na dra...",0,False,0,0.08062053,0,0.018788697,0,0.09875567,0.06605496566666667
+9976,"Aber guet, solang nur d Strichers kei Alk überchöme isch mir das au recht:",0,False,0,0.09255551,0,0.014126459,0,0.17126533,0.09264909966666666
+179583,"mit some verluscht würsch übrigens in spanie oder italie als cherngsunde, mustergültige verein gelte...",0,False,0,0.09113817,0,0.042913035,0,0.2232503,0.11910050166666668
+74803,chash die ganz zit furze wills eh nach zigis shmöckt.,0,False,0,0.06494745,0,0.02820122,0,0.040562436,0.044570368666666665
+149513,zum tcs go prüefe und den ab zum spengler.. *freu*!!,0,False,0,0.03631897,0,0.033344932,0,0.08320498,0.05095629399999999
+37232,Frauefuessball dr stegger zieh wär mol abrocht.,1,False,0,0.28150308,0,0.26961997,0,0.22642624,0.25918309666666667
+105368,regt euch nicht auf oder noch besser *ignore* so behandlet me so flachwixer viel spass no P.S. geili fotos...,0,False,0,0.079950035,1,0.54103905,0,0.1281816,0.24972356166666665
+101219,"ihr 2 players händ monalisa unter 15 durezoge durch dick und dünn Sa 29.12.07, 17:",0,False,0,0.08784136,0,0.05576544,0,0.1851911,0.1095993
+24214,"Die Herrschafte wärde denn schnäll akroche ko, wenn die tusige Franke nüm eifach vo Basel ins Kässeli wandere...",0,False,0,0.2604109,0,0.098954394,1,0.5148121,0.29139246466666663
+205793,Ich wot kei tweets über k pop gse Gsend all fucking glich us und sind operierti musik sklave wo literally nume d ufgab hend geld zmache kpop isch scheisssssseee,0,False,0,0.05539535,0,0.23704128,0,0.19869167,0.16370943333333332
+65436,Das mr es Bürgerrächt 2. Klass ifiehre söll oder was...:,0,False,0,0.2324591,0,0.22979787,0,0.3074164,0.25655779
+195287,Haha d Fara hüratet morn und git da voll Reisetipps und luegt Föteli a und und und...,0,False,0,0.05901341,0,0.022770315,0,0.16307513,0.08161961833333334
+60956,"besser als amateurfuessballer vo de ff60er, congeli 8.liga und so seich... :",0,False,0,0.05738106,0,0.0620723,0,0.07160054,0.06368463333333334
+103736,lüüt sind luut am telefoniere und chinder sind ihres adhs am uslebe,0,False,0,0.1392269,0,0.43796745,0,0.48164088,0.35294507666666664
+42958,s goht nid um d sanktione vo dr fuessballmafia!,0,False,0,0.03298441,0,0.013449079,0,0.054458916,0.03363080166666666
+85258,"Jetzt nimmt's mich nur no Wunder, welle Usländer für de Klein chunnt und wohi es de Inti zieht.",0,False,0,0.42630225,0,0.022393987,0,0.27571538,0.241470539
+113931,Häsch Du eigentli än Clown gässe hüt morge oder was...,0,False,0,0.047217634,0,0.012268819,0,0.03859122,0.03269255766666667
+168872,Was söllmer mit somene Idiot astele??,0,False,0,0.038962606,0,0.029619414,0,0.043978706,0.037520242
+6373,Dr Hörnligödu u dr Pöögumaa söu nech hole!!,0,False,0,0.15351959,0,0.11676699,0,0.19024906,0.15351188000000002
+182077,"Guet, also wänn DE Abgang nöd chasch mit eme Spieler vo GCK ersetze dänn müemer ufhöre!",0,False,0,0.07216877,0,0.018673949,0,0.095636964,0.06215989433333333
+59432,me chönt genau so guet e bricht über e türkischi jugendbandi mache!,0,False,0,0.15885255,0,0.12008801,1,0.5389851,0.27264188666666667
+39662,alles dope von Serie A bis Dilettanti aber Juve immer e bitzeli meh... ;),0,False,0,0.059686642,0,0.036943804,0,0.06566862,0.054099688666666666
+37600,"MODS, findet ihr nid das ihr chli übertribet mit de zensur do im Forum, oder threads löscherei ohni begründig??",0,False,0,0.051117525,0,0.055760153,0,0.051231552,0.05270307666666666
+44550,"d1 isch mi heimat, bi in's d4 (stroof)versetzt worde.",0,False,0,0.10670114,0,0.2110604,0,0.19150352,0.16975502
+33365,wieder e dummi schnuure ha gege dr modärni fuessball..,0,False,0,0.04161135,0,0.022269212,0,0.07909101,0.04765719066666666
+145939,er chan vomirus di geschte richtig kammera mache.,0,False,0,0.04972905,0,0.014625357,0,0.021056594,0.028470333666666667
+63005,Dr Alkohol isch tschuld das es Pöpelei git....(chunt nit vo mir es wird nume oft so intepretiert!!!!!),0,False,0,0.119198345,0,0.062199574,0,0.1171767,0.099524873
+129975,"wenn england tschtuutet hät, scho am vormittag im nelson am suufe gsi...",0,False,0,0.077374116,0,0.025212934,0,0.2126029,0.10506331666666668
+179686,"ich find chlote scheisse und ich han ghofft, dass sie i dae 4. liga saused!",0,False,0,0.036979187,0,0.038932547,0,0.10346819,0.059793307999999996
+8147,gwunne hani 60.- uszahlt becho hani knapp 40.- MAFIA !!!,0,False,0,0.22217853,0,0.038459793,0,0.13147484,0.13070438766666667
+35080,"3. euri chicks sind fetti hässlichi chüe, mit schwabbelranze, h & m perlekettene, hend händ i dä säck, fahret uf hüenerbrüschtli-schwiezer-hopper mit markecaps und carhartt-regejacke ab...und kennet kein kamm oder strähl",1,False,0,0.08556686,0,0.33290735,0,0.36784294,0.26210571666666665
+99855,"Nei, aber chasch am cabanas viel glück wünsche...",0,False,0,0.09667366,0,0.02208215,0,0.14820966,0.08898848999999999
+38165,"Vilicht hets au e ander Grund geh, worum die Deppe dä Dom.",0,False,0,0.048438057,0,0.01554308,0,0.030038401,0.031339846
+12665,"De ganz Match dure hebt me e Pfiffkonzärt praktisch nie voll dure, aber au wenns nume am aafang isch dängg ich emol das es die ******** scho zerscht emol abem stieli keyt!!!!!",0,False,0,0.06352904,0,0.029749747,0,0.07669118,0.056656655666666667
+4266,und ned englische schiss möchtegern hiphop!!!,0,False,0,0.3765618,1,0.56859195,0,0.25745624,0.4008699966666667
+183690,Ich han ja nur scho öpis gägä äs gmeinsams Stadion und denn chunt e so en Gstörte und wot eus und s'Pack zämä tue.,0,False,0,0.2634049,0,0.014058134,0,0.13508628,0.137516438
+192462,fahre ne Black T23 S und ig muss säge SIE macht süchtig!,0,False,1,0.9071109,1,0.5251202,1,0.60535043,0.6791938433333334
+90007,"Mini verwante lüt am shame wo schönheitsops mached, min onkel s n-wort am droppe, mini cousins kanake am nachmache.",0,False,0,0.122397974,0,0.3348741,0,0.26894748,0.2420731846666667
+204878,Hehe Typisch Jugo Muss alles funkl und glitzere sust sinds ned glücklich hihi Gell bratte!,0,False,1,0.89217645,1,0.9053607,1,0.86001873,0.8858519600000001
+2372,"Neinei, lieber ins Stücki, dört hani wenigschtens mini Ruhe und muess mi nid mit Assis um Billigfleisch prügle.",0,False,0,0.06976689,0,0.025724389,0,0.050950963,0.04881408066666667
+32118,mit so Stuss wie em Baschi kame keini Witzli mache.,0,False,0,0.043176677,0,0.016285498,0,0.018379692,0.025947289
+19674,"Dr Bruni Mutz wird sicher nit gschlosse, für sone Ami Untermensche Scheiss...",0,False,0,0.07537051,0,0.062106982,0,0.07195902,0.06981217066666667
+15213,"Sorry Schnüüsi, aber d VBBS Gangbang-Truppe isch leider bis ändi 2007 räschtlos usbuecht!",0,False,0,0.071076944,0,0.013487164,0,0.038319953,0.040961353666666665
+60483,"muess sage, s isch wieder intressants zügs vo de american idiots überecho. :",0,False,0,0.16611245,1,0.6740012,0,0.30040836,0.38017400333333334
+119395,Kennt öper e gueti site zum schöni boobs zbstelle?,0,False,0,0.17521451,0,0.42821968,0,0.19085337,0.26476252
+22340,arztkoschte/psychiaterkoschte und dr militärersatz bis 30ig.,0,False,0,0.13713041,0,0.17067611,0,0.087738216,0.1318482453333333
+139479,"Dänn mit em Mob wieder zrugg uf Oerlike, Notbremse ja klar, Marsch zum Stadion mit Pyro Show, ine und Paaaaaarty!",0,False,0,0.043986835,0,0.022158548,0,0.05311467,0.039753351
+75591,Tische werde wiisi Tischtüecher ha ner silbrigi Platzsets und meh wüsse mer no nid ize mini Frag woni langsam nüme witer weiss...vor Location us chöntemer pro Tisch e grosse Kerzelüchter ha für id Mitti.,0,False,0,0.11279191,0,0.017155604,0,0.077366605,0.06910470633333334
+138339,"Mir spieled uf ei chiste, treffed die wie immer nöd und hine isch es halt eifach nach wie vor eifach wenig bis nüt, sehr passiv.",0,False,0,0.02938474,0,0.009111725,0,0.01860337,0.019033278333333334
+835,"Nochdem die einte echli meh oder halt weniger gschlofe hend, mir s'Zmorge gesse hend und d'Sache packt hend ish eusi Reis nach Rheinfelden witergange.",0,False,0,0.009999564,0,0.008619311,0,0.011779381,0.010132752
+195592,"Ja, üsi liebi zum fcz isch glaub au unzerstörbar, wieso süscht würded mer immer all spiel wieder in letzi od.",0,False,0,0.0680083,0,0.042293508,0,0.12810875,0.079470186
+179924,ja isch au schwer das meh schwiizer chömed wenn ide schwiiz fangs dhälfti albaner sind !,1,False,1,0.69355845,1,0.79298794,1,0.72503686,0.7371944166666666
+197517,also ich will damit nöd sägä die innere gruppierig sind nöd normal im gägäteil!,0,False,0,0.05280906,0,0.023260474,0,0.06822708,0.04809887133333333
+53876,ich mein blackburn isch gester in richwiiti gsi und die hänn in pole gwunnä!,0,False,0,0.046824556,0,0.07040338,0,0.12980922,0.08234571866666666
+166572,luegt mal dem sini biträg a woner bis jetzt gschribe het elende scheissfake!!!!!,0,False,0,0.03710971,0,0.023895606,0,0.09016687,0.05039072866666666
+17329,So vill wie die online isch chan die niemals Chind ha geschweige denn en Job,0,False,1,0.94076514,1,0.664678,1,0.7850636,0.7968355800000001
+122633,Ficket eu alli euchi meinig über mich interessiert mich en scheiss ich bin de fucking usländer wo sich probiert integriere aber ned akzeptiert wird vo dem rentnervolk und da isch mir au egal...,0,False,1,0.5079784,0,0.49057895,1,0.688457,0.5623381166666667
+186974,"Ha ez 2 mal innerhalb vo 1.5h am pannedienst derfe aalüte, ha doch nume uf murte welle go kürbis hole",0,False,0,0.057534974,0,0.09336286,0,0.11031632,0.08707138466666668
+110652,hans dänn miteme Föhn und Luftkompressor wider usebracht,0,False,0,0.028734587,0,0.009242034,0,0.019200636,0.019059085666666666
+740,"Kei wunder, dass e Hippeldi-Hopper wie Du kei Ahnig vo Kultur het...typisch East-Coast P.S seisch im Rakim e Gruess vo mir",0,False,0,0.25553268,0,0.2586397,0,0.2812224,0.2651315933333333
+83724,müestisch halt ab und zue luege wasi alles für schöni links dötä i trägä tue!,0,False,0,0.09420305,0,0.03109592,0,0.05669096,0.060663310000000005
+20377,Es isch eifach ne chlini (und doch grossi) Bitch das Mädel.,0,False,1,0.7083791,0,0.03838028,1,0.6324187,0.4597260266666667
+88072,"Sprich das teili isch somit legal, itragsfrei. - sgit länder wo nid drzueghöre (gnaub albanie isch nid drbi und sicher no paar anderi)",0,False,0,0.34770888,1,0.90711457,1,0.5747191,0.6098475166666667
+51680,Wäge däm sett er grad besser si oder was?,0,False,0,0.035854798,0,0.009065539,0,0.01435274,0.01975769233333333
+158575,De Gygax isch doch die grösst schwöster und en riese schluch...basta!,1,False,0,0.40678975,0,0.188764,0,0.14843793,0.24799722666666665
+135742,en MAB würd ich im PP a die blau tue und suscht under de wulldecki lah.,0,False,1,0.86717653,1,0.63499373,1,0.6839982,0.7287228200000001
+122659,Hättisch Luscht ar Zuekunft vo Huttu mitzwürke?,0,False,0,0.067783765,0,0.009222602,0,0.017399479,0.03146861533333333
+202014,"D Nasche seids richtig, jede Prüefer isch anders...",0,False,0,0.03193202,0,0.009239902,0,0.011939304,0.017703741999999998
+53166,"Du weisch doch, Zürcher sin alli mitenand verwandt, inzucht-dorf halt:",0,False,0,0.20841733,1,0.6088041,0,0.47481185,0.43067776
+76491,Für mich sind linggsextremi genau so gschisse.,0,False,1,0.91647846,1,0.9353134,1,0.93250644,0.9280994333333333
+4730,Hän die dört überhaupt meh als 1 Mannschaft?,0,False,0,0.038364876,0,0.00902256,0,0.017906465,0.02176463366666667
+64150,"eifach nur schwachsinn und kindergarte - und definitiv nivoo-loso, rotoloso !!!",0,False,0,0.26535654,0,0.18610713,0,0.21444708,0.22197025
+147360,Hesch dr Kopf wieder dusse us all de Ärsch vo de Zirücher?,0,False,0,0.09380022,0,0.035087775,0,0.09465457,0.07451418833333333
+67242,S'Blöde isch sie träffe mit däm eh nur die Ausländer wo Fasnacht mache/verstöhnd und nit irgendwelchi Lüt wo nit mol d'Sproch kenne oder was au immer.,0,False,0,0.33634222,0,0.20325495,0,0.22391056,0.25450257666666665
+90904,"und wännt dänn so vollspasste hinder dir häsch, wo sich ufreget und usrüefet, wil du stahsch, is...",0,False,0,0.059639476,0,0.012907071,0,0.04132381,0.037956785666666666
+175630,"ja i ha kes, aber git gnue mittu e pneu zflicke für dasme no chönt fahre.",0,False,0,0.06923208,0,0.03183157,0,0.08420998,0.061757876666666676
+34014,"Mit ere guete Mischig us Russkis, InglischMeeen und Toitschen kanni läbe, aber allzu viil vo ainere Sorte uff aim Huffe isch...",0,False,1,0.8119945,1,0.54433215,0,0.30550382,0.55394349
+61103,"Es sin no keini TV-Uebertragige bekannt, dahaer daenk ich do wird sich no einiges aendere...mir waerdes gseh!",0,False,0,0.10979084,0,0.020661946,0,0.06007624,0.06350967533333333
+31655,"Wie scho gsait, das nennt me Erfolgsverwöhnt Zmindescht wirds gege Sporting voll gsi, allerdings mit wohl ca. 10000 Purtu-Männer.",0,False,0,0.16659956,0,0.012329746,0,0.018762577,0.06589729433333334
+28379,Hüt zobe vomene Araber mit em Messer bedroht worde und somit s'IPhone und 100.- weg!,0,False,1,0.794829,1,0.7883162,1,0.6695944,0.7509132
+41369,"ich find sproblem ned, dass kanguruhs für das brucht werde (shed wirklich gnueg, zudem sind viel e suizidal veralagt und wend vor autos gumpe)",0,False,0,0.26590282,1,0.6559661,1,0.56165713,0.49450868333333337
+85352,im Thread esch nor gsi was si no för en wärt hätti..,0,False,0,0.05503479,0,0.016662851,0,0.0138480235,0.028515221500000004
+20443,"Gege die Düütsche het fascht jede Ösi überzeugt, well die so scheisse gspylt hän.",0,False,0,0.07485984,0,0.021234812,0,0.08840659,0.061500414
+10213,"Und für das het me 9 Kaschtewäge, 2 Jeep mit Gitter und diversi kleineri Fahrzüg vor em Joggeli Postiert...",0,False,0,0.02508273,0,0.008142296,0,0.012264355,0.015163127
+145394,Chinderfasnacht in Bäsibüre also d'Chind wäred im Hindergrund hüt Abig rocked mer denn na d'Altstadt vo Bremgarte,0,False,0,0.037758533,0,0.010972708,0,0.07458173,0.041104323666666664
+155879,"D ah nur no öppis, Sappeure sy riiise deppe!",0,False,0,0.06303091,0,0.1356412,0,0.21214972,0.13694061
+182036,Mached die scheiss blaser sooo deftig fertig wie no nie!!!!!!!!!!!,0,False,0,0.037946686,0,0.1040984,0,0.14441305,0.09548604533333332
+12864,"haha, dr psychobasler vo hintertuggige wo bim yt-Kommentar schribt:",0,False,0,0.05625084,0,0.12918092,0,0.09678332,0.09407169333333333
+55956,dr fc nationalrot mues jo ä rächti glunggivereinigung sy. :,0,False,0,0.031546414,0,0.0134048965,0,0.01417208,0.019707796833333333
+92633,ich würd dr glatt verbiete no anderi Chleider go aluege!,0,False,0,0.17423901,0,0.112629496,0,0.20885445,0.16524098533333334
+23192,Aber isch halt mega cool User dumm azfigge ;),0,False,0,0.05013292,0,0.05157477,0,0.06533766,0.055681783333333325
+22063,Gopfverdammi hört da endli mol mit dem langwilige nervige Radiotusseneschiessdräck!!!,0,False,0,0.071532734,0,0.022934055,0,0.054969978,0.049812255666666666
+148184,Go äuä - wenn überhoupt - nume no as 3. Japaner Träffe in Schwyz das Johr.,0,False,0,0.059954662,0,0.014562577,0,0.021815667,0.03211096866666666
+157236,aber es paar reaktione da im forum sind eifach meinige vo sitzplaetzler und milchtrinker!,0,False,0,0.03857636,0,0.051214185,0,0.06561478,0.051801774999999994
+6109,esch näbede stemm vode amy lee echt die bescht wos momentan im musikbiz geht ond om längene besser aus dönni stemmli wie die vode britney ond anderne tussis wos us sängerinne probiered..,0,False,0,0.1712432,0,0.4539776,0,0.20950691,0.27824257
+75003,"endlich fot die schöni TO zit wieder a, und filicht sogar e paar wo au mitspieläd fu eu *freu* :-D",0,False,0,0.03959838,0,0.023101337,0,0.08117644,0.047958719000000004
+151668,"die afrikanische nutte sind grad nebedra i de sunne, nöd im thaistübli, chasch aber vom thaistübli us direkt übere laufe, muesch nüme veruse!",1,False,1,0.91216165,1,0.9653836,1,0.9412337,0.9395929833333333
+182597,Bi dem isch sProblem daser bi UV-Iistrahlig spröd wird.,0,False,0,0.0237186,0,0.009906283,0,0.013968611,0.015864498
+167742,Ja das find ich au guet bi uns in de muttenzer kurve hets fast alles schwitzer das find ich scheisse will wen sich mehr ussländer würde für d fcb interesiere währe mr besser,0,False,0,0.34043717,1,0.8967722,1,0.88335,0.7068531233333334
+74267,wieso muess es immer eigebröttler geh...,0,False,0,0.12997252,0,0.03623729,0,0.118261926,0.09482391200000001
+14975,"Chöi di Ching meischtens es paar Wuche bruche, u de si si scho zu däm Auter us.",0,False,0,0.0839468,0,0.020089949,0,0.10373021,0.069255653
+202957,Sobald sie mich id nöchi laht gits puppy content!,0,False,0,0.089117095,0,0.021615263,0,0.031795233,0.047509196999999996
+28064,Bestoht e Gfahr für Umwält und Mönsche?,0,False,0,0.008211531,0,0.013944968,0,0.027865434,0.01667397766666667
+70286,"Vyyle dangg im Voruss, ich wird mi au erkenntlig zeige (Gäld, Bier, Nuttene...",0,False,0,0.092555255,0,0.028111536,0,0.1135613,0.07807603033333334
+3707,"so e Scheiss, die Schloofliedli wo sit längerem gsunge werde sind au ischlöfernd wenn alli mitsinge!!!",0,False,0,0.14230318,0,0.296234,0,0.116776794,0.18510465799999998
+171346,"""mir erfüllt zwar die nationale rechtliche Umweltrichtlinie aber mir lönd eus vo es paar Steibock-tschingge erpresse - stadion""",1,False,1,0.75353783,1,0.9335197,1,0.85806936,0.8483756299999999
+49956,solang är YB trainer isch interessierts mi eh nit ;),0,False,0,0.07242861,0,0.042360287,0,0.12357424,0.079454379
+25331,Chasch mer nöd mol mitem Lovebugs Forum helfe?,0,False,0,0.06768486,0,0.020194184,0,0.032509096,0.04012938
+164946,"früeh-englisch findi jetzt aber 100mal gschider, als de goofe scho vorem 1. schueltag es iphone oder ipad in arsch zschiebe.",0,False,0,0.2100488,0,0.12262666,0,0.16490467,0.16586004333333335
+83774,inklusivität in ehre aber chömmer ufhöre mensche mit schwere psychose in machtpositione z setze,0,False,0,0.076234736,0,0.1223757,0,0.12247151,0.10702731533333333
+98133,Jordan Guggenmusig ladet zom Sommernacht-Festival ;,0,False,0,0.021289436,0,0.010210013,0,0.011794143,0.014431197333333333
+67040,ebe klingt verlicht blöd aber denk das tessin bald no zu italie kört nei seich,0,False,0,0.1234253,0,0.3071059,0,0.4395434,0.29002486666666666
+9901,2-3 gegespieler heter immer um sich umme gha.,0,False,0,0.010960673,0,0.009831806,0,0.015201323,0.011997934000000002
+54511,"Ins Gulag bisch cho, wenn du di immene totalitäre Schtaat nit an d'Regle (wo uff jede Fall nit menschewürdig gsi sin, kai Froog) ghalte hesch, für Auschwitz het ä Chrüzli an dr falsche Schtell glängt.",0,False,0,0.2336818,0,0.36349136,0,0.19950138,0.26555818
+190351,"Meister worde isch, de dörfti glaubs au bitz arrogant sie?!?",0,False,0,0.034787282,0,0.029891402,0,0.033932496,0.03287039333333333
+152091,Blödi sieche wie du gsehns gern au no i 5jahre am TV!,0,False,0,0.097383045,0,0.04472502,0,0.08314706,0.07508504166666667
+148175,das isch ja schlimmer als jedi dütsch family wo jedes jahr nach mallorca gaht.,0,False,0,0.11097536,0,0.08897443,0,0.30514815,0.16836598
+106209,"Aber chan sehr entspannt luege, eigentlich egal wer, nur nöd PENS.",0,False,0,0.16348127,0,0.1813272,0,0.40036035,0.24838960666666665
+116302,das ihr fraue ilade....vo däm weissi nüt^^chchchh wird voll geil die scheisse!!!,0,False,0,0.15110159,0,0.3441967,0,0.4583784,0.31789223
+174783,"Und wied Katy, i freu mi abartig uf die kommende Träffe und verastalltige womr wärde ha zäme",0,False,0,0.058267083,0,0.014526485,0,0.06736307,0.04671887933333333
+73281,"Jänu, defür freu mi den au uf de Ehering!!!",0,False,0,0.12436327,0,0.016468806,0,0.018858735,0.05323027033333333
+30821,d fählerquote isch jedes mol immens gsi (han mol öppis vo 80% ghört),0,False,0,0.043974727,0,0.012357617,0,0.082983404,0.046438582666666665
+96451,i ha jo no e so en huffä dämlichi spili im ttt offä mit so inaktive members fum swizz clan.,0,False,0,0.09365696,0,0.026083026,0,0.16505124,0.09493040866666665
+129685,ier händ kei chance de fcz wird untergah gsend das i i euere kurve haha döt stönd nur 12 järigi scheiss SUEDGURKE FCY.,0,False,0,0.25537756,0,0.06394542,1,0.6226708,0.31399792666666665
+7999,"wer das was geschtr in und um bärn abgnage isch als tolli fanunterstützig aluegt het eifach e schade, das isch puri sälbstinszenierig und jede möcht zur schau stelle dass er no dr besseri und duureknallteri fan isch...",0,False,0,0.056052066,0,0.04196449,0,0.07744554,0.05848736533333334
+134915,De Blindi isch au ohni Verletzig en Totalusfall gsi!,0,False,1,0.8064127,1,0.518347,0,0.21860412,0.5144546066666666
+7243,die sin doch eh viel grösser aqls normali...,0,False,0,0.11315163,0,0.18881935,0,0.36583635,0.22260244333333334
+93852,"isch mal öppis anders siter scho 2 mitem pharao, 2-farbigi",0,False,1,0.7423214,1,0.8793425,1,0.9328511,0.8515050000000001
+66769,ämel kheins wo brennt.....die wo mit em auto gehnd:,0,False,1,0.8716864,1,0.9015314,1,0.78235877,0.8518588566666666
+6063,Es het immer wieder besser und schlächteri CH-Sachene wo usechömed!,0,False,0,0.044463478,0,0.01882604,0,0.03131045,0.03153332266666667
+189574,"Uf Meryn ga ich, aber nur um alli uszpfifie!",0,False,0,0.35846826,0,0.023782818,0,0.059790757,0.1473472783333333
+14696,"gopferdammi, wenn wänn die schisstype vo muri dä enschtscheid ändlig mitteile:",0,False,0,0.07058213,0,0.030142989,0,0.2022992,0.10100810633333335
+2023,"Bengale etc. isch jo kei Problem, aber Rauchtöpf?",0,False,1,0.72428286,1,0.92954034,1,0.68818843,0.7806705433333333
+207876,uffff ha grad depressed white alman girl billy eyelash fanclub underage e-girl twitter bubble entdeckt und es isch genau so schlimm wies töönt,0,False,0,0.08844519,0,0.29830694,0,0.378013,0.25492171
+100637,da ich zahlige mache is fürm ich eifacher so.,0,False,0,0.06443793,0,0.014685717,0,0.03893066,0.03935143566666666
+175277,"Fäugä chamä Ärsetze, aber Mönschäläbä nid!!",0,False,0,0.26783445,0,0.175449,0,0.1272059,0.19016311666666666
+207080,"Wenn me dänggt wie schnäll die Hüchler sin bim Pyrobuesse verteile, denn sötts kei Diskussion gä übere (logische) Usschluss vo däm Rassischte- und...",0,False,0,0.062119193,0,0.08228826,0,0.082356304,0.075587919
+196596,oder halt einfach subiektiv bezli ahfegge weil er dir nicht sympathisch ist?,0,False,0,0.051786426,0,0.046841834,0,0.045205094,0.04794445133333333
+53454,"wärsch sicher so dr Harddi Gangsta uf em Schuelhof, wo Ziggis raucht, guet isch in dr Schuel und zobe no usegoht... :",0,False,0,0.066896565,0,0.16242112,0,0.09670611,0.10867459833333333
+65183,wieso isch es läbe vumene italiänische Polizischt mehr wärt als s Läbe vu tusige vu Lüt wo an Hunger stärbe in Afrika???,0,False,0,0.30739304,0,0.22021976,0,0.24564564,0.25775281333333333
+153386,"Die scheiss hoppers händ immer so viel glück, aber glück allei isches dasmal nöt gsi, de scheiss schiri hat wieder e mal voll gege de fcz pfiffe wie üblich odder..",0,False,0,0.055064898,0,0.049985394,0,0.24533357,0.11679462066666667
+75475,D Masnahmä wie gege Fans vorgangä wird würdi sicher no gsteigeret werde.,0,False,0,0.021237915,0,0.008878691,0,0.0149391685,0.0150185915
+177154,das mit dire Schwigermuetter wär jo nid nötig gsi..ungloublech!,0,False,1,0.946338,1,0.8950855,1,0.7508378,0.8640870999999999
+15853,tschöss...sogar bubis in dr kindergarten chönne besser hochduetsch rede als dr hakan.,0,False,1,0.5568285,0,0.3820815,1,0.76771677,0.56887559
+50036,"alli ehemalige, jetzige und zuekünftige tschingge-, portugiese- und türke-natispieler",1,False,0,0.02710376,0,0.015808076,0,0.08862792,0.043846585333333334
+81763,sinder sicher dass das de mazzarelli isch?,0,False,0,0.07493683,0,0.037719984,0,0.029084954,0.047247255999999994
+123679,"Eifach nöd uf tutti oder gratisinserate verchaufe, die lüt sind mindestens genauso schlimm.",0,False,0,0.08931327,0,0.11579394,0,0.13558732,0.11356484333333333
+133592,"Da ich vor eme monet operiert worde bin ade lunge, und s mir verdammt verschisse gaht irgendwie nach dere op, und ich s gfühl han es isch maybee anything schief gloffe, bini i letschte ziet nid dezue cho ad mätch z gah, also sprich ken einzige uefa cup match sogar, wemmer nid seit gsundheit gaht vor, verständlich, sogar für dich nöd?",0,False,0,0.18829839,0,0.20865327,0,0.23985301,0.21226822333333337
+28636,"Also wenn du seisch, mir sige mol so gross gsi wie Ajax denn isch das biz hochgriffe.",0,False,0,0.044906273,0,0.017158588,0,0.053849947,0.038638269333333336
+183295,abr bekanntlich schaffe jo au metzger im mediamark als beroter,0,False,0,0.2071045,0,0.36885965,0,0.4933089,0.35642435
+68823,"wieviil lütt saage, sie sind nitt schauluschdig und so züggs wänn sie...",0,False,0,0.13480155,0,0.20167565,0,0.30435646,0.21361122
+167238,"isch vrdammi stabil, also i cha da locker ziemli schwärs in kofferruhm due, die einzig ibuesse woni han was subwoofer ageit isch haut, das wenn öbis drübr ligt ganz logischerwies dr sound weniger guet dürechunt...",0,False,0,0.07565569,0,0.04569821,0,0.07768524,0.06634638
+62715,"Scho aber i muessmr hütt no in Spanie und in Italie verarschige aahöre wäge dene 2 Spiel und dört hämmer e einiges stärkeri Mannschaft ka als die wo gege Donetsk ""gspielt"" ( ) het...",0,False,0,0.08669406,0,0.07740832,0,0.08983623,0.08464620333333334
+136323,"man lese im swissmom.ch s ged leider SEHR vell fraue, wos ebe so esch.",0,False,1,0.54317003,0,0.19296166,1,0.5362088,0.42411349666666665
+197593,"ich hoff für all wo det dä charä usenand gnah händ, das die mal richtig vo äs paar härte hools überfahre werdäd doch wer weiss wänn dänn plötzlich 200 balkanesis vor de kurve wartet finds dänn glaub niemer me lustig, will mer weiss ja wie die mit Gelfrisure uf ihri autos ufpässled und so!!",1,False,0,0.47417644,1,0.84801185,1,0.7073605,0.6765162633333333
+10127,"aber es git paar usnahme wie stress, nega, s'alte züüg vom bligg, gleis zwei, liricas analas und griot (findet zwor vill lüüt scheisse, aber de macht endli mol öppis anders als all die andere langwilige schwizer rapper!!!)",0,False,0,0.083344005,0,0.26325825,0,0.1620458,0.16954935166666665
+128216,"Mis Herz schlaht z.B. sit Chindheit unregelmässig und es macht überhaupt nüt, bzw. isch alles guet.",0,False,0,0.086247794,0,0.027936285,0,0.04775572,0.053979933
+4655,ussert d engländerinne die sind den geil,0,False,1,0.54289,1,0.79145026,1,0.7632392,0.6991931533333333
+49736,"S ""Kürbis"" hesch au fascht nit drus gschmeggt...",0,False,0,0.07433848,0,0.020886712,0,0.037697118,0.044307436666666665
+59599,Ha scho dr erschti transfär miese tätige Opango isch grad wäg vom fänster ha mr mitm gwinn e Sion spieler zoge.,0,False,0,0.3453154,0,0.22681832,1,0.53851384,0.3702158533333333
+32569,die lueget no meh uffs üssere als männer.,0,False,0,0.1082938,0,0.044653583,0,0.38182667,0.17825801766666668
+185576,dänke dr outi wird üs de morn ufkläre,0,False,0,0.052332833,0,0.034754902,0,0.18093218,0.08933997166666667
+49007,Villicht sött d'Mitarbeiterin vo de Schwöschter vo dinere Kollegin mal öper träffe.,0,False,0,0.05598376,0,0.008620935,0,0.015354862,0.026653185666666666
+53065,"jo und userdem het de christian de wilbert (oder wie au immer me das schribt, wer zum geier nennt si chind au so) verlore an de erzüger, und alles nur wäge dere psycho tussi und sexgeili nümfomanin :(.",1,False,0,0.061783463,0,0.042931575,0,0.1411589,0.08195797933333333
+18925,"Sobald die uf Italie träffe händ sie dr gagg in de Hose und werde, wie sit eh und jeh, eliminiert.",0,False,0,0.037542246,0,0.023235368,0,0.02316763,0.027981748
+33322,Trotzdäm sin mer mit em 3. Platz nach vier Spiel absolut zfriede jetzt gohts zerst am Donnstig gege Muttenz im Cup witer und denn am Sunntig gege Rhyfälde,0,False,0,0.027650794,0,0.009484047,0,0.02908319,0.022072677
+119013,"wänn bim schpeerwerfe d'fraue weniger wiit werfed als d'manne oder sie bim wiitschprung weniger wiit gumped seit au niemer, mer selli das abschaffe oder es seg behindert.",0,False,0,0.06345922,0,0.046180747,0,0.15723608,0.08895868233333333
+159409,"Mer muen nur chli läse den seit das scho alles, alles so halbverwirti wo unzfriede sind das ihre arsch vom MO bis am FR im büro muend plaziere",0,False,0,0.29801765,1,0.54191047,0,0.19293176,0.3442866266666667
+96486,"Sickeret ou scho düre, mit de Rücklüchte.....",0,False,0,0.22212398,0,0.056500074,0,0.054633323,0.11108579233333334
+126366,tue luege das eifach zgüetachte vam material sälbst hesch zbsp gfk(wenn das nid hesch schrieb mer ich schicku ders),0,False,0,0.18938589,0,0.21449262,0,0.37727177,0.26038342666666664
+86083,"Sorry ig weiss zwar kei Shop wo diä abietet, aber wenn öpper öppis weiss wäri ou drbi amä Set!",0,False,0,0.05180929,0,0.018136062,0,0.05322495,0.041056767333333334
+76575,Söll ich wäge Schwiiz - Kanada mir d'Nacht um d'Ohre schlah?,0,False,0,0.06684694,0,0.024766624,0,0.06511012,0.052241227999999994
+25369,"90% ufs fäld gsegglet zem fiire, 10% vermummt diräggt zu de Aarauer ibere und denn selle dAarauer schuld si!???",0,False,0,0.055851273,0,0.060813233,0,0.090928346,0.06919761733333334
+26079,Hoff mir kriege das Spiel no uf e Sieg.,0,False,0,0.038318828,0,0.008904376,0,0.012650345,0.019957849666666666
+126968,die Sieche händ doch no angscht um d Meischterschaft und jetzt chömeds go spiler mugge...,0,False,0,0.04533576,0,0.021056388,0,0.05889766,0.04176326933333333
+19697,oder irgend so öbbis das dlüd wieder richtig mit mache wie an däne grosse champions league öbe.:,0,False,0,0.051571853,0,0.011752384,0,0.040215444,0.034513227
+9915,"ach fraue halt, wird me wohl nie verstoh:",0,False,0,0.16978721,0,0.35426682,0,0.43371445,0.31925615999999996
+128657,"Oh herrje, du willst, dass ich den Ch(r)ie(r)i-Chrieg entscheide?",0,False,1,0.76881456,0,0.2566307,0,0.49703076,0.5074920066666667
+96543,als hetti öpper uf d'fuessballsektion vo de insekte gwartet!,0,False,0,0.061547946,0,0.041393533,0,0.077106245,0.06001590800000001
+207107,"de Animus isch vo Fler-, Manuellsen- und Azad sim Label weg...",0,False,0,0.073962905,0,0.02103559,0,0.048351076,0.04778319033333333
+132434,Ich dänke jede mit es bitzli (Fuessball)Verstand wos schafft die RotWiis-Brülle abzzieh hät das so gseh wills eifach so gsii isch !,0,False,0,0.15720192,0,0.084569044,0,0.2276034,0.15645812133333334
+67382,"I wett fasch phoupte, ds Jame het generell nid so viu Platz in üsere Kultur.",0,False,0,0.42090544,0,0.33167413,0,0.46283376,0.40513777666666667
+96244,ha gad glese lüt wo migräne hend hend es hirn wo viel schneller und komplexer denkt als anderi bitch i bi +~~intelektuell~~+,0,False,1,0.91929096,1,0.85094196,1,0.87453645,0.88158979
+70532,"Und jo, ich möcht die Schloofkappe e chli beschäftige bi dr Polizei :-)",0,False,0,0.30958423,0,0.056820244,0,0.24706297,0.20448914800000004
+64244,"So lüt wie du mache au wettrenne gege querschnit glähmti und Wettschiesse gege Blindi, und sind den no stolz wen si günne.",0,False,1,0.7933593,1,0.69463766,1,0.74232006,0.7434390066666667
+14630,"Dütsche nid, wiil ich kei hochdütsch verstand.",0,False,0,0.09791515,0,0.03753784,0,0.059083305,0.06484543166666666
+196426,uu das isch viel...sind denn die hussene etz unbügled ?,0,False,0,0.33873466,0,0.20688076,0,0.2527484,0.26612127333333335
+153423,Mag so zügs voll nid gseh wenns öperem so mies goht..,0,False,0,0.08424804,0,0.059429217,0,0.30656636,0.15008120566666666
+185848,und mir lerned so blöödi roböterli programmiere i de informatik...,0,False,0,0.048491534,0,0.017478233,0,0.10143548,0.05580174899999999
+168241,aber uf dere gschäftsstell hänged überall so beschissni pack-wimpel und chläber ume...,0,False,0,0.025074178,0,0.023304174,0,0.071289875,0.039889409
+136580,mit dem trade gseht mer wiedermal was d'isles für e lächerlichi organisation sind.,0,False,0,0.035010047,0,0.024892548,0,0.030516498,0.03013969766666667
+138452,"und denn stoht no sone typ vornedra und i ha nit voll könne ischlo, ha meh uf de TYP gluegt als uf öpis anders und die dönt schiebe hinte het aunit grad ghulfe und de ischs no dunkel gsi und überhaupt scheisse gopf mischt dräck schwein sau chue elefant kamel affekacke fuck am arsch fuck am arm fuck überall!!",0,False,0,0.043980245,0,0.09197602,0,0.10199416,0.07931680833333334
+169853,bi dem Gägner würs für mich nur eis geh:,0,False,0,0.08451142,0,0.02700553,0,0.06864844,0.060055130000000005
+54025,"aber s'baby wo dr dharma-chines grosszüchtet isch en, glaub mrs...",0,False,1,0.6395277,1,0.5588712,1,0.7562206,0.6515398333333333
+66667,"(ok, als gröhlendi, vollbsoffeni kutte wirds vilicht schwirig)",0,False,0,0.106122784,0,0.09952084,0,0.20578212,0.13714191466666667
+12770,Jede hinterfrogts kritisch und zum Glück gits Lüt wo e Horizont witer als die Langi Erle hän,0,False,0,0.11806263,0,0.014698916,0,0.096408874,0.07639014000000001
+74750,(stichwort merkel) 6. lueg mal was die letsch...,0,False,0,0.041653622,0,0.01706028,0,0.05861332,0.039109074
+10917,"15 - Security duet blöd, nur wil ich mi chli bim nachbertisch bedient ha...Die verwütschet mi nie!!",0,False,1,0.67442757,0,0.42123386,0,0.4613836,0.51901501
+34717,ihr zürcher wärded immer luschtiger...,0,False,0,0.10299394,0,0.05131784,0,0.14119264,0.09850147333333333
+14196,Liebe Svenson (und alli anderi wo sich über Fraue in dr Kurve uffrege),0,False,0,0.33289772,0,0.094411224,0,0.41530192,0.280870288
+79489,en ipod neu z deseinä isch au eifacher wie en imac oder es powerbook neu z mache denki mol...,0,False,0,0.10351835,0,0.04560487,0,0.10085388,0.0833257
+177359,"susch chasch grad dieheibliibe und synchronschwuemme luege, weisch.",0,False,0,0.3778057,0,0.024937885,0,0.18918948,0.19731102166666667
+209338,"na ja wie gseit, d'canadier liebe skaladdin musig oemu die woni troffe ha.",0,False,0,0.11084595,0,0.046449102,0,0.37118658,0.176160544
+152233,ich ha so langsam zGfihl diä Parteysoldate fahrid ihri Partey sälber a dWand # Chindergarte,0,False,0,0.42200193,1,0.8501184,0,0.47091272,0.5810110166666668
+117426,s'git momentan eifach wider zvill halbschlaui wo s'gfühl hend sie hend mit de dümmste ussage recht und das sich ja eh gnueg lüt um irgendöbbis kümmered dases ja no meh gar nöd brucht,0,False,0,0.08900184,0,0.050609495,0,0.19530906,0.11164013166666668
+105513,"Na-JA es herscht Kindergartenstimmung, gönd doch in Sändelikaste go Dreck wörfe!",0,False,0,0.31205976,1,0.7180194,0,0.22362892,0.41790269333333335
+110973,Hehe hend det grad eim ghulfe Zäh ufläse pögg id frässi,0,False,0,0.08001302,0,0.2510126,0,0.2439893,0.19167164
+27151,"z schwellheim bi dr tramhaltstell kirche teschte e paar ""japaner ihre blitzliechter""... :",0,False,0,0.08650202,0,0.24671514,0,0.42489493,0.25270403
+28141,die rothoorigie schnägge vom FBI isch geil....,0,False,0,0.07653147,0,0.039384697,0,0.054820854,0.05691234033333334
+173715,Auso üebe mer nume wes si Rügge zuelat,0,False,0,0.1425689,0,0.14357023,0,0.28732687,0.19115533333333334
+80114,und fläsche vo bahnhof uusgang richtig coop uf autos (ziellos)schüssä das lauft doch nöd (ich würd gern jungs schribe)ihr verdammte WIXER händs aber glaub nöd verdient;,0,False,0,0.47204095,1,0.51234114,1,0.5267106,0.5036975633333333
+170399,"Bodykit, jetzt no d Angel Eyes, aus nächschts chöme d Rücklüchte, wo si nümme a näh usw.",0,False,0,0.17162228,0,0.38222316,0,0.18547852,0.24644132
+176781,oder gits veilside brämschlötz oder motorrumabdeckige?,0,False,0,0.0637496,0,0.032555413,0,0.054064695,0.050123235999999995
+135919,"Isch puri Sympathie, wie all die Ottawa Affe, wo ihri Spieler voted nur will das Spiel dört isch.....ich hoffe das chehrt no!!!",0,False,0,0.21734601,0,0.39052132,0,0.311889,0.3065854433333333
+39819,"Unser Forum isch am diskutiere wiemer em Landolt wänn imponiere mit unsre pyroschmuggel idee-e eb vogel, muulwurf oder fee-e nur dr suffbrueder will persee em lotti si vagina gsee.",0,False,1,0.6066708,1,0.64801186,1,0.6568481,0.6371769199999999
+81970,"Ds trottifahre isch e usflug wärt, häbet eifach sorg we di grüen iglöste Jeepli unger ufe chöme",0,False,1,0.52858776,1,0.61703545,1,0.50400895,0.5498773866666667
+21083,"ich hoff jetzt dass es die partei verrist, d'ziircher provoziere dass jo mit aller kraft, ARSCHLÖCHER",0,False,0,0.06690841,0,0.43920165,0,0.17306075,0.22639027
+58418,"ah nei shit sorry rechts"" Biifahrer sii chan eifach würkli ned jede # schwiizchiste Mehr anzeigen",0,False,0,0.1046096,1,0.5129799,0,0.41037294,0.34265414666666666
+80484,isch wirkli e chli e komischi sach mit dr band i hät das gläb au nid eifach so übrwiise ehrliggseit.,0,False,0,0.10644031,0,0.03236318,0,0.122217275,0.08700692166666667
+55238,mir wärde die beschte fir Münche schohne und die scheiss GC-Sieche wärde wie immer gege uns dr beschti Daag vo dr Saison izieh...,0,False,0,0.04119975,0,0.04057705,0,0.11147781,0.06441820333333333
+35216,Redet nid über Hip Hop wenners gar nid kennet.,0,False,0,0.050764937,0,0.018136187,0,0.026949715,0.03195027966666667
+22764,es trample in de nägschte dääg schliesslig gnueg iigebooreni schwizer mit flaade an de wanderschueh und kuehglogge ume hals durch basel,0,False,0,0.056190353,0,0.10404196,0,0.20676245,0.12233158766666667
+168418,Im Düütsche wärded die 300 EUR ghandlet,0,False,0,0.025400978,0,0.009816332,0,0.014789652,0.016668987333333333
+6522,lömmer d' chinatowns und griller mol uss em schpiil:,0,False,0,0.0831852,0,0.39016712,0,0.3715172,0.28162317333333337
+35438,"da sind d ""Schwiizerrapper"" würkli na di schloischtä....",0,False,0,0.48731735,0,0.04133522,0,0.04816846,0.19227367666666664
+51437,"au wener verletzigsaafällig isch, mängisch e storch und denn halt trotzdäm tolli töpf macht - go for...",0,False,0,0.038654394,0,0.015812075,0,0.0502493,0.034905256333333336
+98701,Das rüefet es paar bi farbige Spieler und Italiener sind nöd farbig!,0,False,0,0.31144518,0,0.2593978,0,0.36634853,0.31239717
+42598,"di Alte stöhn scho zu 20igscht vordraa und könnes kuum erwarte, di verrumpflete...",0,False,0,0.43790525,0,0.22426032,0,0.33269435,0.3316199733333333
+50718,die saison dörfe mir überhaupt nid wäge schiri-benochteiligunge reede...,0,False,0,0.24179316,0,0.017903715,0,0.1308375,0.130178125
+16599,"isch zwar glich mega schön, aber i würd nume no eine selber mache wo sicher o guet usechunnt!",0,False,0,0.06063842,0,0.010221811,0,0.046055496,0.038971909
+17078,Dasch e guete campesino und isch demietig!,0,False,0,0.061339978,0,0.030678071,0,0.02307856,0.03836553633333333
+189013,"Sicher guet, aber isch scho mies für Wil.aber so isch das gschäft.oppis für totegreber und nekrofili(ha, ha)aber öppis anders:",0,False,1,0.8122249,1,0.79214185,1,0.7754187,0.7932618166666666
+39732,"ebe schiens gohts ""euch"" nur ums Gäld und ume Erfolg und das find i schad drum stirbt dr Schwizer Fuessball ""langsam"" (Wer Ghetto Ausdrücke findet kann sie behalten) ;) :",0,False,0,0.29278204,1,0.6991275,0,0.11422225,0.36871059666666667
+19258,langwielig und verchlämmt sie hämmer eifach im bluet!!,0,False,0,0.0389845,0,0.027929686,0,0.058769662,0.041894615999999996
+165152,Ja guet aber am schluss chunt eh alles us Taiwan oder china Mer zahlt ja nur fürd marke es vermöööge,0,False,0,0.23616695,1,0.7356326,1,0.71730477,0.5630347733333333
+5772,Widr vilech gseh heit heimer im letschte Monet diversi Problem gha mit dr Technik im Stream.,0,False,0,0.018678406,0,0.007976048,0,0.011719998,0.012791484
+22817,"Ich hamer eigentlig vorgno nie über Spieler z schribe bevor i se nid gseh ha spiele oder scho kenn, aber heitere Fahne was wemer miteme Koreaner, het eine nid glänggt.",1,False,0,0.49479032,0,0.3093584,1,0.80718863,0.53711245
+194152,hend ier so vill problem mit euchne lüüt?,0,False,0,0.04702219,0,0.014366251,0,0.06906653,0.043484990333333334
+21019,das sind doch alles verröter und sölle stärbe...,0,False,0,0.034809534,0,0.074089,0,0.045013413,0.05130398233333333
+78167,hät pickel im g'sicht und isch dumm wie äs stuck brot...,0,False,0,0.0457363,0,0.03825864,0,0.052481536,0.045492158666666664
+68678,NEI es isch grad es ganzes Packet vo Iischränkige für die Ussländischi Bevölkerig.,0,False,0,0.17310199,0,0.050545406,0,0.14522746,0.12295828533333335
+11360,nur will dr baschi bi musicstar mit gmacht het isch er e flop het oepper vo euch ihn scho mol live gseh bevor dir oeppert duen kritisiere losed zersch mol sini musik oder geut anes konzert will es toent nid andersch als zueri-west oder patent ochsner,0,False,1,0.60509026,1,0.9217183,1,0.84944284,0.7920838
+65254,Jäjo aber schliesslich söll me jo au nid immer uff Behinderti losgoh oder ?,0,False,0,0.10391212,0,0.06380323,0,0.321042,0.16291911666666667
+156475,Das wäri denn überwiegend Blackmusic (im Auto) Für e Amp meh als 250.- usgeh möchti eigentlich nid.,0,False,1,0.62792635,0,0.37357378,0,0.106426835,0.3693089883333333
+67106,"är meint au nid euch, sondern s zyschtigszügli.",0,False,0,0.031963143,0,0.009990478,0,0.012712075,0.018221898666666667
+93484,:) hey cool merci für de tipp mit dere homepage für stuehlhusse etc. han grad öbis entdeckt wo passe chönt allefalls:,0,False,0,0.14006,0,0.097492225,0,0.29788843,0.1784802183333333
+27938,Wer will scho wie ne 60jährige dütsche mallorca-urlauber ummelaufe?!?,0,False,0,0.3645939,0,0.108673714,0,0.3333289,0.26886550466666664
+181005,hör uf hör uf biiiitte has gester wieder gseh wies eigentlich gah würd.,0,False,0,0.16149376,0,0.017371448,0,0.07139855,0.08342125266666667
+15083,Aber - wo zem Guggugg sin die Täggscht?,0,False,0,0.15859106,0,0.08382954,0,0.097951934,0.11345751133333333
+55313,Hassu Zürich Hassu alli wa eppis aners meh hassunt wa Zürich und dräcks Zürcher,0,False,0,0.11093104,0,0.08051149,0,0.2250642,0.13883557666666665
+8150,die pissers hätte hald nit sötte in nöchi vo unserem geliebte fcb cho...,0,False,0,0.062401056,0,0.02702929,0,0.14924827,0.07955953866666667

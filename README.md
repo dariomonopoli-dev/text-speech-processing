@@ -76,7 +76,16 @@ done
 
 ### Approach 3: SwissBERT on raw Swiss German
 
-`notebooks/train_approach3.ipynb` fine-tunes SwissBERT on GAHD (`de_CH` adapter for training, `gsw` for the dialect, five epochs, learning rate `2e-5`, seeds 42, 43, 44). Its Swiss German predictions have to be exported as a CSV with the columns `sentence_id` and `prob_hate` to be scored with the commands below.
+`notebooks/train_approach3.ipynb` fine-tunes SwissBERT on GAHD (`de_CH` adapter for training, `gsw` for the dialect, five epochs, learning rate `2e-5`, seeds 42, 43, 44). Apply each saved best model to the combined annotation sentences without retraining:
+
+```bash
+python src/build_eval_sentences.py
+for seed in 42 43 44; do
+  python src/predict_swissbert.py --path_checkpoint runs/swissbert_seed${seed}_epochs5_lr2e-5/best_model --path_output runs/gahd_swissbert_raw/run${seed}/predictions_swiss_german_text.csv
+done
+```
+
+The prediction step loads local files only, activates `gsw`, uses FP32 and the training truncation length of 128 tokens, and refuses to overwrite outputs. Each CSV contains `sentence_id`, `prediction` and `prob_hate`; its metadata JSON records the checkpoint, input hash, adapter, device and package versions. Score these files with the evaluation commands below.
 
 ### Baseline: TF-IDF logistic regression
 
