@@ -1,0 +1,38 @@
+{
+    "models": [
+        {
+            "seed": 42,
+            "training_batch": 32,
+            "accumulation_steps": 1,
+            "frozen_tensors_verified": 245,
+            "other_reference_settings_match": true,
+            "development_checkpoint_selection_verified": true,
+            "inference_batch": 8
+        },
+        {
+            "seed": 43,
+            "training_batch": 32,
+            "accumulation_steps": 1,
+            "frozen_tensors_verified": 245,
+            "other_reference_settings_match": true,
+            "development_checkpoint_selection_verified": true,
+            "inference_batch": 8
+        },
+        {
+            "seed": 44,
+            "training_batch": 32,
+            "accumulation_steps": 1,
+            "frozen_tensors_verified": 245,
+            "other_reference_settings_match": true,
+            "development_checkpoint_selection_verified": true,
+            "inference_batch": 8
+        }
+    ],
+    "export": {
+        "gold_sentences": 700,
+        "per_seed_rows": 24,
+        "summary_rows": 64,
+        "trained_models": 6,
+        "all_models_training_batch_32_accumulation_1": true
+    }
+}

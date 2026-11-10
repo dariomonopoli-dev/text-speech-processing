@@ -1,0 +1,442 @@
+{
+    "date": "2026-11-10",
+    "provided_report": {
+        "source_sha256": "269ee67492b8e9a45bb4e9cb4aaa4c8ee505f4ecf56f9d7d0943b09b244d39a7",
+        "reported_metrics": {
+            "raw": {
+                "f1-macro": {
+                    "mean": 0.395,
+                    "stddev": 0.011
+                },
+                "f1-pos": {
+                    "mean": 0.087,
+                    "stddev": 0.009
+                },
+                "precision": {
+                    "mean": 0.047,
+                    "stddev": 0.005
+                },
+                "recall": {
+                    "mean": 0.577,
+                    "stddev": 0.077
+                },
+                "pr-auc": {
+                    "mean": 0.057,
+                    "stddev": 0.009
+                }
+            },
+            "Apertus-8B": {
+                "f1-macro": {
+                    "mean": 0.464,
+                    "stddev": 0.022
+                },
+                "f1-pos": {
+                    "mean": 0.115,
+                    "stddev": 0.014
+                },
+                "precision": {
+                    "mean": 0.065,
+                    "stddev": 0.009
+                },
+                "recall": {
+                    "mean": 0.538,
+                    "stddev": 0.0
+                },
+                "pr-auc": {
+                    "mean": 0.118,
+                    "stddev": 0.021
+                }
+            },
+            "Haiku": {
+                "f1-macro": {
+                    "mean": 0.536,
+                    "stddev": 0.007
+                },
+                "f1-pos": {
+                    "mean": 0.166,
+                    "stddev": 0.019
+                },
+                "precision": {
+                    "mean": 0.102,
+                    "stddev": 0.01
+                },
+                "recall": {
+                    "mean": 0.462,
+                    "stddev": 0.102
+                },
+                "pr-auc": {
+                    "mean": 0.158,
+                    "stddev": 0.027
+                }
+            }
+        },
+        "hardware_sensitivity_statement": "Our uncertainty estimates also understate the variance from training. The bootstrap resamples only the test sentences, and we train three seeds per approach. Retraining Approach~1 with the same seed and hyperparameters on different hardware changes its recall on Swiss German from 0.81 to 0.69, while its GAHD macro F1 stays within 0.01. Scores on the target dialect therefore depend on the individual training run far more than in-domain scores suggest, and future work should train more seeds and report their spread alongside the bootstrap intervals.",
+        "gbert_hyperparameters": {
+            "epochs": 3,
+            "batch_size": 32,
+            "learning_rate": 2e-05,
+            "seeds": [
+                42,
+                43,
+                44
+            ],
+            "train": 7701,
+            "dev": 1649,
+            "test": 1646
+        },
+        "device_and_package_versions": "not specified in report"
+    },
+    "alignment": {
+        "num_sentences": 700,
+        "id_sets_match": true,
+        "text_differences": 0,
+        "gold_label_differences": 0,
+        "translation_haiku_differences": 0,
+        "translation_apertus8b_differences": 0
+    },
+    "gahd": {
+        "remote_revision": "5d9a908a8aadb911d0dd441164976ef8cf13214e",
+        "local_sha256": "a1ba022786b198f0d2145c0ee8cbe4d65a1d3aadb81105ac55684b79d3ed650b",
+        "remote_sha256": "a1ba022786b198f0d2145c0ee8cbe4d65a1d3aadb81105ac55684b79d3ed650b",
+        "local_rows": 10996,
+        "remote_rows": 10996,
+        "same_ids": true,
+        "same_relevant_data": true,
+        "differences": {
+            "gahd_id": 0,
+            "text": 0,
+            "label": 0,
+            "split": 0
+        }
+    },
+    "inference_batches": {
+        "42/text": {
+            "max_probability_difference": 1.8172575378394562e-06,
+            "classification_changes": 0
+        },
+        "42/translation_haiku": {
+            "max_probability_difference": 2.1635658263852164e-06,
+            "classification_changes": 0
+        },
+        "42/translation_apertus8b": {
+            "max_probability_difference": 1.2036643981527817e-06,
+            "classification_changes": 0
+        },
+        "43/text": {
+            "max_probability_difference": 1.3449080658034518e-06,
+            "classification_changes": 0
+        },
+        "43/translation_haiku": {
+            "max_probability_difference": 1.2208509826416858e-06,
+            "classification_changes": 0
+        },
+        "43/translation_apertus8b": {
+            "max_probability_difference": 1.0155998230176877e-06,
+            "classification_changes": 0
+        },
+        "44/text": {
+            "max_probability_difference": 2.000889587405741e-06,
+            "classification_changes": 0
+        },
+        "44/translation_haiku": {
+            "max_probability_difference": 1.434430313085322e-06,
+            "classification_changes": 0
+        },
+        "44/translation_apertus8b": {
+            "max_probability_difference": 2.216260375970114e-06,
+            "classification_changes": 0
+        }
+    },
+    "blank_development_example": {
+        "42": {
+            "epochs": [
+                {
+                    "step": 241,
+                    "current": 0.7581956395113068,
+                    "with_blank_min": 0.7577354605596728,
+                    "with_blank_max": 0.7583322286539113
+                },
+                {
+                    "step": 482,
+                    "current": 0.7895580741765593,
+                    "with_blank_min": 0.7890774258421318,
+                    "with_blank_max": 0.7896684451092706
+                },
+                {
+                    "step": 723,
+                    "current": 0.799376629175268,
+                    "with_blank_min": 0.7988855867018634,
+                    "with_blank_max": 0.7994701679485285
+                }
+            ],
+            "checkpoint_selection_stable_with_blank": true
+        },
+        "43": {
+            "epochs": [
+                {
+                    "step": 241,
+                    "current": 0.7565089874744617,
+                    "with_blank_min": 0.7560500075073087,
+                    "with_blank_max": 0.7566490570481716
+                },
+                {
+                    "step": 482,
+                    "current": 0.7979440305684568,
+                    "with_blank_min": 0.7974535268652916,
+                    "with_blank_max": 0.7980375419910057
+                },
+                {
+                    "step": 723,
+                    "current": 0.7911420243180581,
+                    "with_blank_min": 0.7906578999782955,
+                    "with_blank_max": 0.7912434393561185
+                }
+            ],
+            "checkpoint_selection_stable_with_blank": true
+        },
+        "44": {
+            "epochs": [
+                {
+                    "step": 241,
+                    "current": 0.7503222275989634,
+                    "with_blank_min": 0.7498600708171526,
+                    "with_blank_max": 0.7504337022814547
+                },
+                {
+                    "step": 482,
+                    "current": 0.7688537409672467,
+                    "with_blank_min": 0.7683732775771867,
+                    "with_blank_max": 0.7689462820307591
+                },
+                {
+                    "step": 723,
+                    "current": 0.8009244247776358,
+                    "with_blank_min": 0.8004329935723314,
+                    "with_blank_max": 0.8010183934712236
+                }
+            ],
+            "checkpoint_selection_stable_with_blank": true
+        }
+    },
+    "gradient_probe": {
+        "dropout_disabled_32_vs_8x4": {
+            "loss_a": 0.812458872795105,
+            "loss_b": 0.8124588876962662,
+            "relative_gradient_difference": 0.00013361908007180552,
+            "gradient_cosine": 0.9999999911272139,
+            "maximum_gradient_difference": 0.00013782083988189697
+        },
+        "dropout_enabled_32_vs_8x4": {
+            "loss_a": 0.798340916633606,
+            "loss_b": 0.7468649446964264,
+            "relative_gradient_difference": 1.3205327643693179,
+            "gradient_cosine": 0.43026869997323125,
+            "maximum_gradient_difference": 0.4907033331692219
+        },
+        "checkpointing_off_vs_on_batch32": {
+            "loss_a": 0.798340916633606,
+            "loss_b": 0.798340916633606,
+            "relative_gradient_difference": 0.0,
+            "gradient_cosine": 1.0,
+            "maximum_gradient_difference": 0.0
+        },
+        "max_sample_tokens": 85
+    },
+    "score_correlations": {
+        "mean_prob_hate_raw": {
+            "pearson": 0.9345599414240503,
+            "spearman": 0.9348772828669439,
+            "old_mean_score": 0.43406803211295236,
+            "new_mean_score": 0.49365024825590476,
+            "ensemble_classification_changes": 92
+        },
+        "mean_prob_hate_haiku": {
+            "pearson": 0.9598066000536123,
+            "spearman": 0.9702875100112087,
+            "old_mean_score": 0.2299445540598095,
+            "new_mean_score": 0.2438480779739524,
+            "ensemble_classification_changes": 37
+        },
+        "mean_prob_hate_apertus8b": {
+            "pearson": 0.9639386910042836,
+            "spearman": 0.9693012084864312,
+            "old_mean_score": 0.33889094782090473,
+            "new_mean_score": 0.35961895240514286,
+            "ensemble_classification_changes": 59
+        }
+    },
+    "gahd_test_comparison": [
+        {
+            "seed": 42,
+            "8x4_macro_f1": 0.7872365837028481,
+            "batch32_macro_f1": 0.7893016179770699,
+            "difference": 0.0020650342742217775
+        },
+        {
+            "seed": 43,
+            "8x4_macro_f1": 0.7879377373274667,
+            "batch32_macro_f1": 0.7949372853446248,
+            "difference": 0.006999548017158075
+        },
+        {
+            "seed": 44,
+            "8x4_macro_f1": 0.7885139034154434,
+            "batch32_macro_f1": 0.7796557013676759,
+            "difference": -0.008858202047767438
+        }
+    ],
+    "control_runs": {
+        "42": {
+            "experiment_name": "gahd_gbert_batch32_control",
+            "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+            "max_length": null,
+            "epochs": 3.0,
+            "batch_size": 32,
+            "learning_rate": 2e-05,
+            "weight_decay": 0.01,
+            "patience": 3,
+            "no_fp16": true,
+            "log_interval": 50,
+            "path_runs_dir": "runs",
+            "seed": 42,
+            "path_gahd": "data/gahd.csv",
+            "gradient_accumulation_steps": 1,
+            "model_family": "bert",
+            "resume": false,
+            "gradient_checkpointing": true,
+            "checkpoint_rng_preserved": true,
+            "python_version": "3.12.15",
+            "package_versions": {
+                "torch": "2.11.0+cu128",
+                "transformers": "5.19.0",
+                "datasets": "5.1.0",
+                "pandas": "3.0.6",
+                "scikit-learn": "1.9.1"
+            },
+            "hardware": "NVIDIA GeForce RTX 3080",
+            "optimizer": "OptimizerNames.ADAMW_TORCH_FUSED",
+            "gahd_sha256": "a1ba022786b198f0d2145c0ee8cbe4d65a1d3aadb81105ac55684b79d3ed650b",
+            "tf32": false,
+            "float32_matmul_precision": "highest",
+            "loss_normalization": "sum_cross_entropy_over_accumulated_examples",
+            "purpose": "Controlled full-batch-32 comparison; memory checkpointing was verified to preserve gradients exactly on the probe.",
+            "best_model_checkpoint": "runs\\gahd_gbert_batch32_control\\run42\\checkpoint-723",
+            "best_dev_macro_f1": 0.7858779033001828,
+            "train_runtime": 139.4255,
+            "selected_weights_sha256": "dd888b9bf735afb29bc7599a18eccfa11e82c49dcde213a0501f6dbe708d4cdc"
+        },
+        "43": {
+            "experiment_name": "gahd_gbert_batch32_control",
+            "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+            "max_length": null,
+            "epochs": 3.0,
+            "batch_size": 32,
+            "learning_rate": 2e-05,
+            "weight_decay": 0.01,
+            "patience": 3,
+            "no_fp16": true,
+            "log_interval": 50,
+            "path_runs_dir": "runs",
+            "seed": 43,
+            "path_gahd": "data/gahd.csv",
+            "gradient_accumulation_steps": 1,
+            "model_family": "bert",
+            "resume": false,
+            "gradient_checkpointing": true,
+            "checkpoint_rng_preserved": true,
+            "python_version": "3.12.15",
+            "package_versions": {
+                "torch": "2.11.0+cu128",
+                "transformers": "5.19.0",
+                "datasets": "5.1.0",
+                "pandas": "3.0.6",
+                "scikit-learn": "1.9.1"
+            },
+            "hardware": "NVIDIA GeForce RTX 3080",
+            "optimizer": "OptimizerNames.ADAMW_TORCH_FUSED",
+            "gahd_sha256": "a1ba022786b198f0d2145c0ee8cbe4d65a1d3aadb81105ac55684b79d3ed650b",
+            "tf32": false,
+            "float32_matmul_precision": "highest",
+            "loss_normalization": "sum_cross_entropy_over_accumulated_examples",
+            "purpose": "Controlled full-batch-32 comparison; memory checkpointing was verified to preserve gradients exactly on the probe.",
+            "best_model_checkpoint": "runs\\gahd_gbert_batch32_control\\run43\\checkpoint-723",
+            "best_dev_macro_f1": 0.8003386321892032,
+            "train_runtime": 139.081,
+            "selected_weights_sha256": "c186c53d96441da7977027fd6a1efe4bddf967b70e74ffcefb7bc638419133a7"
+        },
+        "44": {
+            "experiment_name": "gahd_gbert_batch32_control",
+            "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+            "max_length": null,
+            "epochs": 3.0,
+            "batch_size": 32,
+            "learning_rate": 2e-05,
+            "weight_decay": 0.01,
+            "patience": 3,
+            "no_fp16": true,
+            "log_interval": 50,
+            "path_runs_dir": "runs",
+            "seed": 44,
+            "path_gahd": "data/gahd.csv",
+            "gradient_accumulation_steps": 1,
+            "model_family": "bert",
+            "resume": false,
+            "gradient_checkpointing": true,
+            "checkpoint_rng_preserved": true,
+            "python_version": "3.12.15",
+            "package_versions": {
+                "torch": "2.11.0+cu128",
+                "transformers": "5.19.0",
+                "datasets": "5.1.0",
+                "pandas": "3.0.6",
+                "scikit-learn": "1.9.1"
+            },
+            "hardware": "NVIDIA GeForce RTX 3080",
+            "optimizer": "OptimizerNames.ADAMW_TORCH_FUSED",
+            "gahd_sha256": "a1ba022786b198f0d2145c0ee8cbe4d65a1d3aadb81105ac55684b79d3ed650b",
+            "tf32": false,
+            "float32_matmul_precision": "highest",
+            "loss_normalization": "sum_cross_entropy_over_accumulated_examples",
+            "purpose": "Controlled full-batch-32 comparison; memory checkpointing was verified to preserve gradients exactly on the probe.",
+            "best_model_checkpoint": "runs\\gahd_gbert_batch32_control\\run44\\checkpoint-723",
+            "best_dev_macro_f1": 0.7811262436008886,
+            "train_runtime": 146.7748,
+            "selected_weights_sha256": "c5eb5b2747c5324388635738c7aa87038f7a9c8d1264245a4b8ce6dfd368d9e5"
+        }
+    },
+    "unchanged_scoring_code": {
+        "src/evaluate_predictions.py": {
+            "original_blob": "dad4019c281d0b3614c543a19714a3e890ff94db",
+            "current_blob": "dad4019c281d0b3614c543a19714a3e890ff94db"
+        },
+        "src/parse_results_into_csv.py": {
+            "original_blob": "ebd7fdaf5345cee5c1e136b7272059b227a2407c",
+            "current_blob": "ebd7fdaf5345cee5c1e136b7272059b227a2407c"
+        },
+        "src/gold_labels.py": {
+            "original_blob": "96f9de3e9a3ca023e279f527e0a67c4e3a57d238",
+            "current_blob": "96f9de3e9a3ca023e279f527e0a67c4e3a57d238"
+        },
+        "src/predict.py": {
+            "original_blob": "9311eac33976cd22976ff03778e547c114019952",
+            "current_blob": "9311eac33976cd22976ff03778e547c114019952"
+        }
+    },
+    "limitations": [
+        "No original per-seed colleague checkpoints, probabilities or execution logs. Colleague means/SDs are rounded values from the supplied draft.",
+        "Control uses RNG-preserving gradient checkpointing to fit batches of 32; a real-model probe gave exactly matching loss and gradients with checkpointing on/off.",
+        "The production seed-44 reference resumed from a full epoch checkpoint; controls were fresh runs. Exact resume equivalence was not separately retested here.",
+        "Dataset text and split contents match the current public GAHD revision; the original colleague download revision is not recorded.",
+        "Averaged colleague scores allow diagnostic ensemble comparisons, not reconstruction of their original per-seed metrics."
+    ],
+    "reproduction_scripts": {
+        "tmp\\gbert_investigation\\run_batch32_control.py": "f624739f8c5c92152b125debe997992e155cd1756b14f5a1785e471d0158d5a7",
+        "tmp\\gbert_investigation\\probe_gradients.py": "8672b17d9b79b30e7c160d813411f8b4b5c96ec0fbee0192275646b776ecf089"
+    },
+    "code_base_commit": "7fb04e7",
+    "control_validation": {
+        "selected_checkpoints_verified": 3,
+        "prediction_files_verified": 9,
+        "sentences_per_prediction_file": 700
+    }
+}

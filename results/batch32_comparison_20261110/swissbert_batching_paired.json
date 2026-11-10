@@ -1,0 +1,62 @@
+{
+    "reference_experiment": "gahd_swissbert_raw_lossfixed",
+    "new_experiment": "gahd_swissbert_raw_batch32",
+    "subset": "all",
+    "seeds": [
+        42,
+        43,
+        44
+    ],
+    "threshold": 0.5,
+    "bootstrap": {
+        "num_resamples": 1000,
+        "seed": 42,
+        "method": "Paired sentence bootstrap of seed-mean metrics, holding training seeds fixed; discard resamples without positives."
+    },
+    "results": {
+        "batch32_minus_accum8x4": {
+            "f1-macro": {
+                "difference": -0.0015948455557084351,
+                "ci_low": -0.02158670103047642,
+                "ci_high": 0.017906537679998953,
+                "share_resamples_above_zero": 0.461
+            },
+            "f1-pos": {
+                "difference": -0.009697018450662509,
+                "ci_low": -0.0480516324022127,
+                "ci_high": 0.026030841544018465,
+                "share_resamples_above_zero": 0.326
+            },
+            "acc": {
+                "difference": 0.010952380952380936,
+                "ci_low": -0.0009523809523810378,
+                "ci_high": 0.023809523809523725,
+                "share_resamples_above_zero": 0.961
+            },
+            "precision": {
+                "difference": -0.003198360425251179,
+                "ci_low": -0.028474741212346985,
+                "ci_high": 0.021175914030090344,
+                "share_resamples_above_zero": 0.419
+            },
+            "recall": {
+                "difference": -0.051282051282051266,
+                "ci_low": -0.1358164983164983,
+                "ci_high": 0.02669444444444445,
+                "share_resamples_above_zero": 0.077
+            },
+            "pr-auc": {
+                "difference": -0.003114897299066402,
+                "ci_low": -0.019872068167969784,
+                "ci_high": 0.02762718603935427,
+                "share_resamples_above_zero": 0.48
+            },
+            "roc-auc": {
+                "difference": 0.006029825762763563,
+                "ci_low": -0.02389608454538511,
+                "ci_high": 0.039786922657952015,
+                "share_resamples_above_zero": 0.662
+            }
+        }
+    }
+}
