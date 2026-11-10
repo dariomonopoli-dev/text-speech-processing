@@ -1,0 +1,20 @@
+{
+    "train": {
+        "experiment_name": "gahd_swissbert_raw_batch32",
+        "model_name": "models/swissbert/c1294db2e2eb48bfed66ee0b536861601164b92c",
+        "max_length": 128,
+        "epochs": 5.0,
+        "batch_size": 32,
+        "learning_rate": 2e-05,
+        "weight_decay": 0.01,
+        "patience": 5,
+        "no_fp16": true,
+        "log_interval": 25,
+        "path_runs_dir": "runs",
+        "seed": 42,
+        "path_gahd": "data/gahd.csv",
+        "gradient_accumulation_steps": 1,
+        "model_family": "swissbert",
+        "resume": false
+    }
+}

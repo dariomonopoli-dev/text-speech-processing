@@ -43,6 +43,16 @@ def compute_file_hash(path_input: Path) -> str:
 
 def main(args: argparse.Namespace) -> None:
     logger.info(json.dumps(vars(args), default=str))
+    replacements = {
+        "gahd_gbert_raw": getattr(args, "gbert_experiment", "gahd_gbert_raw"),
+        "gahd_swissbert_raw_lossfixed": getattr(
+            args, "swissbert_experiment", "gahd_swissbert_raw_lossfixed"
+        ),
+    }
+    variants = [
+        (name, title, replacements.get(experiment, experiment), column)
+        for name, title, experiment, column in VARIANTS
+    ]
     if len(args.seeds) < 2 or len(set(args.seeds)) != len(args.seeds):
         raise ValueError("Comparison requires at least two distinct seeds")
     if args.path_output_dir.exists() and any(args.path_output_dir.iterdir()):
@@ -55,7 +65,7 @@ def main(args: argparse.Namespace) -> None:
         raise ValueError("Gold labels and annotated sentence texts do not align")
     all_rows, summary_rows, metadata = [], [], {}
     reference_environment = None
-    for variant, title, experiment, input_column in VARIANTS:
+    for variant, title, experiment, input_column in variants:
         scores_per_seed = {}
         for seed in args.seeds:
             path_run = args.path_runs / experiment / f"run{seed}"
@@ -219,7 +229,7 @@ def main(args: argparse.Namespace) -> None:
         "| Variant | Macro-F1 (%) | Hate F1 (%) | Precision (%) | Recall (%) |",
         "| --- | ---: | ---: | ---: | ---: |",
     ]
-    for variant, title, _, _ in VARIANTS:
+    for variant, title, _, _ in variants:
         part = summary.loc[
             (summary.variant == variant) & (summary.subset == "all")
         ].set_index("metric")
@@ -230,6 +240,20 @@ def main(args: argparse.Namespace) -> None:
         lines.append(f"| {title} | " + " | ".join(cells) + " |")
     constant = compute_binary_metrics(
         predictions.label.to_numpy(), np.zeros(len(predictions)), 0.5
+    )
+    gbert_run = metadata[f"{replacements['gahd_gbert_raw']}/run{args.seeds[0]}"]
+    swissbert_run = metadata[
+        f"{replacements['gahd_swissbert_raw_lossfixed']}/run{args.seeds[0]}"
+    ]
+    recipe = (
+        f"GBERT uses {gbert_run['epochs']:g} epochs, maximum length 512, physical batch "
+        f"{gbert_run['batch_size']} and {gbert_run['gradient_accumulation_steps']} accumulation step(s). "
+        f"SwissBERT uses {swissbert_run['epochs']:g} epochs, maximum length "
+        f"{swissbert_run['max_length']}, physical batch {swissbert_run['batch_size']} and "
+        f"{swissbert_run['gradient_accumulation_steps']} accumulation step(s). "
+        "Both use learning rate 2e-5, FP32 and effective batch size 32. "
+        "SwissBERT freezes embeddings and language adapters, trains with de_CH and predicts with gsw. "
+        "This is not a comparison under identical architecture-specific training hyperparameters."
     )
     lines += [
         "",
@@ -257,9 +281,9 @@ def main(args: argparse.Namespace) -> None:
                 manifest["swissbert_original_comparison"] = changes
                 lines += [
                     "",
-                    "SwissBERT before and after corrected training on the same labels:",
+                    "SwissBERT original checkpoints versus the selected runs on the same labels (training recipes may differ):",
                     "",
-                    "| Metric | Original (%) | Corrected (%) | Change (percentage points) |",
+                    "| Metric | Original (%) | Selected runs (%) | Change (percentage points) |",
                     "| --- | ---: | ---: | ---: |",
                 ]
                 for metric, values in changes.items():
@@ -270,9 +294,9 @@ def main(args: argparse.Namespace) -> None:
         "",
         f"Values are mean ± sample SD over the {len(args.seeds)} seeds. The summary CSV also includes accuracy, ROC-AUC, PR-AUC, 95% bootstrap intervals and the shared-only subset. Mean probabilities in the prediction export are for inspection; reported metrics are averages of per-seed metrics, not ensemble metrics.",
         "",
-        "GBERT uses three epochs and maximum length 512; SwissBERT uses five epochs and maximum length 128. Both use learning rate 2e-5, FP32 and effective batch size 32 (8 × 4 accumulation steps). SwissBERT freezes embeddings and language adapters, trains with de_CH and predicts with gsw. Their established recipes were retained; this is not a comparison under identical training hyperparameters.",
+        recipe,
         "",
-        "The original SwissBERT runs had a fourfold gradient-scale defect in the installed Transformers loss handling. Those checkpoints and scores remain available separately. Corrected training is reported here; this does not establish that the loss defect caused the original low scores, because clipping/Adam can offset a uniform gradient scale and final uneven batches also affect weighting.",
+        "The original SwissBERT runs had a fourfold gradient-scale defect in the installed Transformers loss handling. Those checkpoints and scores remain available separately. Corrected training is reported here; this does not establish that the loss defect caused the original low scores, because clipping/Adam can offset a uniform gradient scale and final uneven batches also affect weighting. Any batching changes also affect the stochastic training trajectory, so this historical comparison does not isolate the loss correction when batches differ.",
         "",
         "The [SwissBERT model card](https://huggingface.co/ZurichNLP/swissbert#training-details) states that its gsw adapter was pretrained on SwissCrawl. This test set also comes from SwissCrawl, so possible exposure to unlabeled test text should be disclosed. Sentence-level pretraining overlap has not been established.",
         "",
@@ -283,6 +307,11 @@ def main(args: argparse.Namespace) -> None:
         f"All exported per-seed metrics were independently recomputed from the stored probabilities and matched their evaluation JSON files. All prediction files contain exactly one finite probability per gold sentence. Training-data hashes, hardware and package versions match across the {len(metadata)} trained models.",
         "",
     ]
+    if any(run.get("gradient_checkpointing") for run in metadata.values()):
+        lines += [
+            "GBERT batch-32 controls use activation checkpointing with RNG preservation to fit GPU memory. Its loss and gradients matched exactly with checkpointing disabled in the real-model probe. SwissBERT uses ordinary training without activation checkpointing.",
+            "",
+        ]
     (args.path_output_dir / "metadata.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=4), encoding="utf-8"
     )
@@ -292,6 +321,16 @@ def main(args: argparse.Namespace) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--gbert_experiment",
+        default="gahd_gbert_raw",
+        help="Experiment folder containing the three GBERT variants.",
+    )
+    parser.add_argument(
+        "--swissbert_experiment",
+        default="gahd_swissbert_raw_lossfixed",
+        help="Experiment folder containing the SwissBERT raw-text runs.",
+    )
     parser.add_argument(
         "--path_runs",
         type=Path,

@@ -98,6 +98,12 @@ python -c "from huggingface_hub import snapshot_download; snapshot_download('Zur
 
 These runs use `configs/gahd_swissbert_raw_lossfixed_run<seed>.json` and write `runs/gahd_swissbert_raw_lossfixed/run<seed>/`. They retain five epochs, learning rate `2e-5`, FP32, maximum length 128, effective batch size 32 and development macro-F1 checkpoint selection. The original runs remain available for comparison. Both local launchers evaluate the full and shared subsets with 1,000 bootstrap resamples.
 
+The separate physical-batch-32 SwissBERT experiment uses 32 examples per device and one accumulation step. It retains the other settings and writes `runs/gahd_swissbert_raw_batch32/`:
+
+```powershell
+.\scripts\run_swissbert_local.ps1 -Python python -ExperimentName gahd_swissbert_raw_batch32 -LogPrefix swissbert_batch32
+```
+
 An interrupted training run with a full optimizer/RNG checkpoint can resume by setting its config's `train.resume` to `true` and calling `exec_scripts.py`. Resumption validates the run configuration, data hash and loss normalization; completed runs are refused. If predictions already exist, call only the missing steps instead of repeating the launcher.
 
 ### Baseline: TF-IDF logistic regression
@@ -133,6 +139,23 @@ python src/export_approach_comparison.py --path_output_dir results/local_compari
 ```
 
 The export includes per-seed metrics, seed means and standard deviations, bootstrap intervals, sentence probabilities and a Markdown report. It recomputes the metrics from predictions and verifies matching hardware, package versions and GAHD hashes. Existing output folders are refused. The original SwissBERT results are compared separately with the corrected runs when their annotation hashes match.
+
+Use `--gbert_experiment` and `--swissbert_experiment` to compare a different pair of run folders.
+
+The GBERT batch-32 runner trains three seeds and predicts the raw, Haiku and Apertus inputs. It uses the pinned local model from the existing GBERT configs, FP32 and activation checkpointing with RNG preservation. Run these commands from the repository root with the prepared inputs described above; existing run directories and evaluation outputs are refused.
+
+```powershell
+python src/run_gbert_batch32.py --seeds 42 43 44
+.\scripts\evaluate_local.ps1 -Python python -ExperimentName gahd_gbert_batch32_control -LogPrefix gbert_batch32 -Variants text,translation_haiku,translation_apertus8b
+```
+
+After the GBERT and SwissBERT batch-32 evaluations finish, export their comparison:
+
+```bash
+python src/export_approach_comparison.py --gbert_experiment gahd_gbert_batch32_control --swissbert_experiment gahd_swissbert_raw_batch32 --path_output_dir results/batch32_comparison_20261110 --evaluation_date 2026-11-10
+```
+
+The generated report reads each experiment's actual batching settings. The latest results are in the [batch-32 comparison](results/batch32_comparison_20261110/report.md), with the [investigation of differences from the original report](results/gbert_reproduction_investigation_20261110/report.md) alongside it. The earlier 8-by-4 comparison remains a separate experiment. The recorded runtime versions are in each comparison's `metadata.json`; matching the hyperparameters alone does not guarantee identical scores on another environment.
 
 ### Error analysis
 
