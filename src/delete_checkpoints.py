@@ -57,7 +57,12 @@ def delete_non_best_checkpoints(
     """Remove every checkpoint directory except the best one."""
     for checkpoint in checkpoints:
         if checkpoint != best_checkpoint:
-            path_checkpoint = os.path.join(path_run_dir, f"checkpoint-{checkpoint}")
+            path_run = os.path.realpath(path_run_dir)
+            path_checkpoint = os.path.realpath(
+                os.path.join(path_run, f"checkpoint-{checkpoint}")
+            )
+            if os.path.dirname(path_checkpoint) != path_run:
+                raise ValueError(f"Checkpoint resolves outside run: {path_checkpoint}")
             cp_logger.info(f"Delete checkpoint: {path_checkpoint}")
             shutil.rmtree(path_checkpoint)
 

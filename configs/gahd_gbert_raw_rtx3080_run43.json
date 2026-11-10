@@ -1,0 +1,56 @@
+{
+    "train": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+        "max_length": null,
+        "epochs": 3.0,
+        "batch_size": 8,
+        "learning_rate": 2e-05,
+        "weight_decay": 0.01,
+        "patience": 3,
+        "no_fp16": true,
+        "log_interval": 50,
+        "path_runs_dir": "runs",
+        "seed": 43,
+        "path_gahd": "data/gahd.csv",
+        "gradient_accumulation_steps": 4,
+        "model_family": "bert",
+        "resume": false
+    },
+    "predict": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+        "max_length": null,
+        "path_eval_set": "data/eval_sentences.csv",
+        "input_column": "text",
+        "batch_size": 8,
+        "no_fp16": true,
+        "path_runs_dir": "runs",
+        "seed": 43,
+        "path_checkpoint": null
+    },
+    "predict_translation_haiku": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+        "max_length": null,
+        "path_eval_set": "data/pred_input_haiku.csv",
+        "input_column": "translation_haiku",
+        "batch_size": 8,
+        "no_fp16": true,
+        "path_runs_dir": "runs",
+        "seed": 43,
+        "path_checkpoint": null
+    },
+    "predict_translation_apertus8b": {
+        "experiment_name": "gahd_gbert_raw",
+        "model_name": "models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a",
+        "max_length": null,
+        "path_eval_set": "data/pred_input_apertus8b.csv",
+        "input_column": "translation_apertus8b",
+        "batch_size": 8,
+        "no_fp16": true,
+        "path_runs_dir": "runs",
+        "seed": 43,
+        "path_checkpoint": null
+    }
+}

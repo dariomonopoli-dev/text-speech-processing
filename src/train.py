@@ -1,9 +1,13 @@
-"""Fine-tune a BERT model on GAHD and write its GAHD test predictions and metrics."""
+"""Fine-tune GBERT or SwissBERT on GAHD and write test predictions and metrics."""
 
 import argparse
+import hashlib
 import json
 import os
+import platform
 import random
+from importlib.metadata import version
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -11,6 +15,8 @@ import torch
 from datasets import Dataset
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from transformers import (
+    AutoModelForSequenceClassification,
+    AutoTokenizer,
     BertForSequenceClassification,
     BertTokenizer,
     DataCollatorWithPadding,
@@ -18,9 +24,13 @@ from transformers import (
     EvalPrediction,
     Trainer,
     TrainingArguments,
+    PreTrainedModel,
+    PreTrainedTokenizerBase,
 )
+from transformers.trainer_utils import get_last_checkpoint
 
 import delete_checkpoints
+from classification_loss import compute_classification_loss
 from config import ID2LABEL, LABEL2ID, LABEL_LIST, get_run_name, get_run_path
 from dataset import load_gahd
 from get_loggers import get_logger
@@ -79,7 +89,7 @@ def to_prob_hate(logits: np.ndarray) -> np.ndarray:
 
 def encode_dataset(
     df: pd.DataFrame,
-    tokenizer: BertTokenizer,
+    tokenizer: PreTrainedTokenizerBase,
     max_length: int | None,
     text_column: str = "text",
 ) -> Dataset:
@@ -93,7 +103,14 @@ def encode_dataset(
 
 
 def check_args(args: argparse.Namespace) -> None:
-    for name in ["epochs", "batch_size", "learning_rate", "patience", "log_interval"]:
+    for name in [
+        "epochs",
+        "batch_size",
+        "gradient_accumulation_steps",
+        "learning_rate",
+        "patience",
+        "log_interval",
+    ]:
         if getattr(args, name) <= 0:
             raise ValueError(f"--{name} must be positive, got {getattr(args, name)}.")
     if args.max_length is not None and args.max_length <= 0:
@@ -105,6 +122,51 @@ def check_empty_output_dir(path_out_dir: str) -> None:
     os.makedirs(path_out_dir, exist_ok=True)
     if os.listdir(path_out_dir):
         raise FileExistsError(f"Output directory '{path_out_dir}' is not empty.")
+
+
+def get_resume_checkpoint(args: argparse.Namespace, run_path: str) -> str | None:
+    """Resume only an unfinished run with matching configuration and full state."""
+    if not args.resume:
+        check_empty_output_dir(run_path)
+        return None
+    path_run = Path(run_path).resolve()
+    if (path_run / "gahd_test_metrics.json").exists():
+        raise FileExistsError(f"Training is already complete in {run_path}")
+    previous = json.loads((path_run / "experiment.json").read_text(encoding="utf-8"))
+    differences = [
+        key
+        for key, value in vars(args).items()
+        if key != "resume" and previous.get(key) != value
+    ]
+    if differences:
+        raise ValueError(f"Resume configuration differs for {differences}")
+    if (
+        previous.get("loss_normalization")
+        != "sum_cross_entropy_over_accumulated_examples"
+    ):
+        raise ValueError("Cannot resume a run with different loss normalization")
+    if args.path_gahd is not None:
+        current_hash = hashlib.sha256(Path(args.path_gahd).read_bytes()).hexdigest()
+        if previous.get("gahd_sha256") != current_hash:
+            raise ValueError("GAHD data changed since the interrupted run")
+    checkpoint = get_last_checkpoint(str(path_run))
+    if checkpoint is None:
+        raise FileNotFoundError(f"No resumable checkpoint in {run_path}")
+    path_checkpoint = Path(checkpoint).resolve()
+    if path_checkpoint.parent != path_run:
+        raise ValueError(f"Checkpoint resolves outside run: {path_checkpoint}")
+    for name in [
+        "model.safetensors",
+        "optimizer.pt",
+        "scheduler.pt",
+        "rng_state.pth",
+        "trainer_state.json",
+    ]:
+        if not (path_checkpoint / name).is_file():
+            raise FileNotFoundError(
+                f"Resume checkpoint lacks {name}: {path_checkpoint}"
+            )
+    return str(path_checkpoint)
 
 
 def check_columns(df: pd.DataFrame, columns: list[str], name: str) -> None:
@@ -132,6 +194,29 @@ def write_test_results(
     train_logger.info(f"GAHD test metrics: {json.dumps(metrics, indent=4)}")
 
 
+def load_model(model_name: str, model_family: str) -> PreTrainedModel:
+    """Load the classifier and apply the SwissBERT training adapter policy."""
+    model_class = (
+        AutoModelForSequenceClassification
+        if model_family == "swissbert"
+        else BertForSequenceClassification
+    )
+    model = model_class.from_pretrained(
+        model_name,
+        num_labels=len(LABEL_LIST),
+        id2label=ID2LABEL,
+        label2id=LABEL2ID,
+    )
+    if model_family == "swissbert":
+        if model.config.model_type != "xmod" or "gsw" not in model.config.languages:
+            raise ValueError(
+                "SwissBERT requires an X-MOD checkpoint with a gsw adapter"
+            )
+        model.set_default_language("de_CH")
+        model.freeze_embeddings_and_language_adapters()
+    return model
+
+
 def main(args: argparse.Namespace) -> None:
     torch.manual_seed(args.seed)
     random.seed(args.seed)
@@ -139,11 +224,11 @@ def main(args: argparse.Namespace) -> None:
 
     check_args(args)
     run_path = get_run_path(args.path_runs_dir, args.experiment_name, args.seed)
-    check_empty_output_dir(run_path)
+    resume_checkpoint = get_resume_checkpoint(args, run_path)
     train_logger.info(f"CMD args: {json.dumps(args.__dict__, indent=4)}")
 
     train_logger.info("Load GAHD.")
-    train_set, dev_set, test_set = load_gahd()
+    train_set, dev_set, test_set = load_gahd(args.path_gahd)
     for name, split in [("train", train_set), ("dev", dev_set), ("test", test_set)]:
         check_columns(split, GAHD_COLUMNS, f"GAHD {name} split")
     train_logger.info(
@@ -151,7 +236,10 @@ def main(args: argparse.Namespace) -> None:
     )
 
     train_logger.info(f"Load tokenizer: {args.model_name}")
-    tokenizer = BertTokenizer.from_pretrained(args.model_name)
+    tokenizer_class = (
+        AutoTokenizer if args.model_family == "swissbert" else BertTokenizer
+    )
+    tokenizer = tokenizer_class.from_pretrained(args.model_name)
     enc_train_set = encode_dataset(
         train_set[["text", "label"]], tokenizer, args.max_length
     )
@@ -161,11 +249,9 @@ def main(args: argparse.Namespace) -> None:
     )
 
     train_logger.info(f"Load model: {args.model_name}")
-    model = BertForSequenceClassification.from_pretrained(
-        args.model_name,
-        num_labels=len(LABEL_LIST),
-        id2label=ID2LABEL,
-        label2id=LABEL2ID,
+    model = load_model(args.model_name, args.model_family)
+    optimizer_args = (
+        {"optim": "adamw_torch"} if args.model_family == "swissbert" else {}
     )
     training_args = TrainingArguments(
         output_dir=run_path,
@@ -174,6 +260,7 @@ def main(args: argparse.Namespace) -> None:
         learning_rate=args.learning_rate,
         per_device_train_batch_size=args.batch_size,
         per_device_eval_batch_size=args.batch_size,
+        gradient_accumulation_steps=args.gradient_accumulation_steps,
         weight_decay=args.weight_decay,
         eval_strategy="epoch",
         save_strategy="epoch",
@@ -184,6 +271,7 @@ def main(args: argparse.Namespace) -> None:
         seed=args.seed,
         report_to="tensorboard",
         fp16=not args.no_fp16,
+        **optimizer_args,
     )
     trainer = Trainer(
         model=model,
@@ -193,10 +281,50 @@ def main(args: argparse.Namespace) -> None:
         processing_class=tokenizer,
         data_collator=DataCollatorWithPadding(tokenizer=tokenizer),
         compute_metrics=compute_metrics,
+        compute_loss_func=compute_classification_loss,
         callbacks=[EarlyStoppingCallback(early_stopping_patience=args.patience)],
     )
+    experiment = {
+        **vars(args),
+        "effective_batch_size": args.batch_size * args.gradient_accumulation_steps,
+        "loss_normalization": "sum_cross_entropy_over_accumulated_examples",
+        "resumed_from_checkpoint": resume_checkpoint,
+        "optimizer": str(training_args.optim),
+        "max_grad_norm": training_args.max_grad_norm,
+        "training_adapter": getattr(model.config, "default_language", None),
+        "embeddings_and_language_adapters_frozen": args.model_family == "swissbert",
+        "python_version": platform.python_version(),
+        "package_versions": {
+            name: version(name)
+            for name in ["torch", "transformers", "datasets", "pandas", "scikit-learn"]
+        },
+        "device": str(training_args.device),
+        "hardware": (
+            torch.cuda.get_device_name(training_args.device)
+            if training_args.device.type == "cuda"
+            else platform.processor()
+        ),
+        "num_train": len(train_set),
+        "num_dev": len(dev_set),
+        "num_test": len(test_set),
+        "tokenizer_max_length": tokenizer.model_max_length,
+        "gahd_sha256": (
+            hashlib.sha256(Path(args.path_gahd).read_bytes()).hexdigest()
+            if args.path_gahd is not None
+            else None
+        ),
+    }
+    path_experiment = Path(run_path) / "experiment.json"
+    path_experiment.write_text(json.dumps(experiment, indent=4), encoding="utf-8")
     train_logger.info("Start training.")
-    trainer.train()
+    train_result = trainer.train(resume_from_checkpoint=resume_checkpoint)
+    trainer.save_state()
+    experiment.update(
+        best_model_checkpoint=trainer.state.best_model_checkpoint,
+        best_dev_macro_f1=trainer.state.best_metric,
+        train_runtime=train_result.metrics["train_runtime"],
+    )
+    path_experiment.write_text(json.dumps(experiment, indent=4), encoding="utf-8")
     train_logger.info("Finished training.")
 
     train_logger.info("Predict on the GAHD test split with the best checkpoint.")
@@ -218,6 +346,28 @@ def get_argparser() -> argparse.ArgumentParser:
         "--model_name",
         default="deepset/gbert-base",
         help="Hugging Face name of the model and tokenizer to fine-tune.",
+    )
+    parser.add_argument(
+        "--model_family",
+        choices=["bert", "swissbert"],
+        default="bert",
+        help="SwissBERT uses de_CH and freezes embeddings and language adapters.",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume the latest full checkpoint of an unfinished matching run.",
+    )
+    parser.add_argument(
+        "--path_gahd",
+        default=None,
+        help="Local GAHD CSV. Default: download from the Hugging Face hub.",
+    )
+    parser.add_argument(
+        "--gradient_accumulation_steps",
+        type=int,
+        default=1,
+        help="Microbatches per optimizer step; effective batch size is their product.",
     )
     parser.add_argument(
         "--max_length",

@@ -11,7 +11,11 @@
         "no_fp16": true,
         "log_interval": 50,
         "path_runs_dir": "runs",
-        "seed": 44
+        "seed": 44,
+        "path_gahd": null,
+        "gradient_accumulation_steps": 1,
+        "model_family": "bert",
+        "resume": false
     },
     "predict": {
         "experiment_name": "gahd_gbert_raw",

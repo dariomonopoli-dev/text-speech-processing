@@ -29,7 +29,7 @@ python3 src/compute_annotation_agreement.py
 evaluate_approach gahd_gbert_raw text
 evaluate_approach gahd_gbert_raw translation_haiku
 evaluate_approach gahd_gbert_raw translation_apertus8b
-evaluate_approach gahd_swissbert_raw text
+evaluate_approach gahd_swissbert_raw_lossfixed text
 evaluate_approach gahd_tfidf_logreg text
 evaluate_approach gahd_tfidf_logreg translation_haiku
 evaluate_approach gahd_tfidf_logreg translation_apertus8b

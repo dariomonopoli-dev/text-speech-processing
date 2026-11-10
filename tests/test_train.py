@@ -5,6 +5,7 @@ import os
 import numpy as np
 import pandas as pd
 import pytest
+from transformers import XmodConfig, XmodForSequenceClassification
 
 import delete_checkpoints
 import exec_scripts
@@ -83,6 +84,32 @@ def test_non_positive_batch_size_is_refused():
         train.check_args(args)
 
 
+def test_non_positive_gradient_accumulation_is_refused():
+    args = train.get_argparser().parse_args(
+        ["--experiment_name", "x", "--gradient_accumulation_steps", "0"]
+    )
+
+    with pytest.raises(ValueError, match="gradient_accumulation_steps"):
+        train.check_args(args)
+
+
+@pytest.mark.parametrize("seed", [42, 43, 44])
+def test_local_config_preserves_effective_batch_size(seed):
+    path_config = os.path.join(
+        PATH_CONFIGS_DIR, f"gahd_gbert_raw_rtx3080_run{seed}.json"
+    )
+    with open(path_config) as fin:
+        config = json.load(fin)
+
+    exec_scripts.check_config_section("train", config["train"], train)
+    assert (
+        config["train"]["batch_size"] * config["train"]["gradient_accumulation_steps"]
+        == 32
+    )
+    assert config["train"]["path_gahd"] == "data/gahd.csv"
+    assert config["train"]["seed"] == seed
+
+
 def test_missing_gahd_columns_are_listed():
     with pytest.raises(KeyError, match="gahd_id"):
         train.check_columns(
@@ -150,3 +177,74 @@ def test_first_checkpoint_wins_a_tie(tmp_path):
 def test_run_without_checkpoints_is_refused(tmp_path):
     with pytest.raises(ValueError, match="No checkpoints"):
         delete_checkpoints.main(argparse.Namespace(path_run_dir=str(tmp_path)))
+
+
+def test_swissbert_load_model_freezes_adapters_and_selects_german(tmp_path):
+    model = XmodForSequenceClassification(
+        XmodConfig(
+            vocab_size=20,
+            hidden_size=8,
+            intermediate_size=16,
+            num_hidden_layers=1,
+            num_attention_heads=2,
+            languages=["de_CH", "gsw"],
+            num_labels=2,
+        )
+    )
+    model.save_pretrained(tmp_path)
+
+    loaded = train.load_model(str(tmp_path), "swissbert")
+
+    assert loaded.config.default_language == "de_CH"
+    assert loaded.config.label2id == {"not_hate": 0, "hate": 1}
+    assert not any(p.requires_grad for p in loaded.roberta.embeddings.parameters())
+    assert not any(
+        p.requires_grad
+        for name, p in loaded.named_parameters()
+        if ".adapter_modules." in name
+    )
+    assert all(p.requires_grad for p in loaded.classifier.parameters())
+    assert loaded.roberta.encoder.layer[0].attention.self.query.weight.requires_grad
+
+
+@pytest.fixture
+def resumable_run(tmp_path):
+    args = train.get_argparser().parse_args(["--experiment_name", "x", "--resume"])
+    (tmp_path / "experiment.json").write_text(
+        json.dumps(
+            {
+                **vars(args),
+                "loss_normalization": "sum_cross_entropy_over_accumulated_examples",
+            }
+        )
+    )
+    checkpoint = tmp_path / "checkpoint-10"
+    checkpoint.mkdir()
+    for name in [
+        "model.safetensors",
+        "optimizer.pt",
+        "scheduler.pt",
+        "rng_state.pth",
+        "trainer_state.json",
+    ]:
+        (checkpoint / name).touch()
+    return args, tmp_path, checkpoint
+
+
+def test_resume_keeps_matching_checkpoint_state(resumable_run):
+    args, run_path, checkpoint = resumable_run
+    assert train.get_resume_checkpoint(args, str(run_path)) == str(checkpoint.resolve())
+
+
+def test_resume_refuses_changed_hyperparameters(resumable_run):
+    args, run_path, _ = resumable_run
+    args.learning_rate = 1e-3
+    with pytest.raises(ValueError, match="learning_rate"):
+        train.get_resume_checkpoint(args, str(run_path))
+
+
+def test_resume_refuses_missing_optimizer_state(resumable_run):
+    args, run_path, checkpoint = resumable_run
+    (checkpoint / "optimizer.pt").unlink()
+    with pytest.raises(FileNotFoundError, match="optimizer.pt"):
+        train.get_resume_checkpoint(args, str(run_path))
