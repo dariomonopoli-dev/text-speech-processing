@@ -1,6 +1,10 @@
 # Approach 3 correctness audit
 
-Audited on 9 November 2026. No correctness error was found that explains the weak Swiss German results. All three saved models reproduce every previously saved classification on GAHD dev, GAHD test and the 700 Swiss German sentences. The reported test results remain unchanged.
+**Corrected runs complete (10 November 2026):** three-seed SwissBERT means are now 53.05% macro-F1 and 13.60% hate F1, compared with the original 51.84% and 13.03%. See the [verified local comparison](local_comparison_20261110/report.md). Original checkpoint scores below are retained as historical results.
+
+**Subsequent finding (9 November 2026):** a direct gradient check found an accumulation-loss normalization defect in the installed Transformers 5.19.0 BERT and X-MOD classifiers. With four accumulation steps, the original training produces gradients four times the full-batch reference. The prediction-reproduction checks below remain correct, but they did not test this training behavior. The earlier conclusion that no training error was found is superseded. At that stage its effect on the final scores had not been established; clipping and Adam can offset a uniform scale factor, while uneven final batches also require proper sample weighting. A corrected loss function and gradient-equivalence regression tests are now provided.
+
+The initial prediction audit on 9 November 2026 passed the checks below; the later gradient audit identified the training issue described above. All three saved models reproduce every previously saved classification on GAHD dev, GAHD test and the 700 Swiss German sentences. The reported test results remain unchanged.
 
 | Evaluation | Mean macro-F1 (%) | Mean hate F1 (%) |
 | --- | ---: | ---: |

@@ -1,0 +1,134 @@
+{
+    "translation_haiku_minus_text": {
+        "f1-macro": {
+            "difference": 0.16625385573574714,
+            "ci_low": 0.13393710807284934,
+            "ci_high": 0.197310232845458,
+            "share_resamples_above_zero": 1.0
+        },
+        "f1-pos": {
+            "difference": 0.0623458642303274,
+            "ci_low": 0.010867542611774627,
+            "ci_high": 0.11139585586835482,
+            "share_resamples_above_zero": 0.991
+        },
+        "acc": {
+            "difference": 0.3404761904761905,
+            "ci_low": 0.30330952380952375,
+            "ci_high": 0.3723809523809523,
+            "share_resamples_above_zero": 1.0
+        },
+        "precision": {
+            "difference": 0.04435454491904707,
+            "ci_low": 0.012277037077513339,
+            "ci_high": 0.07873231419922362,
+            "share_resamples_above_zero": 0.997
+        },
+        "recall": {
+            "difference": -0.2948717948717949,
+            "ci_low": -0.44840229885057475,
+            "ci_high": -0.12344054580896698,
+            "share_resamples_above_zero": 0.001
+        },
+        "pr-auc": {
+            "difference": 0.0819909836608308,
+            "ci_low": 0.009210273194687153,
+            "ci_high": 0.19401436872680966,
+            "share_resamples_above_zero": 0.99
+        },
+        "roc-auc": {
+            "difference": 0.07024651905957535,
+            "ci_low": -0.036278477287435565,
+            "ci_high": 0.1694230103592227,
+            "share_resamples_above_zero": 0.906
+        }
+    },
+    "translation_apertus8b_minus_text": {
+        "f1-macro": {
+            "difference": 0.08960087906366532,
+            "ci_low": 0.0666038588999102,
+            "ci_high": 0.11269887643793344,
+            "share_resamples_above_zero": 1.0
+        },
+        "f1-pos": {
+            "difference": 0.01781389796014965,
+            "ci_low": -0.011602486126422257,
+            "ci_high": 0.044053999001297826,
+            "share_resamples_above_zero": 0.89
+        },
+        "acc": {
+            "difference": 0.18285714285714283,
+            "ci_low": 0.1499761904761904,
+            "ci_high": 0.21382142857142863,
+            "share_resamples_above_zero": 1.0
+        },
+        "precision": {
+            "difference": 0.011753823806986918,
+            "ci_low": -0.004461159368154729,
+            "ci_high": 0.026783698061835903,
+            "share_resamples_above_zero": 0.921
+        },
+        "recall": {
+            "difference": -0.16666666666666663,
+            "ci_low": -0.3333333333333333,
+            "ci_high": -0.011494252873563201,
+            "share_resamples_above_zero": 0.015
+        },
+        "pr-auc": {
+            "difference": 0.08622471094200845,
+            "ci_low": 0.007557381893631778,
+            "ci_high": 0.17391676879589593,
+            "share_resamples_above_zero": 0.99
+        },
+        "roc-auc": {
+            "difference": 0.031119226964924196,
+            "ci_low": -0.052948263505083755,
+            "ci_high": 0.11712912448492521,
+            "share_resamples_above_zero": 0.754
+        }
+    },
+    "translation_haiku_minus_translation_apertus8b": {
+        "f1-macro": {
+            "difference": 0.07665297667208182,
+            "ci_low": 0.052098579205762156,
+            "ci_high": 0.10059084213782221,
+            "share_resamples_above_zero": 1.0
+        },
+        "f1-pos": {
+            "difference": 0.04453196627017775,
+            "ci_low": 0.0037848219069001638,
+            "ci_high": 0.08194055455725223,
+            "share_resamples_above_zero": 0.982
+        },
+        "acc": {
+            "difference": 0.15761904761904766,
+            "ci_low": 0.12904761904761897,
+            "ci_high": 0.18333333333333335,
+            "share_resamples_above_zero": 1.0
+        },
+        "precision": {
+            "difference": 0.03260072111206015,
+            "ci_low": 0.007054492852628686,
+            "ci_high": 0.06078950131078995,
+            "share_resamples_above_zero": 0.993
+        },
+        "recall": {
+            "difference": -0.12820512820512825,
+            "ci_low": -0.26317616959064344,
+            "ci_high": -0.013333333333333416,
+            "share_resamples_above_zero": 0.008
+        },
+        "pr-auc": {
+            "difference": -0.004233727281177657,
+            "ci_low": -0.0799270466384443,
+            "ci_high": 0.10611015362284863,
+            "share_resamples_above_zero": 0.535
+        },
+        "roc-auc": {
+            "difference": 0.039127292094651156,
+            "ci_low": -0.022334859419094043,
+            "ci_high": 0.09976630397400832,
+            "share_resamples_above_zero": 0.913
+        }
+    }
+}

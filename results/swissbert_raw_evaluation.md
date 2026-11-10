@@ -1,4 +1,8 @@
-# Approach 3: SwissBERT on annotated Swiss German
+# Original Approach 3: SwissBERT on annotated Swiss German
+
+Corrected training results are available in the [10 November local comparison](local_comparison_20261110/report.md). The figures below describe the original checkpoints.
+
+**Training caveat:** these scores describe the original checkpoints. A later audit found a gradient-accumulation normalization issue in their training environment; see [the updated audit](swissbert_approach3_audit.md). The scores reproduce, but any corrected training runs must be reported separately.
 
 Evaluation: 9 November 2026. Existing GAHD-trained checkpoints were used without retraining. Each was selected by development macro-F1 with five epochs, learning rate 2e-5 and training adapter de_CH. Inference uses gsw, FP32, batch size 8 and a maximum of 128 tokens on an NVIDIA GeForce RTX 3080.
 

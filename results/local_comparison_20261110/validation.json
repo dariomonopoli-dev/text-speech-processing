@@ -1,0 +1,34 @@
+{
+    "date": "2026-11-10",
+    "pytest": {
+        "passed": 207,
+        "skipped": 3
+    },
+    "modified_python_black_check": "passed",
+    "modified_python_pyflakes": "passed",
+    "powershell_parse": "passed",
+    "git_diff_whitespace": "passed",
+    "preexisting_repository_wide_checks": {
+        "black": "16 existing files require formatting",
+        "pyflakes": "src/visualizations/gahd_diagnostics.py:312 references undefined MIN_WORD_COUNT and MIN_WORD_LENGTH"
+    },
+    "source_sha256": {
+        "src/classification_loss.py": "6f314da095a3398625c51575d5b22c2638eed15feacf2cc773d33a611a176bb8",
+        "src/dataset.py": "0c301d063d144c8ca7c8d47f884bfdd15ccb63538e7da1386aa55368cb5cd13e",
+        "src/delete_checkpoints.py": "f7727b4e6b6e70e2633f89ae00ff8cba783ec77eb4f008e4465808f07f0cb7ec",
+        "src/export_approach_comparison.py": "01eb07a5f270763bf9e8bd7f9f67ce55b8df78630ed4927cff54beeb850d8815",
+        "src/train.py": "4276728b8b775588f0ae539c0e74cd6ecc041aafd3b83f8ceb172ee650ff0d07",
+        "tests/test_classification_loss.py": "dcf220bdcbb188b3350fba5cc3ee69914d79764166c26c9d646b457fe228e9ee",
+        "tests/test_dataset.py": "16871dbf55f49d0e7f05e15fb14f27ced01b32440381511f647eb6a0befd9f93",
+        "tests/test_train.py": "7d5cc156226156a1763d6ab3d3d5ad5a2810ed65828b71b028290c311aba8529"
+    },
+    "runtime_verification": {
+        "trained_models": 6,
+        "prediction_files": 12,
+        "prediction_rows_per_file": 700,
+        "prediction_columns_match_threshold": true,
+        "development_checkpoint_selections_verified": 6,
+        "swissbert_frozen_tensors_verified_per_seed": 245,
+        "all_exported_metrics_recomputed": true
+    }
+}

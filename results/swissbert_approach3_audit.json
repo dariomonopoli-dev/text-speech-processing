@@ -436,7 +436,7 @@
         }
     },
     "audit_date": "2026-11-09",
-    "conclusion": "No correctness error found in the checked training configuration, saved checkpoints, adapter routing, tokenization, gold-label merge or evaluation. All saved German and Swiss German classifications reproduced.",
+    "conclusion": "Prediction, checkpoint, adapter, tokenization and gold-label checks passed. Subsequent gradient testing found an accumulation-loss normalization defect in the original training; the earlier no-training-error conclusion is superseded.",
     "checks": {
         "gahd_train_dev_text_overlap": 0,
         "gahd_train_test_text_overlap": 0,
@@ -470,5 +470,34 @@
     "validation": {
         "swissbert_prediction_tests_passed": 6,
         "git_diff_whitespace_check_passed": true
+    },
+    "subsequent_gradient_finding": {
+        "date": "2026-11-09",
+        "transformers_version": "5.19.0",
+        "models": [
+            "BertForSequenceClassification",
+            "XmodForSequenceClassification"
+        ],
+        "accumulation_steps": 4,
+        "observed_gradient_norm_ratio_to_full_batch": 4.0,
+        "gradient_equivalence_tests_passed": 4,
+        "fix": "src/classification_loss.py",
+        "effect_on_original_final_scores": "Corrected retraining observed +1.21 macro-F1 points and +0.57 hate-F1 points; the causal contribution of uniform scaling alone is not isolated."
+    },
+    "corrected_run_comparison": {
+        "completed": "2026-11-10",
+        "report": "local_comparison_20261110/report.md",
+        "metrics": {
+            "f1-macro": {
+                "original": 0.5184163848155899,
+                "corrected": 0.5304717384267214,
+                "difference": 0.012055353611131414
+            },
+            "f1-pos": {
+                "original": 0.13030954660780839,
+                "corrected": 0.1360391052182812,
+                "difference": 0.005729558610472807
+            }
+        }
     }
 }
