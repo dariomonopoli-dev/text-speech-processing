@@ -30,7 +30,10 @@ Annotate `label` with `1` or `0` in `data/annotation_<annotator>_stratified.csv`
 
 ```bash
 python src/compute_annotation_agreement.py --path_annotations data --path_agreement results/annotation_agreement.json
+python src/build_labeled_testset.py
 ```
+
+`build_labeled_testset.py` aggregates the three annotation files into `data/test_set.csv` (`sentence_id`, `text`, `label`): the majority label on the 100 shared sentences and the single label on the other 600.
 
 ### Approach 1: GBERT on raw Swiss German
 
@@ -41,15 +44,18 @@ python src/build_eval_sentences.py
 bash scripts/train_gbert_raw.sh
 ```
 
-`build_eval_sentences.py` collects the 700 sentences from the three annotation files into `data/eval_sentences.csv`. Each run writes `runs/gahd_gbert_raw/run<seed>/` with `gahd_test_predictions.csv`, `gahd_test_metrics.json`, the best checkpoint and `predictions_swiss_german_text.csv`. The configs in `configs/` have one section per step (`train`, `predict`, `predict_translation_haiku`, `predict_translation_apertus8b`) whose keys equal the argparse flags. The two translation sections read the files prepared under Approach 2, so run those steps before the launcher.
+`build_eval_sentences.py` collects the 700 sentences from the three annotation files into `data/eval_sentences.csv`. Each run writes `runs/gahd_gbert_raw/run<seed>/` with `gahd_test_predictions.csv`, `gahd_test_metrics.json`, the best checkpoint and `predictions_swiss_german_text.csv`. The configs in `configs/` have one section per step (`train`, `predict`, `predict_translation_haiku`, `predict_translation_apertus8b`) whose keys equal the argparse flags. The two translation sections read the files prepared under Approach 2, so run those steps before the training script.
 
 For Windows with an RTX 3080, activate the GPU-enabled Python environment used for Approach 3, prepare the two translation inputs below, and download the pinned GBERT weights once:
 
-```powershell
+```bash
 python -c "from huggingface_hub import snapshot_download; snapshot_download('deepset/gbert-base', revision='d50cb1df9660ff2de1af8a5362d322b3d5a1a28a', local_dir='models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a', allow_patterns=['config.json', 'model.safetensors', 'tokenizer_config.json', 'vocab.txt'])"
+for seed in 42 43 44; do
+  python src/exec_scripts.py --path_config configs/gahd_gbert_raw_rtx3080_run$seed.json
+done
 ```
 
-The `gahd_gbert_raw_rtx3080_run<seed>.json` configs train from the local `data/gahd.csv`, remove blank texts as Approach 3 does, and use FP32 batches of 8 with four accumulation steps (effective batch size 32). They retain the three epochs, learning rate `2e-5` and GBERT tokenizer limit of 512 tokens. Each seed is trained once and applied to raw text and both existing translation files. Scoring uses `evaluate_predictions.py`. Per-stage logs are in `logs/gbert_*.log`; run metadata records the environment, data hash and development-selected checkpoint. Existing run outputs and stage logs are not overwritten.
+The `gahd_gbert_raw_rtx3080_run<seed>.json` configs train from the local `data/gahd.csv`, remove blank texts as Approach 3 does, and use FP32 batches of 8 with four accumulation steps (effective batch size 32). They retain the three epochs, learning rate `2e-5` and GBERT tokenizer limit of 512 tokens. Each seed is trained once and applied to raw text and both existing translation files. Run metadata records the environment, data hash and development-selected checkpoint. Existing run outputs and stage logs are not overwritten.
 
 ### Approach 2: GBERT on normalised input
 
@@ -84,21 +90,28 @@ done
 
 ### Approach 3: SwissBERT on raw Swiss German
 
-`notebooks/train_approach3.ipynb` documents SwissBERT fine-tuning on GAHD (`de_CH` adapter for training, `gsw` for the dialect, five epochs, learning rate `2e-5`, seeds 42, 43, 44). Its saved outputs describe the original runs. Use the corrected local launcher below for the current comparison.
+`notebooks/train_approach3.ipynb` documents SwissBERT fine-tuning on GAHD (`de_CH` adapter for training, `gsw` for the dialect, five epochs, learning rate `2e-5`, seeds 42, 43, 44). Its saved outputs describe the original runs. Use the corrected local runs below for the current comparison.
 
 The prediction step loads local files only, activates `gsw`, uses FP32 and the training truncation length of 128 tokens, and refuses to overwrite outputs. Each CSV contains `sentence_id`, `prediction` and `prob_hate`; its metadata JSON records the checkpoint, input hash, adapter, device and package versions. Score these files with the evaluation commands below.
 
 For corrected local training, use the pinned SwissBERT revision and the shared classification-loss function. This explicitly normalizes loss over all accumulated examples; the installed Transformers 5.19.0 otherwise produces fourfold gradients for these classifiers with four accumulation steps.
 
-```powershell
+```bash
 python -c "from huggingface_hub import snapshot_download; snapshot_download('ZurichNLP/swissbert', revision='c1294db2e2eb48bfed66ee0b536861601164b92c', local_dir='models/swissbert/c1294db2e2eb48bfed66ee0b536861601164b92c', allow_patterns=['config.json', 'model.safetensors', 'sentencepiece.bpe.model', 'special_tokens_map.json', 'tokenizer_config.json'])"
+for seed in 42 43 44; do
+  path_run=runs/gahd_swissbert_raw_lossfixed/run$seed
+  python src/exec_scripts.py --path_config configs/gahd_swissbert_raw_lossfixed_run$seed.json
+  python src/predict_swissbert.py \
+    --path_checkpoint "$(python -c "import json; print(json.load(open('$path_run/experiment.json'))['best_model_checkpoint'])")" \
+    --path_output $path_run/predictions_swiss_german_text.csv
+done
 ```
 
 These runs use `configs/gahd_swissbert_raw_lossfixed_run<seed>.json` and write `runs/gahd_swissbert_raw_lossfixed/run<seed>/`. They retain five epochs, learning rate `2e-5`, FP32, maximum length 128, effective batch size 32 and development macro-F1 checkpoint selection. The original runs remain available for comparison.
 
-The separate physical-batch-32 SwissBERT experiment uses 32 examples per device and one accumulation step. It retains the other settings and writes `runs/gahd_swissbert_raw_batch32/`.
+The separate physical-batch-32 SwissBERT experiment uses 32 examples per device and one accumulation step. It retains the other settings, uses the same two commands with `configs/gahd_swissbert_raw_batch32_run<seed>.json` and writes `runs/gahd_swissbert_raw_batch32/`.
 
-An interrupted training run with a full optimizer/RNG checkpoint can resume by setting its config's `train.resume` to `true` and calling `exec_scripts.py`. Resumption validates the run configuration, data hash and loss normalization; completed runs are refused. If predictions already exist, call only the missing steps instead of repeating the launcher.
+An interrupted training run with a full optimizer/RNG checkpoint can resume by setting its config's `train.resume` to `true` and calling `exec_scripts.py`. Resumption validates the run configuration, data hash and loss normalization; completed runs are refused. If predictions already exist, call only the missing steps.
 
 ### Baseline: TF-IDF logistic regression
 
@@ -126,7 +139,7 @@ The default SwissBERT evaluation uses `gahd_swissbert_raw_lossfixed`. The origin
 
 `evaluate_unflagged_subset.py` scores only the sentences that neither normaliser left unchanged. `compare_variants.py` bootstraps the metric differences between variants (Haiku and Apertus-8B against the raw text, and against each other) on shared resamples of the test sentences.
 
-After both local launchers finish, export the four variants on the same gold set:
+After the GBERT and SwissBERT runs are evaluated, export the four variants on the same gold set:
 
 ```bash
 python src/export_approach_comparison.py --path_output_dir results/local_comparison_20261110 --evaluation_date 2026-11-10
@@ -138,7 +151,7 @@ Use `--gbert_experiment` and `--swissbert_experiment` to compare a different pai
 
 The GBERT batch-32 runner trains three seeds and predicts the raw, Haiku and Apertus inputs. It uses the pinned local model from the existing GBERT configs, FP32 and activation checkpointing with RNG preservation. Run these commands from the repository root with the prepared inputs described above; existing run directories and evaluation outputs are refused.
 
-```powershell
+```bash
 python src/run_gbert_batch32.py --seeds 42 43 44
 ```
 
@@ -166,18 +179,12 @@ python src/analyse_hate.py
 
 `analyse_hate.py` counts, per target and mechanism, how many gold-hate sentences each variant detects at threshold 0.5. It reads the hand-assigned `Target` and `Mechanism` columns of `results/gold_hate_sentences.csv`, writes `results/hate_analysis_table.csv` and logs every cell that differs from the hand counts stored in the script.
 
-### Figures
-
-```bash
-python src/plot_report_figures.py --path_figures_dir figures
-```
-
 ## Layout
 
 ```
 src/        one script per step plus small helper modules
 configs/    one JSON config per training run
-scripts/    bash launchers for the experiment families
+scripts/    bash scripts for the experiment families
 notebooks/  exploration, baseline and Yannis's Approach 3 training
 tests/      pytest suite for the pipeline, evaluation and training helpers
 data/       inputs, annotations, translations and prediction inputs
