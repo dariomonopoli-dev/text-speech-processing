@@ -47,10 +47,9 @@ For Windows with an RTX 3080, activate the GPU-enabled Python environment used f
 
 ```powershell
 python -c "from huggingface_hub import snapshot_download; snapshot_download('deepset/gbert-base', revision='d50cb1df9660ff2de1af8a5362d322b3d5a1a28a', local_dir='models/gbert-base/d50cb1df9660ff2de1af8a5362d322b3d5a1a28a', allow_patterns=['config.json', 'model.safetensors', 'tokenizer_config.json', 'vocab.txt'])"
-.\scripts\run_gbert_local.ps1 -Python python
 ```
 
-The `gahd_gbert_raw_rtx3080_run<seed>.json` configs train from the local `data/gahd.csv`, remove blank texts as Approach 3 does, and use FP32 batches of 8 with four accumulation steps (effective batch size 32). They retain the three epochs, learning rate `2e-5` and GBERT tokenizer limit of 512 tokens. Each seed is trained once and applied to raw text and both existing translation files. The launcher then scores all 700 sentences and the shared subset, with seed averages and bootstrap intervals. Per-stage logs are in `logs/gbert_*.log`; run metadata records the environment, data hash and development-selected checkpoint. Existing run outputs and stage logs are not overwritten.
+The `gahd_gbert_raw_rtx3080_run<seed>.json` configs train from the local `data/gahd.csv`, remove blank texts as Approach 3 does, and use FP32 batches of 8 with four accumulation steps (effective batch size 32). They retain the three epochs, learning rate `2e-5` and GBERT tokenizer limit of 512 tokens. Each seed is trained once and applied to raw text and both existing translation files. Scoring uses `evaluate_predictions.py`. Per-stage logs are in `logs/gbert_*.log`; run metadata records the environment, data hash and development-selected checkpoint. Existing run outputs and stage logs are not overwritten.
 
 ### Approach 2: GBERT on normalised input
 
@@ -93,16 +92,11 @@ For corrected local training, use the pinned SwissBERT revision and the shared c
 
 ```powershell
 python -c "from huggingface_hub import snapshot_download; snapshot_download('ZurichNLP/swissbert', revision='c1294db2e2eb48bfed66ee0b536861601164b92c', local_dir='models/swissbert/c1294db2e2eb48bfed66ee0b536861601164b92c', allow_patterns=['config.json', 'model.safetensors', 'sentencepiece.bpe.model', 'special_tokens_map.json', 'tokenizer_config.json'])"
-.\scripts\run_swissbert_local.ps1 -Python python
 ```
 
-These runs use `configs/gahd_swissbert_raw_lossfixed_run<seed>.json` and write `runs/gahd_swissbert_raw_lossfixed/run<seed>/`. They retain five epochs, learning rate `2e-5`, FP32, maximum length 128, effective batch size 32 and development macro-F1 checkpoint selection. The original runs remain available for comparison. Both local launchers evaluate the full and shared subsets with 1,000 bootstrap resamples.
+These runs use `configs/gahd_swissbert_raw_lossfixed_run<seed>.json` and write `runs/gahd_swissbert_raw_lossfixed/run<seed>/`. They retain five epochs, learning rate `2e-5`, FP32, maximum length 128, effective batch size 32 and development macro-F1 checkpoint selection. The original runs remain available for comparison.
 
-The separate physical-batch-32 SwissBERT experiment uses 32 examples per device and one accumulation step. It retains the other settings and writes `runs/gahd_swissbert_raw_batch32/`:
-
-```powershell
-.\scripts\run_swissbert_local.ps1 -Python python -ExperimentName gahd_swissbert_raw_batch32 -LogPrefix swissbert_batch32
-```
+The separate physical-batch-32 SwissBERT experiment uses 32 examples per device and one accumulation step. It retains the other settings and writes `runs/gahd_swissbert_raw_batch32/`.
 
 An interrupted training run with a full optimizer/RNG checkpoint can resume by setting its config's `train.resume` to `true` and calling `exec_scripts.py`. Resumption validates the run configuration, data hash and loss normalization; completed runs are refused. If predictions already exist, call only the missing steps instead of repeating the launcher.
 
@@ -146,7 +140,6 @@ The GBERT batch-32 runner trains three seeds and predicts the raw, Haiku and Ape
 
 ```powershell
 python src/run_gbert_batch32.py --seeds 42 43 44
-.\scripts\evaluate_local.ps1 -Python python -ExperimentName gahd_gbert_batch32_control -LogPrefix gbert_batch32 -Variants text,translation_haiku,translation_apertus8b
 ```
 
 After the GBERT and SwissBERT batch-32 evaluations finish, export their comparison:
