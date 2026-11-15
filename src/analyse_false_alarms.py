@@ -169,19 +169,19 @@ if __name__ == "__main__":
     parser.add_argument(
         "--path_scores",
         type=Path,
-        default=Path("results/test_set_scores.csv"),
+        default=Path("results/analysis/test_set_scores.csv"),
         help="CSV from export_hate_sentences.py --subset all.",
     )
     parser.add_argument(
         "--path_tag_file",
         type=Path,
-        default=Path("results/false_alarms_to_tag.csv"),
+        default=Path("results/analysis/false_alarms_to_tag.csv"),
         help="CSV for manual tagging with category and label_noise columns.",
     )
     parser.add_argument(
         "--path_summary",
         type=Path,
-        default=Path("results/false_alarms_summary.csv"),
+        default=Path("results/analysis/false_alarms_summary.csv"),
         help="CSV with the per-category summary written by the summarise step.",
     )
     # hyperparams

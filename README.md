@@ -129,8 +129,8 @@ Each run writes `runs/gahd_tfidf_logreg/run<seed>/` with the GAHD test metrics a
 
 ```bash
 bash scripts/evaluate_swiss_german.sh
-python src/evaluate_unflagged_subset.py --path_translations data/eval_sentences_apertus8b.csv data/haiku_translations_700_audited.csv --path_output results/unflagged_subset_metrics.json
-python src/compare_variants.py --path_output results/paired_differences.json
+python src/evaluate_unflagged_subset.py --path_translations data/eval_sentences_apertus8b.csv data/haiku_translations_700_audited.csv --path_output results/approach2_normalisation/exclude_flagged_translations_metrics.json
+python src/compare_variants.py --path_output results/approach2_normalisation/paired_differences.json
 ```
 
 `evaluate_swiss_german.sh` recomputes the annotation agreement, then scores the `text`, `translation_haiku` and `translation_apertus8b` predictions of every seed. For one prediction file, call `evaluate_predictions.py` and `parse_results_into_csv.py` as the script does. `evaluate_predictions.py` writes one flat metrics JSON (`acc`, `f1-macro`, `f1-pos`, `f1-neg`, `precision`, `recall`, `pr-auc`, `roc-auc`, ...) and a bootstrap interval file next to it. `parse_results_into_csv.py` writes `raw_results.csv` and `seed_avg_results.csv` (mean and standard deviation over seeds). Gold labels are the majority of the three annotators on the shared sentences and the single label elsewhere.
@@ -166,18 +166,18 @@ The generated report reads each experiment's actual batching settings. The lates
 ### Error analysis
 
 ```bash
-python src/export_hate_sentences.py --subset all --path_output results/test_set_scores.csv
+python src/export_hate_sentences.py --subset all --path_output results/analysis/test_set_scores.csv
 python src/export_hate_sentences.py
 python src/analyse_false_alarms.py --step select
 python src/analyse_false_alarms.py --step summarise
 python src/analyse_hate.py
 ```
 
-`export_hate_sentences.py` writes the test sentences with the gold label, both translations and the hate score of every variant averaged over the seeds. The first call exports all 700 sentences, the second only the 26 gold-hate sentences into `results/gold_hate_sentences.csv`.
+`export_hate_sentences.py` writes the test sentences with the gold label, both translations and the hate score of every variant averaged over the seeds. The first call exports all 700 sentences, the second only the 26 gold-hate sentences into `results/analysis/gold_hate_sentences.csv`.
 
-`analyse_false_alarms.py --step select` writes the highest-scoring non-hate sentences of each variant to `results/false_alarms_to_tag.csv`. Fill in `category` and `label_noise` by hand, then run `--step summarise` for `results/false_alarms_summary.csv`. The select step refuses to overwrite tags that already exist.
+`analyse_false_alarms.py --step select` writes the highest-scoring non-hate sentences of each variant to `results/analysis/false_alarms_to_tag.csv`. Fill in `category` and `label_noise` by hand, then run `--step summarise` for `results/analysis/false_alarms_summary.csv`. The select step refuses to overwrite tags that already exist.
 
-`analyse_hate.py` counts, per target and mechanism, how many gold-hate sentences each variant detects at threshold 0.5. It reads the hand-assigned `Target` and `Mechanism` columns of `results/gold_hate_sentences.csv`, writes `results/hate_analysis_table.csv` and logs every cell that differs from the hand counts stored in the script.
+`analyse_hate.py` counts, per target and mechanism, how many gold-hate sentences each variant detects at threshold 0.5. It reads the hand-assigned `Target` and `Mechanism` columns of `results/analysis/gold_hate_sentences.csv`, writes `results/analysis/hate_analysis_table.csv` and logs every cell that differs from the hand counts stored in the script.
 
 ## Layout
 
@@ -188,7 +188,7 @@ scripts/    bash scripts for the experiment families
 notebooks/  exploration, baseline and Yannis's Approach 3 training
 tests/      pytest suite for the pipeline, evaluation and training helpers
 data/       inputs, annotations, translations and prediction inputs
-results/    annotation agreement, subset metrics, paired differences and error analysis
+results/    annotation agreement, comparison reports, `approach2_normalisation/` (subset metrics, paired differences) and `analysis/` (sentence scores, false alarms, target and mechanism table)
 runs/       training output (gitignored)
 ```
 

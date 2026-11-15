@@ -132,7 +132,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--path_output",
         type=Path,
-        default=Path("results/gold_hate_sentences.csv"),
+        default=Path("results/analysis/gold_hate_sentences.csv"),
         help="CSV with one row per exported sentence.",
     )
     parser.add_argument(

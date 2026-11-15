@@ -190,7 +190,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--path_sentences",
         type=Path,
-        default=Path("results/gold_hate_sentences.csv"),
+        default=Path("results/analysis/gold_hate_sentences.csv"),
         help="CSV with the gold-hate sentences, seed-mean scores, Target and Mechanism.",
     )
     # hyperparams
@@ -205,7 +205,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--path_output",
         type=Path,
-        default=Path("results/hate_analysis_table.csv"),
+        default=Path("results/analysis/hate_analysis_table.csv"),
         help="CSV with the analysis table.",
     )
     parser.add_argument(
