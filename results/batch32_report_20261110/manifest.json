@@ -1,0 +1,35 @@
+{
+    "source": "User-supplied LaTeX draft",
+    "source_sha256": "269ee67492b8e9a45bb4e9cb4aaa4c8ee505f4ecf56f9d7d0943b09b244d39a7",
+    "neural_experiments": [
+        "gahd_gbert_batch32_control",
+        "gahd_swissbert_raw_batch32"
+    ],
+    "seeds": [
+        42,
+        43,
+        44
+    ],
+    "threshold": 0.5,
+    "bootstrap": {
+        "num_resamples": 1000,
+        "seed": 42,
+        "method": "Paired sentence bootstrap of seed-mean metrics; training seeds held fixed."
+    },
+    "baseline": "Fresh deterministic local fit, seed 42, using data/gahd.csv",
+    "fixed_false_alarm_selection": {
+        "description": "Fixed union of the three earlier GBERT top-20 non-hate lists, retaining manual tags and rescored using the current batch-32 runs; not the current runs' top-20 union.",
+        "original_selection_file": "results/analysis/false_alarms_to_tag.csv",
+        "updated_scores_file": "results/batch32_report_20261110/fixed_false_alarm_sample.csv",
+        "original_membership_column": "in_top_k (raw, ap, hk)",
+        "original_fixed_sample": 44,
+        "new_top20_union": 47,
+        "overlap": 32,
+        "unannotated_new": 15
+    },
+    "data_files": {
+        "results/batch32_comparison_20261110/predictions.csv": "89b07de93c9f9daef3860ae77d62711fbdf84ad687063e9e3398b7f5638fc659",
+        "results/analysis/gold_hate_sentences.csv": "c094bb249f6526b4fa212d9b8f27a4abdef0e10c5cd70ba243343b4d62dd9b7c",
+        "results/analysis/false_alarms_to_tag.csv": "0ee44c25938dd5bacce9b8cc359dd641a9b63602469611dc94f2cbaf623e9ed5"
+    }
+}

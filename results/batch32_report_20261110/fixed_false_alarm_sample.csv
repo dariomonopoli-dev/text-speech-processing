@@ -1,0 +1,45 @@
+sentence_id,text,category,label_noise,raw,apertus,haiku,swissbert
+52413,"Das wirdi nie vrgässe, sälte soviel schwarze gseh und das imene Clspil :)",statement not clear,No clue what this sentence means,0.9485246333333331,0.94091155,0.9636887666666666,0.9234858166666666
+118474,En wahre kroat würd aber welle dass no en zeche meh mittrennt wird damits es grosskroatie mit bosnie git,"group mention, no hate",,0.7490767366666667,0.9559971,0.2691309166666666,0.5209561266666666
+13935,Die Umfroog soll aber kaineswägs e vergliich mit em Schnaabelbryys syy!,no clear trigger,,0.9363458,0.9404544666666668,0.0233612203333333,0.0225350066666666
+104153,das bin ich wenn ich id türkei gah und mini mom mir seit ich söll yufka mitbringe damit sie börek chan mache,"group mention, no hate",,0.92489648,0.79414788,0.0051037372,0.7162079499999999
+50044,Am Hanfueli siin Cousin wo so viel Alk gsoffe hät das er chiise muess :-),no clear trigger,,0.8907739433333334,0.8849718599999999,0.7051186,0.0622440146666666
+41347,Hhahahah schwanzduell hahahahahahaha hey russanisch der nüt bessers i kfalle??,"swearing / insult, no group",,0.93371646,0.93371646,0.7394122666666666,0.6378761866666667
+93852,"isch mal öppis anders siter scho 2 mitem pharao, 2-farbigi",statement not clear,,0.9039230633333334,0.5383775833333333,0.0362701319333333,0.8877020999999999
+168760,"Afrikaner bruchid Zuneigig, öppis vo de Ponte hervorragend hed könnä (wenigstens das hed er könnä)!","group mention, no hate",maybe,0.8271668999999999,0.95150245,0.9311531466666666,0.8580048333333333
+119981,"sowit ig mi ma bsinnä sis würklech nur je 2 kabu gsi, aber i bimr äbä nümme sichr...",no clear trigger,,0.2372582486666666,0.89764658,0.6874558666666667,0.062629562
+47561,Hau ab und mach ändlich im Quennoz Platz!!!!,"swearing / insult, no group",,0.9321399233333332,0.8502003333333333,0.8502004866666667,0.034111691
+96486,"Sickeret ou scho düre, mit de Rücklüchte.....",no clear trigger,,0.9299358233333334,0.3158680333333333,0.1071843833333333,0.034311917
+38337,"wird luschtig, de bedrunggene holländr zueluege wiesie mit de bulle diskutiere..wie letzt mol..muahaha","group mention, no hate",,0.91721592,0.8279321133333334,0.8231994966666667,0.90345488
+189574,"Uf Meryn ga ich, aber nur um alli uszpfifie!",reported / counter-speech,,0.88132128,0.0880119313333333,0.2965521166666666,0.0346687896666666
+68638,Das und Spil in Pole sin im Momänt wirklich fascht s einzige woni im Kopf ha,"group mention, no hate",,0.9065619833333332,0.2806572066666666,0.0030875140333333,0.2206334466666666
+169938,"Flying-Eye sofern di normale Schwarze oder Chrom häsch muesch fürd MFK nüüt wächsle, sötted ja es DOT/SAE Zeiche druffha",no clear trigger,,0.7972437733333333,0.7364301733333333,0.12425932,0.93471671
+57748,do sind die welsche mol besser im moderiere und sie brülle ins microfon wenns e goal git,"group mention, no hate",,0.90593954,0.8830606566666667,0.0068327244333333,0.2629801866666666
+165152,Ja guet aber am schluss chunt eh alles us Taiwan oder china Mer zahlt ja nur fürd marke es vermöööge,"group mention, no hate",,0.8936153500000001,0.8600917899999999,0.5675999866666667,0.5803026166666666
+104518,Bitte entlönd eifach de Thurneer han fascht krise becho ab dem sine behinderte sprüch !,"swearing / insult, no group",,0.88986552,0.8619475666666667,0.8755990266666666,0.6301222599999999
+38838,will drusse händ ihn lieber drine wie dusse;-) spass bi site..denke russland wird stercher ufträte mit weniger hemmige wie d tscheche und das wird ne früeh 0:,"group mention, no hate",,0.9086665233333332,0.6143669866666667,0.7850098133333333,0.4082242533333333
+4655,ussert d engländerinne die sind den geil,"group mention, no hate",,0.93985497,0.5438235266666667,0.068110527,0.7956769666666667
+106639,"WIR SINGEN HEIMSPIEL IM HARDTURM, HEIMSPIEL IM HARDTURM *sing* aber d insekte hän jo im cup au 4-0 gwunne...","swearing / insult, no group",,0.87867505,0.6541500566666667,0.6925398133333333,0.0416567656666666
+140867,"super palmares vom forte, ääähh nati b oder was",no clear trigger,,0.9063634233333334,0.8203941666666666,0.4513423266666667,0.4485098733333334
+32724,woner kha hett wär wieder öbbis für e rotoloso gsi,statement not clear,,0.8289640566666666,0.9062231533333334,0.317212161,0.7838451966666667
+54025,"aber s'baby wo dr dharma-chines grosszüchtet isch en, glaub mrs...",statement not clear,,0.4443885266666666,0.5683128,0.8136740566666667,0.5024127866666667
+85258,"Jetzt nimmt's mich nur no Wunder, welle Usländer für de Klein chunnt und wohi es de Inti zieht.","group mention, no hate",,0.0405126953333333,0.8581296100000001,0.90813573,0.14114472
+92077,Ärdbeeriwy mit Ärdbeeri vor umgäbig Macht freud bi däm Wätter im Garte,no clear trigger,,0.90745831,0.24834787,0.0067260310666666,0.1227338816666666
+134000,i wird mit angels umefahre und gseh nid i wieso es DOT nid söti lange,no clear trigger,,0.8965919333333333,0.8337076766666667,0.6182846999999999,0.79630812
+133082,"alli iversüchtig, milan häts verdient, sie hät die saison dominiert und fertig",no clear trigger,,0.6433467733333332,0.8390355100000001,0.0063307088,0.0864545033333333
+187745,nei man...de blerim söll nachli bliiibe!,no clear trigger,,0.6706708666666666,0.68856127,0.8658509666666667,0.23968853
+6012,kunnt grad e huere geili hand hansen gege negreanu und denn nachem river rugglets uff eimol und was kunnt???,statement not clear,,0.33611478,0.8643002266666667,0.8582470833333332,0.160531
+116302,das ihr fraue ilade....vo däm weissi nüt^^chchchh wird voll geil die scheisse!!!,"group mention, no hate",,0.7269617333333332,0.7215541999999999,0.8951759333333333,0.4883093166666666
+49852,Ja okay isch das ned aber d Fraue send so..,"group mention, no hate",yes,0.7804386866666665,0.8457455633333333,0.8041921333333333,0.8151833333333333
+98701,Das rüefet es paar bi farbige Spieler und Italiener sind nöd farbig!,reported / counter-speech,,0.8785089533333333,0.8770467999999999,0.8452860666666666,0.1968393533333333
+195002,"due de uf weddix scho es schiferehärz bseue woni cha ad oder id chischte due mit ""karten"" oder üser näme oder so i gloube, bis am schluss chunnts no guet",no clear trigger,,0.157672335,0.8472641866666667,0.0577950296666666,0.15897069
+204878,Hehe Typisch Jugo Muss alles funkl und glitzere sust sinds ned glücklich hihi Gell bratte!,"group mention, no hate",,0.8336784833333333,0.8624375533333333,0.8307556866666667,0.8600675299999999
+98723,alli nume Zug nöd...ich ha mit em Kläy na e Rächnig off mit dem Riesearschloch..,"swearing / insult, no group",,0.6116755833333333,0.7657920233333333,0.8740693333333334,0.0681064096666666
+57179,so vrsnobbti studänteärsch go usneh...,"swearing / insult, no group",,0.795456,0.85808809,0.6635397466666667,0.0290653673333333
+199732,"ja, ich weiss mushu, sehr gföhrlich, alles kriminelli...aber wie hät de gygax bim brack emal gseit?",reported / counter-speech,maybe,0.49377679,0.7829124799999999,0.85361529,0.036413942
+13230,Also Chinesisch isch es ziemlich sicher so zeigts au mis Skype a. Ha aber no nie so öbis gha vielicht bruche dich d Chinese für d Olympia.,"group mention, no hate",,0.6774763166666666,0.8030727033333335,0.8222646066666667,0.18574598
+67166,denn lueg ich lieber TSR2 welsche könne wenigstens moderiere und schreie wenns goals git,"group mention, no hate",,0.7334796833333334,0.8422896566666668,0.1532196283333333,0.1532943633333333
+200292,Bi FarCry chani mi kei bizeli beklage;,no clear trigger,,0.5380456866666666,0.7521185199999999,0.8061097033333334,0.027067852
+12665,"De ganz Match dure hebt me e Pfiffkonzärt praktisch nie voll dure, aber au wenns nume am aafang isch dängg ich emol das es die ******** scho zerscht emol abem stieli keyt!!!!!","swearing / insult, no group",,0.8418905866666666,0.7948751133333333,0.82317958,0.0265730873333333
+740,"Kei wunder, dass e Hippeldi-Hopper wie Du kei Ahnig vo Kultur het...typisch East-Coast P.S seisch im Rakim e Gruess vo mir","swearing / insult, no group",,0.8462918433333334,0.7655115333333334,0.76058959,0.2689984666666666
+197060,"wenn mer die gastgschänli nid fertig möged, de gits halt keini pompons schiebi immer use, aber anonsten...",no clear trigger,,0.55670024,0.3139543966666667,0.6563735133333333,0.3012289066666666
