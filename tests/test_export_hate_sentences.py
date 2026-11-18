@@ -132,7 +132,7 @@ def test_main_refuses_an_existing_output_without_overwrite(args):
         export_hate_sentences.main(args)
 
 
-def test_main_keeps_hand_assigned_columns_when_overwriting(args):
+def test_main_keeps_the_manual_tags_when_overwriting(args):
     export_hate_sentences.main(args)
     tagged = pd.read_csv(args.path_output, encoding="utf-8-sig")
     tagged["Target"] = ["Women", "Disability"]

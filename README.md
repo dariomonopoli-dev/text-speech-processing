@@ -172,7 +172,7 @@ python src/analyse_false_alarms.py --step summarise --overwrite
 python src/analyse_hate.py --overwrite
 ```
 
-`runs/gahd_gbert_raw_batch32` holds the GBERT runs of the report. The two exports refresh the scores in the existing tables and keep the hand-assigned `Target` and `Mechanism` columns.
+`runs/gahd_gbert_raw_batch32` holds the GBERT runs of the report. The two exports refresh the scores in the existing tables and keep the manually typed `Target` and `Mechanism` tags.
 
 `export_hate_sentences.py` writes the test sentences with the gold label, both translations and the hate score of every variant averaged over the seeds. The first call exports all 700 sentences, the second only the 26 gold-hate sentences into `results/analysis/gold_hate_sentences.csv`.
 
