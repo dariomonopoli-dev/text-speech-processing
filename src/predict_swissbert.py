@@ -67,7 +67,9 @@ def main(args: argparse.Namespace) -> None:
             raise FileExistsError(f"Output {path_output} already exists")
     eval_set = load_eval_set(args.path_eval_set)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    tokenizer = AutoTokenizer.from_pretrained(args.path_checkpoint, local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(
+        args.path_checkpoint, local_files_only=True
+    )
     model = AutoModelForSequenceClassification.from_pretrained(
         args.path_checkpoint, local_files_only=True
     )
@@ -85,9 +87,10 @@ def main(args: argparse.Namespace) -> None:
         args.max_length,
         device,
     )
-    if probabilities.shape != (len(eval_set), 2) or not torch.isfinite(
-        probabilities
-    ).all():
+    if (
+        probabilities.shape != (len(eval_set), 2)
+        or not torch.isfinite(probabilities).all()
+    ):
         raise ValueError("Prediction probabilities are invalid")
     predictions = eval_set[["sentence_id"]].copy()
     predictions["prediction"] = probabilities.argmax(dim=-1).numpy()

@@ -20,7 +20,15 @@ from parse_results_into_csv import get_run_paths
 
 logger = get_logger("compare")
 
-DIFFERENCE_METRICS = ["f1-macro", "f1-pos", "acc", "precision", "recall", "pr-auc", "roc-auc"]
+DIFFERENCE_METRICS = [
+    "f1-macro",
+    "f1-pos",
+    "acc",
+    "precision",
+    "recall",
+    "pr-auc",
+    "roc-auc",
+]
 DEFAULT_PAIRS = [
     "translation_haiku:text",
     "translation_apertus8b:text",
@@ -45,7 +53,9 @@ def compute_paired_differences(
     seed: int,
 ) -> dict[str, dict[str, dict[str, float]]]:
     """Difference of seed-mean metrics per pair with a 95 percent interval over shared resamples."""
-    unknown_variants = sorted({v for pair in pairs for v in pair} - scores_per_variant.keys())
+    unknown_variants = sorted(
+        {v for pair in pairs for v in pair} - scores_per_variant.keys()
+    )
     if unknown_variants:
         raise KeyError(f"no predictions loaded for {unknown_variants}")
     full_metrics = {
@@ -53,7 +63,9 @@ def compute_paired_differences(
         for variant, scores_per_run in scores_per_variant.items()
     }
     generator = np.random.default_rng(seed)
-    resampled_metrics: dict[str, list[dict[str, float]]] = {v: [] for v in scores_per_variant}
+    resampled_metrics: dict[str, list[dict[str, float]]] = {
+        v: [] for v in scores_per_variant
+    }
     num_done = 0
     while num_done < num_resamples:
         indices = generator.integers(0, len(true_labels), len(true_labels))
@@ -63,7 +75,9 @@ def compute_paired_differences(
         for variant, scores_per_run in scores_per_variant.items():
             resampled_metrics[variant].append(
                 compute_seed_mean_metrics(
-                    true_labels[indices], [scores[indices] for scores in scores_per_run], threshold
+                    true_labels[indices],
+                    [scores[indices] for scores in scores_per_run],
+                    threshold,
                 )
             )
         num_done += 1
@@ -73,9 +87,13 @@ def compute_paired_differences(
     for variant_a, variant_b in pairs:
         pair_results = {}
         for metric in DIFFERENCE_METRICS:
-            differences = resampled_df[variant_a][metric] - resampled_df[variant_b][metric]
+            differences = (
+                resampled_df[variant_a][metric] - resampled_df[variant_b][metric]
+            )
             pair_results[metric] = {
-                "difference": float(full_metrics[variant_a][metric] - full_metrics[variant_b][metric]),
+                "difference": float(
+                    full_metrics[variant_a][metric] - full_metrics[variant_b][metric]
+                ),
                 "ci_low": float(differences.quantile(0.025)),
                 "ci_high": float(differences.quantile(0.975)),
                 "share_resamples_above_zero": float((differences > 0).mean()),
@@ -87,7 +105,9 @@ def compute_paired_differences(
 def main(args: argparse.Namespace) -> None:
     logger.info(json.dumps(vars(args), ensure_ascii=False, default=str))
     if args.path_output.exists() and not args.overwrite:
-        raise FileExistsError(f"{args.path_output} exists, pass --overwrite to replace it")
+        raise FileExistsError(
+            f"{args.path_output} exists, pass --overwrite to replace it"
+        )
     pairs = [parse_pair(pair) for pair in args.pairs]
 
     true_labels = load_gold_labels(args.path_annotations)
@@ -103,7 +123,9 @@ def main(args: argparse.Namespace) -> None:
             scores_per_run.append(raw_preds.loc[true_labels.index].to_numpy())
         scores_per_variant[variant] = scores_per_run
 
-    logger.info(f"Start paired bootstrap with {args.num_resamples} resamples for {args.pairs}.")
+    logger.info(
+        f"Start paired bootstrap with {args.num_resamples} resamples for {args.pairs}."
+    )
     results = compute_paired_differences(
         true_labels["label"].to_numpy(),
         scores_per_variant,

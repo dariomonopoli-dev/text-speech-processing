@@ -87,7 +87,9 @@ def main(args: argparse.Namespace) -> None:
         check_covers_ids(mean_scores.to_frame(), hate_ids, f"predictions for {variant}")
         hate_sentences[column] = mean_scores.loc[hate_ids]
 
-    hate_sentences = hate_sentences.sort_index().rename_axis("sentence_id").reset_index()
+    hate_sentences = (
+        hate_sentences.sort_index().rename_axis("sentence_id").reset_index()
+    )
     write_csv(hate_sentences, args.path_output)
     logger.info(f"wrote {len(hate_sentences)} sentences to {args.path_output}")
 

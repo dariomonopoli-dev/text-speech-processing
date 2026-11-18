@@ -34,9 +34,9 @@ def test_load_annotated_sentences_returns_each_sentence_once(args):
 
 
 def test_load_annotated_sentences_rejects_conflicting_texts(args, tmp_path):
-    pd.DataFrame([(1, "anders")], columns=["sentence_id", "text"]).assign(label=0).to_csv(
-        tmp_path / "annotation_yannis_stratified.csv", index=False
-    )
+    pd.DataFrame([(1, "anders")], columns=["sentence_id", "text"]).assign(
+        label=0
+    ).to_csv(tmp_path / "annotation_yannis_stratified.csv", index=False)
 
     with pytest.raises(ValueError, match="different texts"):
         build_eval_sentences.load_annotated_sentences(args.path_annotations)

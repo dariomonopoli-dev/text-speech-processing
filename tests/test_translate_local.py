@@ -66,7 +66,9 @@ def test_translate_batch_splits_a_batch_whose_reply_has_the_wrong_length():
 
 
 def test_translate_batch_returns_none_for_a_sentence_that_cannot_be_parsed():
-    translations = translate_local.translate_batch(["eins"], lambda prompt: "kein format")
+    translations = translate_local.translate_batch(
+        ["eins"], lambda prompt: "kein format"
+    )
 
     assert translations == [None]
 
@@ -83,7 +85,9 @@ def test_translate_sentences_keeps_the_input_order_and_records_the_model(
     assert translated["translation_model"].eq(MODEL_NAME).all()
 
 
-def test_translate_sentences_flags_a_missing_translation_for_review(sentences, tmp_path):
+def test_translate_sentences_flags_a_missing_translation_for_review(
+    sentences, tmp_path
+):
     translated = translate_local.translate_sentences(
         sentences, lambda prompt: "kein format", MODEL_NAME, 5, tmp_path / "c.jsonl"
     )
@@ -125,7 +129,9 @@ def test_resume_only_translates_sentences_missing_from_the_checkpoint(
     sentences, tmp_path
 ):
     path_checkpoint = tmp_path / "c.jsonl"
-    translate_local.append_checkpoint(path_checkpoint, ["11", "12"], ["ERSTE", "ZWEITE"], MODEL_NAME)
+    translate_local.append_checkpoint(
+        path_checkpoint, ["11", "12"], ["ERSTE", "ZWEITE"], MODEL_NAME
+    )
     prompts = []
 
     def recording_generate(prompt: str) -> str:
@@ -155,7 +161,9 @@ def test_main_writes_translations_and_a_checkpoint(args):
     translated = pd.read_csv(args.path_output, encoding="utf-8-sig")
     assert translated["translation"].tolist()[0] == "SATZ 1 ISCH KURZ"
     assert len(translated) == 5
-    records = [json.loads(line) for line in args.path_checkpoint.read_text().splitlines()]
+    records = [
+        json.loads(line) for line in args.path_checkpoint.read_text().splitlines()
+    ]
     assert len(records) == 5
 
 

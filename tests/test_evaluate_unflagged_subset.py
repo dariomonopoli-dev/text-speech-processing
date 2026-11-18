@@ -44,7 +44,10 @@ def args(tmp_path) -> argparse.Namespace:
 
     return argparse.Namespace(
         path_annotations=tmp_path,
-        path_translations=[tmp_path / "translations_a.csv", tmp_path / "translations_b.csv"],
+        path_translations=[
+            tmp_path / "translations_a.csv",
+            tmp_path / "translations_b.csv",
+        ],
         path_runs=tmp_path / "runs",
         variants=["text"],
         score_column="prob_hate",

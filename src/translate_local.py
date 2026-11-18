@@ -35,7 +35,10 @@ def check_sentences(sentences: pd.DataFrame, path_sentences: Path) -> None:
     missing_columns = sorted(set(SOURCE_COLUMNS) - set(sentences.columns))
     if missing_columns:
         raise KeyError(f"{path_sentences} lacks columns {missing_columns}")
-    if sentences["sentence_id"].isna().any() or sentences["sentence_id"].duplicated().any():
+    if (
+        sentences["sentence_id"].isna().any()
+        or sentences["sentence_id"].duplicated().any()
+    ):
         raise ValueError(f"{path_sentences} needs unique, non-null sentence_id values.")
 
 
@@ -44,7 +47,11 @@ def translate_batch(
 ) -> list[str | None]:
     """Translate texts in one prompt, splitting the batch if the reply cannot be parsed."""
     try:
-        return list(parse_translation_response(generate(to_translation_prompt(texts)), len(texts)))
+        return list(
+            parse_translation_response(
+                generate(to_translation_prompt(texts)), len(texts)
+            )
+        )
     except ValueError as error:
         logger.warning(f"Unparsable reply for {len(texts)} sentences: {error}")
     if len(texts) == 1:
@@ -63,7 +70,10 @@ def load_checkpoint(path_checkpoint: Path, model_name: str) -> dict[str, str | N
     with path_checkpoint.open(encoding="utf-8") as fin:
         for line in fin:
             record = json.loads(line)
-            if record["model_name"] != model_name or record["prompt_version"] != PROMPT_VERSION:
+            if (
+                record["model_name"] != model_name
+                or record["prompt_version"] != PROMPT_VERSION
+            ):
                 raise PipelineError(
                     f"Checkpoint {path_checkpoint} was written with "
                     f"{record['model_name']} / {record['prompt_version']}, "
@@ -102,13 +112,19 @@ def translate_sentences(
     """Translate every sentence not yet in the checkpoint and return the audited frame."""
     done = load_checkpoint(path_checkpoint, model_name)
     pending = sentences[~sentences["sentence_id"].isin(done)]
-    logger.info(f"{len(done)} sentences in the checkpoint, {len(pending)} to translate.")
+    logger.info(
+        f"{len(done)} sentences in the checkpoint, {len(pending)} to translate."
+    )
     for start in range(0, len(pending), batch_size):
         batch = pending.iloc[start : start + batch_size]
         translations = translate_batch(batch["text"].tolist(), generate)
-        append_checkpoint(path_checkpoint, batch["sentence_id"].tolist(), translations, model_name)
+        append_checkpoint(
+            path_checkpoint, batch["sentence_id"].tolist(), translations, model_name
+        )
         done.update(zip(batch["sentence_id"], translations, strict=True))
-        logger.info(f"Translated {min(start + batch_size, len(pending))}/{len(pending)}.")
+        logger.info(
+            f"Translated {min(start + batch_size, len(pending))}/{len(pending)}."
+        )
 
     translated = add_translations(
         sentences[SOURCE_COLUMNS].reset_index(drop=True),

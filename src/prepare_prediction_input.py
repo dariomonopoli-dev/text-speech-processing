@@ -22,7 +22,9 @@ def check_translations(translations: pd.DataFrame, path_translations: Path) -> N
         raise KeyError(f"{path_translations} lacks columns {missing_columns}")
     sentence_ids = translations["sentence_id"]
     if sentence_ids.isna().any() or sentence_ids.duplicated().any():
-        raise ValueError(f"{path_translations} needs unique, non-null sentence_id values.")
+        raise ValueError(
+            f"{path_translations} needs unique, non-null sentence_id values."
+        )
     is_blank = translations["translation"].fillna("").astype(str).str.strip().eq("")
     if is_blank.any():
         raise ValueError(

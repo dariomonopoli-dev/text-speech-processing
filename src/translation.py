@@ -164,9 +164,9 @@ def flag_unchanged(translated: pd.DataFrame) -> pd.DataFrame:
     flagged = translated.copy()
     flagged["translation_unchanged"] = compute_unchanged(flagged)
     flagged["translation_has_anomaly"] |= flagged["translation_unchanged"]
-    flagged.loc[flagged["translation_has_anomaly"], "translation_status"] = (
-        "manual_review"
-    )
+    flagged.loc[
+        flagged["translation_has_anomaly"], "translation_status"
+    ] = "manual_review"
     return flagged
 
 

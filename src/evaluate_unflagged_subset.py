@@ -56,12 +56,16 @@ def compute_subset_results(
 def main(args: argparse.Namespace) -> None:
     logger.info(json.dumps(vars(args), ensure_ascii=False, default=str))
     if args.path_output.exists() and not args.overwrite:
-        raise FileExistsError(f"{args.path_output} exists, pass --overwrite to replace it")
+        raise FileExistsError(
+            f"{args.path_output} exists, pass --overwrite to replace it"
+        )
 
     flagged_ids = set()
     for path_translations in args.path_translations:
         flagged_ids |= load_flagged_ids(path_translations)
-    logger.info(f"{len(flagged_ids)} sentences are flagged in at least one translation file.")
+    logger.info(
+        f"{len(flagged_ids)} sentences are flagged in at least one translation file."
+    )
 
     true_labels = load_gold_labels(args.path_annotations)
     kept_labels = true_labels.loc[~true_labels.index.isin(flagged_ids)]

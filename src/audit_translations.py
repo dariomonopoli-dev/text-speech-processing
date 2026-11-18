@@ -20,8 +20,13 @@ def check_translations(translations: pd.DataFrame, path_translations: Path) -> N
     missing_columns = sorted(set(REQUIRED_COLUMNS) - set(translations.columns))
     if missing_columns:
         raise KeyError(f"{path_translations} lacks columns {missing_columns}")
-    if translations["sentence_id"].isna().any() or translations["sentence_id"].duplicated().any():
-        raise ValueError(f"{path_translations} needs unique, non-null sentence_id values.")
+    if (
+        translations["sentence_id"].isna().any()
+        or translations["sentence_id"].duplicated().any()
+    ):
+        raise ValueError(
+            f"{path_translations} needs unique, non-null sentence_id values."
+        )
 
 
 def audit_translations(translations: pd.DataFrame) -> pd.DataFrame:

@@ -95,8 +95,12 @@ def compute_analysis_table(sentences: pd.DataFrame, threshold: float) -> pd.Data
     for column in TAG_COLUMNS:
         for name in list_tag_names(sentences, column):
             group = select_sentences(sentences, name, [column])
-            rows.append({"group": column, "name": name, **count_detections(group, threshold)})
-    rows.append({"group": "All", "name": "All", **count_detections(sentences, threshold)})
+            rows.append(
+                {"group": column, "name": name, **count_detections(group, threshold)}
+            )
+    rows.append(
+        {"group": "All", "name": "All", **count_detections(sentences, threshold)}
+    )
     return pd.DataFrame(rows)
 
 

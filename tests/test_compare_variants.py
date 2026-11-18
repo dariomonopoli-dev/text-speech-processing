@@ -26,7 +26,11 @@ def args(tmp_path) -> argparse.Namespace:
     for seed in [42, 43]:
         run_path = tmp_path / "runs" / f"run{seed}"
         run_path.mkdir(parents=True)
-        for variant, scores in [("good", good_scores), ("bad", bad_scores), ("same", good_scores)]:
+        for variant, scores in [
+            ("good", good_scores),
+            ("bad", bad_scores),
+            ("same", good_scores),
+        ]:
             pd.DataFrame({"sentence_id": SENTENCE_IDS, "prob_hate": scores}).to_csv(
                 run_path / f"predictions_swiss_german_{variant}.csv", index=False
             )

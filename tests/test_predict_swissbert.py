@@ -57,7 +57,9 @@ def test_batched_xmod_inference_uses_gsw_and_preserves_weights() -> None:
     adapter_batch_sizes = []
     handles = [
         module.register_forward_hook(
-            lambda module, inputs, output: adapter_batch_sizes.append(inputs[0].shape[0])
+            lambda module, inputs, output: adapter_batch_sizes.append(
+                inputs[0].shape[0]
+            )
         )
         for name, module in model.named_modules()
         if name.endswith("adapter_modules.gsw")

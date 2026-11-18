@@ -61,7 +61,9 @@ def select_false_alarms(scores: pd.DataFrame, top_k: int) -> pd.DataFrame:
         name: set(not_hate.nlargest(top_k, column)["sentence_id"])
         for name, column in VARIANTS.items()
     }
-    selected = not_hate[not_hate["sentence_id"].isin(set().union(*top_ids.values()))].copy()
+    selected = not_hate[
+        not_hate["sentence_id"].isin(set().union(*top_ids.values()))
+    ].copy()
     selected["in_top_k"] = [
         "/".join(name for name in VARIANTS if sentence_id in top_ids[name])
         for sentence_id in selected["sentence_id"]
@@ -123,7 +125,7 @@ def run_summarise(args: argparse.Namespace) -> None:
         raise FileExistsError(
             f"{args.path_summary} exists, pass --overwrite to replace it"
         )
-    tagged =pd.read_csv(args.path_tag_file, encoding="utf-8-sig")
+    tagged = pd.read_csv(args.path_tag_file, encoding="utf-8-sig")
     missing_columns = sorted(set(TAG_COLUMNS + SCORE_COLUMNS) - set(tagged.columns))
     if missing_columns:
         raise KeyError(f"{args.path_tag_file} lacks columns {missing_columns}")
@@ -191,7 +193,9 @@ if __name__ == "__main__":
     )
     # saving
     parser.add_argument(
-        "--overwrite", action="store_true", help="Replace an existing tag file or summary file."
+        "--overwrite",
+        action="store_true",
+        help="Replace an existing tag file or summary file.",
     )
     cmd_args = parser.parse_args()
     main(cmd_args)

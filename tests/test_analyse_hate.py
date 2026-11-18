@@ -57,7 +57,12 @@ def test_misspelled_tag_is_listed_as_unexpected(sentences):
 
     assert "slur" in table["name"].tolist()
     mismatches = analyse_hate.find_mismatches(table)
-    unexpected = {"name": "slur", "column": "tag", "expected": "absent", "actual": "present"}
+    unexpected = {
+        "name": "slur",
+        "column": "tag",
+        "expected": "absent",
+        "actual": "present",
+    }
     assert unexpected in mismatches
 
 
