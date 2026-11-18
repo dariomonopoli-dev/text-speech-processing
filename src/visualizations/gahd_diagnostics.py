@@ -25,6 +25,8 @@ from .style import (
     HATE_COLOR,
     INK,
     LABEL_NAMES,
+    MIN_WORD_COUNT,
+    MIN_WORD_LENGTH,
     MUTED_INK,
     N_RESAMPLES,
     N_SIMILARITY_BINS,
