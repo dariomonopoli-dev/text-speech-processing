@@ -28,14 +28,14 @@ MECHANISM_NAMES = ["Slur", "Generalisation / stereotype", "Implicit / mockery"]
 TAG_NAMES = {"Target": TARGET_NAMES, "Mechanism": MECHANISM_NAMES}
 # n, raw, apertus, haiku as counted by hand for the report table
 EXPECTED_COUNTS = {
-    "Nationality / ethnicity": (9, 5, 4, 3),
-    "Women": (9, 4, 5, 3),
-    "Sexual orientation / gender identity": (6, 5, 5, 5),
-    "Disability": (4, 3, 1, 1),
-    "Slur": (12, 6, 6, 7),
-    "Generalisation / stereotype": (6, 2, 2, 2),
-    "Implicit / mockery": (8, 7, 5, 2),
-    "All": (26, 15, 13, 11),
+    "Nationality / ethnicity": (9, 6, 5, 4),
+    "Women": (9, 6, 5, 4),
+    "Sexual orientation / gender identity": (6, 5, 5, 6),
+    "Disability": (4, 4, 2, 1),
+    "Slur": (12, 8, 7, 7),
+    "Generalisation / stereotype": (6, 4, 3, 4),
+    "Implicit / mockery": (8, 7, 5, 3),
+    "All": (26, 19, 15, 14),
 }
 COUNT_COLUMNS = ["n", *SCORE_COLUMNS]
 

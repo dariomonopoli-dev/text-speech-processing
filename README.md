@@ -166,18 +166,21 @@ The generated report reads each experiment's actual batching settings. The lates
 ### Error analysis
 
 ```bash
-python src/export_hate_sentences.py --subset all --path_output results/analysis/test_set_scores.csv
-python src/export_hate_sentences.py
-python src/analyse_false_alarms.py --step select
-python src/analyse_false_alarms.py --step summarise
-python src/analyse_hate.py
+python src/export_hate_sentences.py --subset all --path_runs runs/gahd_gbert_raw_batch32 --path_output results/analysis/test_set_scores.csv --overwrite
+python src/export_hate_sentences.py --path_runs runs/gahd_gbert_raw_batch32 --overwrite
+python src/analyse_false_alarms.py --step summarise --overwrite
+python src/analyse_hate.py --overwrite
 ```
+
+`runs/gahd_gbert_raw_batch32` holds the GBERT runs of the report. The two exports refresh the scores in the existing tables and keep the hand-assigned `Target` and `Mechanism` columns.
 
 `export_hate_sentences.py` writes the test sentences with the gold label, both translations and the hate score of every variant averaged over the seeds. The first call exports all 700 sentences, the second only the 26 gold-hate sentences into `results/analysis/gold_hate_sentences.csv`.
 
-`analyse_false_alarms.py --step select` writes the highest-scoring non-hate sentences of each variant to `results/analysis/false_alarms_to_tag.csv`. Fill in `category` and `label_noise` by hand, then run `--step summarise` for `results/analysis/false_alarms_summary.csv`. The select step refuses to overwrite tags that already exist.
+`analyse_false_alarms.py --step select` writes the highest-scoring non-hate sentences of each variant to `results/analysis/false_alarms_to_tag.csv`. Fill in `category` and `label_noise` by hand, then run `--step summarise` for `results/analysis/false_alarms_summary.csv`. The select step refuses to overwrite tags that already exist, and it is run once: the 44 tagged sentences are a fixed sample, so after new runs only the three `mean_prob_hate_*` columns of `false_alarms_to_tag.csv` are replaced, by sentence_id, with those of `test_set_scores.csv`.
 
 `analyse_hate.py` counts, per target and mechanism, how many gold-hate sentences each variant detects at threshold 0.5. It reads the hand-assigned `Target` and `Mechanism` columns of `results/analysis/gold_hate_sentences.csv`, writes `results/analysis/hate_analysis_table.csv` and logs every cell that differs from the hand counts stored in the script.
+
+The report tables also include SwissBERT. They are committed in `results/batch32_report_20261110/` and treated as given data.
 
 ## Layout
 

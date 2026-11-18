@@ -1,9 +1,9 @@
 ﻿group,name,n,raw,apertus,haiku
-Target,Nationality / ethnicity,9,5,4,3
-Target,Women,9,4,5,3
-Target,Sexual orientation / gender identity,6,5,5,5
-Target,Disability,4,3,1,1
-Mechanism,Slur,12,6,6,7
-Mechanism,Generalisation / stereotype,6,2,2,2
-Mechanism,Implicit / mockery,8,7,5,2
-All,All,26,15,13,11
+Target,Nationality / ethnicity,9,6,5,4
+Target,Women,9,6,5,4
+Target,Sexual orientation / gender identity,6,5,5,6
+Target,Disability,4,4,2,1
+Mechanism,Slur,12,8,7,7
+Mechanism,Generalisation / stereotype,6,4,3,4
+Mechanism,Implicit / mockery,8,7,5,3
+All,All,26,19,15,14
