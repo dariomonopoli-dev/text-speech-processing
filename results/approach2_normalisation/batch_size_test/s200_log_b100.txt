@@ -1,0 +1,9 @@
+[2026-11-05 16:12:44,528] [INFO] {"path_sentences": "tmp/batch_test/sample200.csv", "path_output": "tmp/batch_test/s200_b100.csv", "path_checkpoint": "tmp/batch_test/s200_ckpt_b100.jsonl", "model_name": "mlx-community/Apertus-8B-Instruct-2509-bf16", "batch_size": 100, "max_tokens": 8192, "resume": false}
+[2026-11-05 16:12:44,531] [INFO] Start translation with mlx-community/Apertus-8B-Instruct-2509-bf16.
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 2678.70it/s]
+[2026-11-05 16:12:48,938] [INFO] 0 sentences in the checkpoint, 200 to translate.
+[2026-11-05 16:15:56,314] [INFO] Translated 100/200.
+[2026-11-05 16:18:41,155] [INFO] Translated 200/200.
+[2026-11-05 16:18:41,183] [INFO] Finished translation.
+[2026-11-05 16:18:41,183] [WARNING] 46 translations are flagged for manual review.
+[2026-11-05 16:18:41,185] [INFO] wrote 200 rows to tmp/batch_test/s200_b100.csv

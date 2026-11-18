@@ -1,0 +1,3 @@
+﻿output,num_sentences,num_unchanged,num_anomalies,num_identical_to_first
+s50_b10,50,9,0,50
+s50_b50,50,1,0,11

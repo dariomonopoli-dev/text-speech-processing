@@ -64,7 +64,12 @@ The same fine-tuned models applied to Standard German translations of the 700 se
 - `claude-haiku-5-5` with a fixed four-example prompt (`data/haiku_translations_700.csv`).
 - `mlx-community/Apertus-8B-Instruct-2509-bf16`, run locally with MLX in batches of 50 sentences with greedy decoding. It replaces the Apertus-70B model named in the proposal, which does not fit into 48 GB of memory.
 
-Translate with Apertus. Batch size 50 left 2 to 4 percent of the sentences unchanged on two test samples, batch sizes 10, 100 and 200 left 18 to 23 percent.
+Translate with Apertus. Batch size 50 left 2 to 4 percent of the sentences unchanged on two test samples, batch sizes 10, 100 and 200 left 18 to 23 percent. The outputs of both samples are in `results/approach2_normalisation/batch_size_test/`. Compare them against the first file given:
+
+```bash
+python src/compare_batch_sizes.py --path_outputs results/approach2_normalisation/batch_size_test/s50_b10.csv results/approach2_normalisation/batch_size_test/s50_b50.csv --path_summary results/approach2_normalisation/batch_size_test/summary_sample50.csv
+python src/compare_batch_sizes.py --path_outputs results/approach2_normalisation/batch_size_test/s200_b50.csv results/approach2_normalisation/batch_size_test/s200_b100.csv results/approach2_normalisation/batch_size_test/s200_b200.csv --path_summary results/approach2_normalisation/batch_size_test/summary_sample200.csv
+```
 
 ```bash
 python src/translate_local.py --path_output data/eval_sentences_apertus8b.csv --path_checkpoint tmp/apertus8b_translation.jsonl --model_name mlx-community/Apertus-8B-Instruct-2509-bf16 --batch_size 50
@@ -190,7 +195,7 @@ scripts/    bash scripts for the experiment families
 notebooks/  exploration, baseline and Yannis's Approach 3 training
 tests/      pytest suite for the pipeline, evaluation and training helpers
 data/       inputs, annotations, translations and prediction inputs
-results/    annotation agreement, comparison reports, `approach2_normalisation/` (subset metrics) and `analysis/` (sentence scores, false alarms, target and mechanism table)
+results/    annotation agreement, comparison reports, `approach2_normalisation/` (subset metrics, translation batch-size test) and `analysis/` (sentence scores, false alarms, target and mechanism table)
 runs/       training output (gitignored)
 ```
 

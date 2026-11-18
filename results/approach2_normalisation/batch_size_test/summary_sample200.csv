@@ -1,0 +1,4 @@
+﻿output,num_sentences,num_unchanged,num_anomalies,num_identical_to_first
+s200_b50,200,8,8,200
+s200_b100,200,46,46,21
+s200_b200,200,37,39,21

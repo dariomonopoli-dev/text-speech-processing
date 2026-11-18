@@ -213,7 +213,7 @@ if __name__ == "__main__":
         help="Hugging Face id of an MLX-compatible model, e.g. an Apertus instruct model.",
     )
     parser.add_argument(
-        "--batch_size", type=int, default=10, help="Sentences per prompt."
+        "--batch_size", type=int, default=50, help="Sentences per prompt."
     )
     parser.add_argument(
         "--max_tokens",
