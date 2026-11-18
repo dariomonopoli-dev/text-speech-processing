@@ -130,7 +130,6 @@ Each run writes `runs/gahd_tfidf_logreg/run<seed>/` with the GAHD test metrics a
 ```bash
 bash scripts/evaluate_swiss_german.sh
 python src/evaluate_unflagged_subset.py --path_translations data/eval_sentences_apertus8b.csv data/haiku_translations_700_audited.csv --path_runs runs/gahd_gbert_batch32_control --path_output results/approach2_normalisation/exclude_flagged_translations_metrics.json
-python src/compare_variants.py --path_runs runs/gahd_gbert_batch32_control --path_output results/approach2_normalisation/paired_differences.json
 ```
 
 `evaluate_swiss_german.sh` recomputes the annotation agreement, then scores the `text`, `translation_haiku` and `translation_apertus8b` predictions of every seed. For one prediction file, call `evaluate_predictions.py` and `parse_results_into_csv.py` as the script does. `evaluate_predictions.py` writes one flat metrics JSON (`acc`, `f1-macro`, `f1-pos`, `f1-neg`, `precision`, `recall`, `pr-auc`, `roc-auc`, ...) and a bootstrap interval file next to it. `parse_results_into_csv.py` writes `raw_results.csv` and `seed_avg_results.csv` (mean and standard deviation over seeds). Gold labels are the majority of the three annotators on the shared sentences and the single label elsewhere.
@@ -191,7 +190,7 @@ scripts/    bash scripts for the experiment families
 notebooks/  exploration, baseline and Yannis's Approach 3 training
 tests/      pytest suite for the pipeline, evaluation and training helpers
 data/       inputs, annotations, translations and prediction inputs
-results/    annotation agreement, comparison reports, `approach2_normalisation/` (subset metrics, paired differences) and `analysis/` (sentence scores, false alarms, target and mechanism table)
+results/    annotation agreement, comparison reports, `approach2_normalisation/` (subset metrics) and `analysis/` (sentence scores, false alarms, target and mechanism table)
 runs/       training output (gitignored)
 ```
 
