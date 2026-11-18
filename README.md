@@ -9,7 +9,7 @@ Sentences labelled by all three annotators are `shared` (100). The other 200 per
 ## Setup
 
 ```bash
-python3.10 -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -62,7 +62,7 @@ The `gahd_gbert_raw_rtx3080_run<seed>.json` configs train from the local `data/g
 The same fine-tuned models applied to Standard German translations of the 700 sentences from two normalisers:
 
 - `claude-haiku-5-5` with a fixed four-example prompt (`data/haiku_translations_700.csv`).
-- `mlx-community/Apertus-8B-Instruct-2509-bf16`, run locally with MLX in batches of 50 sentences with greedy decoding. It replaces the Apertus-70B model named in the proposal, which does not fit into 48 GB of memory. This must be stated in the report.
+- `mlx-community/Apertus-8B-Instruct-2509-bf16`, run locally with MLX in batches of 50 sentences with greedy decoding. It replaces the Apertus-70B model named in the proposal, which does not fit into 48 GB of memory.
 
 Translate with Apertus. Batch size 50 left 2 to 4 percent of the sentences unchanged on two test samples, batch sizes 10, 100 and 200 left 18 to 23 percent.
 
@@ -129,8 +129,8 @@ Each run writes `runs/gahd_tfidf_logreg/run<seed>/` with the GAHD test metrics a
 
 ```bash
 bash scripts/evaluate_swiss_german.sh
-python src/evaluate_unflagged_subset.py --path_translations data/eval_sentences_apertus8b.csv data/haiku_translations_700_audited.csv --path_output results/approach2_normalisation/exclude_flagged_translations_metrics.json
-python src/compare_variants.py --path_output results/approach2_normalisation/paired_differences.json
+python src/evaluate_unflagged_subset.py --path_translations data/eval_sentences_apertus8b.csv data/haiku_translations_700_audited.csv --path_runs runs/gahd_gbert_batch32_control --path_output results/approach2_normalisation/exclude_flagged_translations_metrics.json
+python src/compare_variants.py --path_runs runs/gahd_gbert_batch32_control --path_output results/approach2_normalisation/paired_differences.json
 ```
 
 `evaluate_swiss_german.sh` recomputes the annotation agreement, then scores the `text`, `translation_haiku` and `translation_apertus8b` predictions of every seed. For one prediction file, call `evaluate_predictions.py` and `parse_results_into_csv.py` as the script does. `evaluate_predictions.py` writes one flat metrics JSON (`acc`, `f1-macro`, `f1-pos`, `f1-neg`, `precision`, `recall`, `pr-auc`, `roc-auc`, ...) and a bootstrap interval file next to it. `parse_results_into_csv.py` writes `raw_results.csv` and `seed_avg_results.csv` (mean and standard deviation over seeds). Gold labels are the majority of the three annotators on the shared sentences and the single label elsewhere.
@@ -166,13 +166,13 @@ The generated report reads each experiment's actual batching settings. The lates
 ### Error analysis
 
 ```bash
-python src/export_hate_sentences.py --subset all --path_runs runs/gahd_gbert_raw_batch32 --path_output results/analysis/test_set_scores.csv --overwrite
-python src/export_hate_sentences.py --path_runs runs/gahd_gbert_raw_batch32 --overwrite
+python src/export_hate_sentences.py --subset all --path_runs runs/gahd_gbert_batch32_control --path_output results/analysis/test_set_scores.csv --overwrite
+python src/export_hate_sentences.py --path_runs runs/gahd_gbert_batch32_control --overwrite
 python src/analyse_false_alarms.py --step summarise --overwrite
 python src/analyse_hate.py --overwrite
 ```
 
-`runs/gahd_gbert_raw_batch32` holds the GBERT runs of the report. The two exports refresh the scores in the existing tables and keep the manually typed `Target` and `Mechanism` tags.
+`runs/gahd_gbert_batch32_control` holds the GBERT runs of the report, written by `run_gbert_batch32.py`. The two exports refresh the scores in the existing tables and keep the manually typed `Target` and `Mechanism` tags.
 
 `export_hate_sentences.py` writes the test sentences with the gold label, both translations and the hate score of every variant averaged over the seeds. The first call exports all 700 sentences, the second only the 26 gold-hate sentences into `results/analysis/gold_hate_sentences.csv`.
 
@@ -213,3 +213,7 @@ python -m pytest
 python -m black --check src tests
 python -m pyflakes src tests
 ```
+
+## License
+
+The code is released under the MIT License (`LICENSE`). The sentences in `data/test_set.csv` come from SwissCrawl and keep its terms of use.
