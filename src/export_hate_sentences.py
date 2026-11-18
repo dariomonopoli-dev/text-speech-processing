@@ -51,6 +51,17 @@ def check_covers_ids(frame: pd.DataFrame, sentence_ids: pd.Index, name: str) -> 
         raise KeyError(f"{name} lacks sentence_ids {list(missing_ids[:5])}")
 
 
+def keep_hand_assigned_columns(
+    hate_sentences: pd.DataFrame, path_existing: Path
+) -> pd.DataFrame:
+    """Carry over the columns of an existing table that this export does not write."""
+    existing = pd.read_csv(path_existing, encoding="utf-8-sig")
+    hand_assigned = [c for c in existing.columns if c not in hate_sentences.columns]
+    return hate_sentences.merge(
+        existing[["sentence_id", *hand_assigned]], on="sentence_id", how="left"
+    )
+
+
 def main(args: argparse.Namespace) -> None:
     logger.info(json.dumps(vars(args), ensure_ascii=False, default=str))
     if args.path_output.exists() and not args.overwrite:
@@ -90,6 +101,8 @@ def main(args: argparse.Namespace) -> None:
     hate_sentences = (
         hate_sentences.sort_index().rename_axis("sentence_id").reset_index()
     )
+    if args.path_output.exists():
+        hate_sentences = keep_hand_assigned_columns(hate_sentences, args.path_output)
     write_csv(hate_sentences, args.path_output)
     logger.info(f"wrote {len(hate_sentences)} sentences to {args.path_output}")
 

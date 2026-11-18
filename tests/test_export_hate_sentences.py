@@ -130,3 +130,18 @@ def test_main_refuses_an_existing_output_without_overwrite(args):
 
     with pytest.raises(FileExistsError, match="--overwrite"):
         export_hate_sentences.main(args)
+
+
+def test_main_keeps_hand_assigned_columns_when_overwriting(args):
+    export_hate_sentences.main(args)
+    tagged = pd.read_csv(args.path_output, encoding="utf-8-sig")
+    tagged["Target"] = ["Women", "Disability"]
+    tagged["mean_prob_hate_raw"] = 0.0
+    tagged.to_csv(args.path_output, index=False)
+    args.overwrite = True
+
+    export_hate_sentences.main(args)
+
+    rewritten = pd.read_csv(args.path_output, encoding="utf-8-sig")
+    assert rewritten["Target"].tolist() == ["Women", "Disability"]
+    assert rewritten["mean_prob_hate_raw"].gt(0).all()
